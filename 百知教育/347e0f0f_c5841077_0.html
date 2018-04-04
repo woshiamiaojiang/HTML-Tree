@@ -1,0 +1,1102 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<h2><a name="_Toc12699"><span lang="EN-US" style="font-size:10.5pt;line-height:
+173%">jsp</span></a><span style="mso-bookmark:_Toc12699"><span style="font-size:10.5pt;line-height:173%;font-family:宋体;mso-ascii-font-family:
+Cambria;mso-hansi-font-family:Cambria">的隐含对象</span></span><span style="mso-bookmark:_Toc12699"></span><span lang="EN-US" style="font-size:10.5pt;
+line-height:173%"><o:p></o:p></span>
+			</h2>
+			<h3><a name="_Toc24738"><span style="font-size:10.5pt;line-height:173%;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">知识点</span></a><span style="mso-bookmark:
+_Toc24738"></span><span lang="EN-US" style="font-size:10.5pt;line-height:173%"><o:p></o:p></span>
+			</h3>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">由</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">tomcat </span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">创建，可以在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSP</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> &lt;%=%&gt; </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">和</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> &lt;% %&gt; </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中使用的一组对象。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">1</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">request<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">类型：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">HttpServletRequest<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">方法：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> str =
+request.getParameter(&quot;name&quot;);//</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">获取</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">client</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">数据</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>request.setAttribute(&quot;str&quot;,obj);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">String str =
+request.getContextPath();//</span><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">获取</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">web</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">应用名称</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">......<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">示例：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%@ page
+pageEncoding=<em style="mso-bidi-font-style:normal">&quot;UTF-8&quot;</em>contentType=<em style="mso-bidi-font-style:normal">&quot;text/html&quot;</em>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">getProtocol=&lt;%=request.getProtocol()
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">getMethod=&lt;%=request.getMethod()
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">getRequestURL=&lt;%=request.getRequestURL()
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">getRequestURI=&lt;%=request.getRequestURI()
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">getContextPath=&lt;%=request.getContextPath()
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">运行结果：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-no-proof:yes"><img width="394" height="155" src="data:image/jpg;base64,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" v:shapes="图片_x0020_4" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">2</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">response<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">类型：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">HttpServletResponse<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">方法：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">response.setContentType(&quot;text/html&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>response.setCharacterEncoding(&quot;UTF-8&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>PrintWriter out = response.getWriter();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">3</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">out<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">类型：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JspWriter<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">方法：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> out.print(&quot;&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>out.println(&quot;&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>out.write(&quot;&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">4</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">session<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">类型：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">HttpSession<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">方法：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">session.setAttribute(&quot;&quot;,obj)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>session.getAttribute(&quot;&quot;)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>session.removeAttribute(&quot;&quot;)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">5</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">application<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">类型：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">ServletContext<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">方法：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">application.getInitParameter(&quot;&quot;);//</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">获取</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">web.xml</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中配置的全局初始化参数</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>application.setAttribute(&quot;&quot;,obj)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>application.getAttribute(&quot;&quot;)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>application.removeAttribute(&quot;&quot;)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">6</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">config<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">类型：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">ServletConfig<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">7</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">page<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">类型：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">Object<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">代表当前</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSP</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">页面本身，相当于</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> this</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">8</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">exception<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">类型：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">Throwable<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">注意：该对象只能要</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> isErrorPage=&quot;true&quot; </span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的页面中使用。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">示例：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> error.jsp</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-fareast-font-family:宋体"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%@ page
+pageEncoding=<em style="mso-bidi-font-style:normal">&quot;UTF-8&quot;</em>contentType=<em style="mso-bidi-font-style:normal">&quot;text/html&quot;</em>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%@ page
+isErrorPage=<em style="mso-bidi-font-style:normal">&quot;true&quot;</em> %&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">出错啦！！！<span lang="EN-US">&lt;br/&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%=exception.getMessage()
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体">jsp1.jsp<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas;color:#BF5F3F">&lt;%@</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"> <span style="color:#3F7F7F">page</span> <span style="color:#7F007F">pageEncoding</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;UTF-8&quot;</span></em> <span style="color:#7F007F">contentType</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;text/html&quot;</span></em> <span style="color:#BF5F3F">%&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas;color:#BF5F3F">&lt;%@</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"> <span style="color:#3F7F7F">page</span> <span style="color:#7F007F">errorPage</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;/error.jsp&quot;</span></em> <span style="color:
+#BF5F3F">%&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas;color:#BF5F3F">&lt;%</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:black"> <span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas;color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:宋体;color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;
+mso-fareast-font-family:Consolas;color:#7F0055">int</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas;color:black"> result = 5/0;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas;color:black"><span style="mso-spacerun:yes">&nbsp;</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:宋体;color:black"><span style="mso-tab-count:1">&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas;color:#BF5F3F">%&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+宋体"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:Consolas;mso-hansi-font-family:Consolas">运行结果：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+宋体"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-no-proof:yes"><img width="394" height="135" src="data:image/png;base64,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" v:shapes="图片_x0020_3" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:宋体"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">9</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">pageContext<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">类型：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">javax.servlet.jsp.PageContext<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）获取</span><span style="mso-bidi-font-size:
+10.5pt"> </span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">其它</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> 8</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">个</span><span style="mso-bidi-font-size:
+10.5pt"> </span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">隐含对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>pageContext.getRequest();<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">获取到</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> request </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>pageContext.getServletContext();<span style="mso-tab-count:1">&nbsp; </span>--&gt; application<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>2</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）作用域对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">开始：请求到达该页面开始</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">结束：请求离开该页面</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">使用：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">pageContext.setAttribute(“str”,obj);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">obj = pageContext.getAttribute(“str”);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">示例：</span><span style="mso-bidi-font-size:10.5pt"> <span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">forward1.jsp<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%@ page
+pageEncoding=<em style="mso-bidi-font-style:normal">&quot;UTF-8&quot;</em>contentType=<em style="mso-bidi-font-style:normal">&quot;text/html&quot;</em>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">这是<span lang="EN-US">forward1</span>页面<span lang="EN-US">&lt;br/&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">request.setAttribute(&quot;name&quot;,&quot;zs&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">pageContext.setAttribute(&quot;name&quot;,&quot;tom&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-spacerun:yes">&nbsp;</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;jsp:forward
+page=<em style="mso-bidi-font-style:normal">&quot;<u>/forward2.jsp</u>&quot;</em>/&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">forward2.jsp<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%@ page
+pageEncoding=<em style="mso-bidi-font-style:normal">&quot;UTF-8&quot;</em>contentType=<em style="mso-bidi-font-style:normal">&quot;text/html&quot;</em>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">这是<span lang="EN-US">forward2</span>页面<span lang="EN-US">&lt;br/&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%=request.getAttribute(&quot;name&quot;)
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%=pageContext.getAttribute(&quot;name&quot;)
+%&gt;&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:
+Consolas;mso-fareast-font-family:宋体">b</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">r/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">运行结果：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-no-proof:yes"><img width="387" height="163" src="data:image/jpg;base64,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" v:shapes="图片_x0020_2" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>3</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）操作其它</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> 3 </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">个作用域对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">使用</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">pageContext</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">往</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">request</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">作用域中设置命名属性</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>pageContext.setAttribute(&quot;str&quot;,obj,PageContext.REQUEST_SCOPE);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">使用</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">pageContext</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">获取</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">session</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">作用域中的命名属性</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>obj =
+pageContext.getAttribute(&quot;str&quot;,PageContext.SESSION_SCOPE);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">使用</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">pageContext</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">删除</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">application</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的命名属性</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>pageContext.remove(&quot;str&quot;,PageContext.APPLICATION_SCOPE);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">jsp</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">的作用域中从小到大进行搜索，搜索即停止</span><span style="mso-bidi-font-size:10.5pt"> <span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>obj =
+pageContext.findAttribute(&quot;str&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p>&nbsp;</o:p></span>
+			</p>
+			<h2><a name="_Toc2015"><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-hansi-font-family:Cambria">综合应用</span></a><span lang="EN-US"><o:p></o:p></span>
+			</h2>
+			<h3><a name="_Toc22620"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">登录功能</span></a><span lang="EN-US"><o:p></o:p></span>
+			</h3>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">需求描述：根据用户输入的用户名密码，和数据库中的数据进行对比，正确转“查所有”；错误回“登录”页，并提供“用户名不存在！”或“密码错误！”。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;border:solid windowtext 1.0pt;mso-border-alt:
+solid windowtext .5pt;padding:0cm;mso-no-proof:yes"><img width="240" height="139" src="data:image/jpg;base64,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" v:shapes="图片_x0020_10" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;border:none windowtext 1.0pt;mso-border-alt:none windowtext 0cm;
+padding:0cm"><span style="mso-spacerun:yes">&nbsp;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;border:solid windowtext 1.0pt;mso-border-alt:
+solid windowtext .5pt;padding:0cm;mso-no-proof:yes"><img width="266" height="141" src="data:image/jpg;base64,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" v:shapes="图片_x0020_9" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">分析：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">输入界面</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> - login.jsp<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">登录验证（主要功能）</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> - loginAction.jsp<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">关键代码：（</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">loginAction.jsp</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%@ page import=<em style="mso-bidi-font-style:normal">&quot;com.zpark.service.*&quot;</em> %&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%@</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+宋体"> </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;
+mso-fareast-font-family:Consolas">page import=<em style="mso-bidi-font-style:
+normal">&quot;com.zpark.entity.User&quot;</em>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>// 1 </span><span style="mso-bidi-font-size:10.5pt;font-family:
+Consolas;mso-fareast-font-family:Consolas">获取<span lang="EN-US">client</span>数据<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>String name = request.getParameter(&quot;username&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>String pass = request.getParameter(&quot;password&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>// 2</span><span style="mso-bidi-font-size:10.5pt;font-family:
+Consolas;mso-fareast-font-family:Consolas">调用业务类的方法，实现“验证”功能<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>UserServiceImpl userService = new UserServiceImpl();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>User user = userService.checkLogin(name);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>// 3</span><span style="mso-bidi-font-size:10.5pt;font-family:
+Consolas;mso-fareast-font-family:Consolas">根据结果，跳转<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>if (user == null){//name err<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>request.setAttribute(&quot;errMsg&quot;,&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">用户名</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:Consolas;mso-hansi-font-family:Consolas">不存在</span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">！<span lang="EN-US">&quot;);<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>&lt;jsp:forward page=<em style="mso-bidi-font-style:normal">&quot;/login.jsp&quot;</em>/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>} else if (user.getPassword().equals(pass)) {//ok<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>session.setAttribute(&quot;LoginedUser&quot;,user);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>&lt;jsp:forward page=<em style="mso-bidi-font-style:normal">&quot;/queryAllAction.jsp&quot;</em>/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>} else {<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>request.setAttribute(&quot;errMsg&quot;,&quot;pass</span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">错误！<span lang="EN-US">&quot;);<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>&lt;jsp:forward page=<em style="mso-bidi-font-style:normal">&quot;/login.jsp&quot;</em>/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">%&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p>&nbsp;</o:p></span>
+			</p>
+			<h3><a name="_Toc8328"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">查所有功能</span></a><span lang="EN-US"><o:p></o:p></span>
+			</h3>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">需求描述：查询数据库中的所有帐户信息，并以表格的形式展现在界面中；如果没有查询到数据，则显示“暂无数据！”。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-no-proof:yes"><img width="386" height="219" src="data:image/jpg;base64,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" v:shapes="图片_x0020_8" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">分析：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">查询所有帐户</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> - queryAllAction.jsp<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">显示所有帐户信息</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> - queryAllView.jsp<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">关键代码：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">（</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">queryAllAction.jsp</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%@page import=<em style="mso-bidi-font-style:normal">&quot;com.zpark.entity.Account&quot;</em>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%@page import=<em style="mso-bidi-font-style:normal">&quot;java.util.List&quot;</em>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%@page import=<em style="mso-bidi-font-style:normal">&quot;com.zpark.service.BankServiceImpl&quot;</em>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>// [1</span><span style="mso-bidi-font-size:10.5pt;font-family:
+Consolas;mso-fareast-font-family:Consolas">获取<span lang="EN-US">client</span>数据<span lang="EN-US">]<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>// 2</span><span style="mso-bidi-font-size:10.5pt;font-family:
+Consolas;mso-fareast-font-family:Consolas">调用业务类，实现“查所有”功能<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>BankServiceImpl bankService = new BankServiceImpl();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>List&lt;Account&gt; accList = bankService.queryAll();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>// 3</span><span style="mso-bidi-font-size:10.5pt;font-family:
+Consolas;mso-fareast-font-family:Consolas">根据结果，跳转 <span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>request.setAttribute(&quot;myList&quot;, accList);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">&lt;jsp:forward page=<em style="mso-bidi-font-style:normal">&quot;/queryAllView.jsp&quot;</em>/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">（</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">queryAllView.jsp</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%@page import=<em style="mso-bidi-font-style:normal">&quot;com.zpark.entity.Account&quot;</em>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%@page import=<em style="mso-bidi-font-style:normal">&quot;java.util.List&quot;</em>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>// </span><span style="mso-bidi-font-size:10.5pt;font-family:
+Consolas;mso-fareast-font-family:Consolas">获取<span lang="EN-US">request</span>中的命名属性<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>Object obj = request.getAttribute(&quot;myList&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>List&lt;Account&gt; accList = <u>(List&lt;Account&gt;)obj</u>;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;table <u>width</u>=<em style="mso-bidi-font-style:normal">&quot;50%&quot;</em> <u>border</u>=<em style="mso-bidi-font-style:normal">&quot;1&quot;</em>&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>&lt;tr&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;td&gt;</span><span style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">编号<span lang="EN-US">&lt;/td&gt;&lt;td&gt;</span>姓名<span lang="EN-US">&lt;/td&gt;&lt;td&gt;</span>余额<span lang="EN-US">&lt;/td&gt;&lt;td&gt;</span>操作<span lang="EN-US">&lt;/td&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>&lt;/tr&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (accList.size() == 0){//</span><span style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">没有数据<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>&lt;tr&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;td colspan=<em style="mso-bidi-font-style:normal">&quot;4&quot;</em>align=<em style="mso-bidi-font-style:normal">&quot;center&quot;</em>&gt;</span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">暂无数据！<span lang="EN-US">&lt;/td&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>&lt;/tr&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} else {<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(Account acc: accList){<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>&lt;tr&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;td&gt;&lt;%=acc.getAccountNo() %&gt;&lt;/td&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;td&gt;&lt;%=acc.getAccountName() %&gt;&lt;/td&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;td&gt;&lt;%=acc.getBalance() %&gt;&lt;/td&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;td&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;a href=<em style="mso-bidi-font-style:normal">&quot;</em></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:宋体">#</span></em><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&quot;</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">&gt;</span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;
+mso-fareast-font-family:Consolas">修改<span lang="EN-US">&lt;/a&gt; <o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;a href=<em style="mso-bidi-font-style:normal">&quot;</em></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:宋体">#</span></em><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&quot;</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">&gt;</span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;
+mso-fareast-font-family:Consolas">删除<span lang="EN-US">&lt;/a&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;/td&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>&lt;/tr&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;</span>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">&lt;/table&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

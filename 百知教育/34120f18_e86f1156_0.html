@@ -1,0 +1,466 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<div style="mso-element:para-border-div;border:solid #DBE5F1 3.0pt;padding:
+0cm 0cm 0cm 0cm;background:#DBE5F1">
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;letter-spacing:
+.75pt;mso-font-kerning:0pt;font-weight:normal">第</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">3</span><span style="font-size:14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">讲</span><span style="font-size:14.0pt;line-height:115%;
+font-family:'Calibri',sans-serif;letter-spacing:.75pt;mso-font-kerning:0pt;
+font-weight:normal"> </span><span style="font-size:14.0pt;line-height:115%;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">事务配置</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal"><o:p></o:p></span>
+				</h2>
+			</div>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF">&lt;!-- </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F5FBF">事务管理器</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>transactionManager</span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F5FBF">不同的底层实现需要不同的事务管理器</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF">底层是<span lang="EN-US">jdbc,mybatis:
+DataSourceTransactionManager</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF">底层是<span lang="EN-US">hibernate:
+HibernateTransactionManager</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF">--&gt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">bean</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">id</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;transactionManager&quot;<o:p></o:p></span></em></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt;text-autospace:
+none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F007F">class</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">=</span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#2A00FF">&quot;org.springframework.orm.hibernate3.HibernateTransactionManager&quot;</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">name</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;sessionFactory&quot;</span></em> <span style="color:#7F007F">ref</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;sessionFactory&quot;</span></em><span style="color:teal">/&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">bean</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF">&lt;!-- </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F5FBF">事务通知类<span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span></span>如果事务管理器的<span lang="EN-US">id=transactionManager, </span>则<span lang="EN-US">transaction-manager</span>可以省略<span lang="EN-US"> --&gt;</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">tx:advice</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">id</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;txAdvice&quot;</span></em><span style="color:#7F007F">transaction-manager</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;transactionManager&quot;</span></em><span style="color:teal">&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">tx:attributes</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">tx:method</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">name</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;find*&quot;</span></em> <span style="color:#7F007F">propagation</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;SUPPORTS&quot;</span></em><span style="color:teal">/&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">tx:method</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">name</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;*&quot;</span></em> <span style="color:#7F007F">propagation</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;REQUIRED&quot;</span></em><span style="color:teal">/&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">tx:attributes</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">tx:advice</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF">&lt;!-- </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F5FBF">定义事务切面<span lang="EN-US"> --&gt;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">aop:config</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">aop:advisor</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">advice-ref</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;txAdvice&quot;</span></em> <span style="color:#7F007F">pointcut</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;execution(* day4.service.*.*(..))&quot;</span></em><span style="color:teal">/&gt;</span><span style="color:black"><span style="mso-tab-count:1">&nbsp;&nbsp; </span></span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">aop:config</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:teal"><o:p>&nbsp;</o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l1 level1 lfo1;tab-stops:18.75pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><span style="mso-list:Ignore">1.<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal">事务管理器<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">它是对底层事务开启、提交、回滚的抽象。</span><span lang="EN-US">JDBC</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">是利用</span><span lang="EN-US">Connection</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">对象对事务控制，而</span><span lang="EN-US">Hibernate</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">是利用一个</span><span lang="EN-US">Transaction</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">对象对事务控制。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">而事务通知类中进一步对每个方法采用何种事务属性进行了详细配置，例如查询方法不应当主动开启事务，但允许其加入当前事务，这种情况应当配置其传播行为为</span><span lang="EN-US">SUPPORTS. </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">又例如，增删改方法必须开启事务，如果事务已经存在也需要加入当前事务，这种情况应当配置其传播行为为</span><span lang="EN-US">REQUIRED.<o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l1 level1 lfo1;tab-stops:18.75pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><span style="mso-list:Ignore">2.<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal">回滚控制<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l0 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">业务方法成功运行，则事务提交</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l0 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">出现</span><span lang="EN-US">RuntimeException
+(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">或它的子类异常时</span><span lang="EN-US">), </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">则事务回滚</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l0 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">出现</span><span lang="EN-US">Exceptin
+(IOException), </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">则事务仍会提交</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l0 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">hibernate </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">中所有方法</span><span lang="EN-US"> save</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，</span><span lang="EN-US">update</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，等方法都抛出运行时异常，因而能与</span><span lang="EN-US">spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的事务很好地结合</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l0 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">默认规则可以改变：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US">rollback-for=&quot;</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">需要回滚的异常类型</span><span lang="EN-US">&quot;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">例如：</span><span lang="EN-US">rollback-for=&quot;java.io.IOException&quot; </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">遇到</span><span lang="EN-US">IOException</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">或它的子类异常时都会回滚</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US">no-rollback-for=&quot;</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">不想回滚的异常类型</span><span lang="EN-US">&quot;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">例如：</span><span lang="EN-US">no-rollback-for=&quot;java.lang.RuntimeException&quot; </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">遇到</span><span lang="EN-US">RuntimeException</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">或它的子类异常时都不会回滚</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">其它事务属性不是很重要，只需要了解即可：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l1 level1 lfo1;tab-stops:18.75pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><span style="mso-list:Ignore">3.<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal">只读事务<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">可以配合查询使用，某些数据库驱动能够对于只读事务做优化，但不是所有驱动都支持。另外，它跟</span><span lang="EN-US">Oracle</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的“只读事务”是两个完全不同的概念</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l1 level1 lfo1;tab-stops:18.75pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><span style="mso-list:Ignore">4.<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal">事务超时时间<span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp; </span><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US">timeout=&quot;60&quot;<span style="mso-tab-count:1">&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">表示一分钟内事务还没有执行完，则回滚此事务</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US">timeout=&quot;-1&quot;<span style="mso-tab-count:1">&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">表示永不超时（默认）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l1 level1 lfo1;tab-stops:18.75pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><span style="mso-list:Ignore">5.<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal">隔离级别<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l2 level1 lfo3;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">未提交读</span><span lang="EN-US"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">出现脏读现象</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l2 level1 lfo3;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">提交读</span><span lang="EN-US"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">能够避免脏读</span><span lang="EN-US"> (Oracle</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">默认的隔离级别</span><span lang="EN-US">), </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">会出现不可重复读</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l2 level1 lfo3;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">可重复读</span><span lang="EN-US"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">能够避免不可重复读</span><span lang="EN-US">(Oracle</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">不支持</span><span lang="EN-US">)</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，会出现幻读</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l2 level1 lfo3;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">序列化读</span><span lang="EN-US"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">能够避免幻读现象</span><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman';background:yellow;mso-highlight:yellow">注意</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：隔离级别不是设置的越高越好，越高性能越低</span><span lang="EN-US">;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">只有在特殊场景下，才需要选择高的隔离级别，大部分情况使用数据库默认的隔离级别即可</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l1 level1 lfo1;tab-stops:18.75pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><span style="mso-list:Ignore">6.<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal">事务传播行为<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l3 level1 lfo4;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">REQUIRED<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">必须的</span><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">如果没有事务，开启新事务，已经有事务，则加入当前事务，共用同一事务</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l3 level1 lfo4;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">SUPPORTS <span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">支持的</span><span lang="EN-US"> <span style="mso-tab-count:1">&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">如果没有事务</span><span lang="EN-US">, </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">不会开启事务，已经有事务，则加入当前事务</span><span lang="EN-US"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l3 level1 lfo4;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">REQUIRES_NEW<span style="mso-tab-count:1"> </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">不管有没有事务，都开启新事务</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l3 level1 lfo4;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">NOT_SUPPORTED<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">不支持，执行该方法时事务会挂起，等该方法运行完毕，事务再恢复</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l3 level1 lfo4;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">MANDATORY<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">强制的</span><span lang="EN-US">, </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">必须提前开启，否则会抛异常</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l3 level1 lfo4;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">NEVER<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">强制不能有事务，如果有事务已开启，会抛异常</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l3 level1 lfo4;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">NESTED<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">嵌套事务</span> <span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">要求数据库必须支持</span><span lang="EN-US">savepoint</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">（保存点）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">事务的传播行为仅限于<span style="background:lime;mso-highlight:lime">不同对象的事务方法之间相互调用时，才有意义</span>。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">例如</span><span lang="EN-US">A</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">业务对象的方法</span><span lang="EN-US">a()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">执行时，调用了</span><span lang="EN-US">B</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">业务对象的方法</span><span lang="EN-US">b()<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">场景一：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US">a()</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法的传播行为设为</span><span lang="EN-US">REQUIRED</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">，</span><span lang="EN-US">b()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法的传播行为设为</span><span lang="EN-US">REQUIRED</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">，则</span><span lang="EN-US">b()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法被调用时会加入</span><span lang="EN-US">a()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法所开启的事务（即它们处于同一事务）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">场景二：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US">a()</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法的传播行为设为</span><span lang="EN-US">SUPPORTS</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">，</span><span lang="EN-US">b()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法的传播行为设为</span><span lang="EN-US">REQUIRED</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">，</span><span lang="EN-US">a()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法时没有事务被开启，当</span><span lang="EN-US">b()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法被调用时，事务开始；</span><span lang="EN-US">b()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法调用结束事务跟着结束</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">场景三：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US">a()</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法的传播行为设为</span><span lang="EN-US">REQUIRED</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">，</span><span lang="EN-US">b()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法的传播行为设为</span><span lang="EN-US">REQUIRES_NEW</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">，则</span><span lang="EN-US">b()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法被调用时会开启一个新的事务，总共是两个不同事务（可以用于审计通知，无论正常业务执行成功与否，总要向审计表插入记录，这时，审计的插入操作不应当收到正常业务回滚的影响）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">场景四：（例外情况）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">假设对象</span><span lang="EN-US">A</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的</span><span lang="EN-US">a()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法的传播行为设为</span><span lang="EN-US">REQUIRED</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">，方法</span><span lang="EN-US">c() </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">设为</span><span lang="EN-US">REQUIRES_NEW</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">，现在在对象</span><span lang="EN-US">A</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的</span><span lang="EN-US">a()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法中调用</span><span lang="EN-US">c()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法，则</span><span lang="EN-US">c()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法不会开启新事务。原因是同一对象内的方法调用无法经过代理对象，本质上这些传播控制，还是依赖于事务通知，没有缺少了中间的代理对象，事务通知没机会被调用。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

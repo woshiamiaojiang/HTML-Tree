@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<p class="MsoTitle"><span lang="EN-US">Oracle </span><span style="font-family:宋体;
+mso-ascii-font-family:Cambria;mso-ascii-theme-font:major-latin;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:major-latin">模块一</span><span lang="EN-US"> SQL(DQL)<o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border:solid #4F81BD 3.0pt;padding:
+0cm 0cm 0cm 0cm;background:#4F81BD">
+				<h1 align="center" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:0cm;margin-bottom:.0001pt;text-align:center;line-height:115%;
+mso-pagination:widow-orphan;page-break-after:auto;background:#4F81BD;
+border:none;mso-border-alt:solid #4F81BD 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><span lang="EN-US" style="font-size:23.0pt;mso-bidi-font-size:
+24.0pt;line-height:115%;font-family:仿宋;mso-bidi-font-family:'Courier New';
+color:#C7EDCC;text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:
+0pt">------------day1--------------<o:p></o:p></span>
+				</h1>
+			</div>
+			<div style="mso-element:para-border-div;border:solid #DBE5F1 3.0pt;padding:
+0cm 0cm 0cm 0cm;background:#DBE5F1">
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><a name="_Toc248137810"><span style="font-size:14.0pt;
+line-height:115%;font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+Calibri;text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;
+font-weight:normal">第</span></a><span style="mso-bookmark:_Toc248137810"><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal">1</span></span><span style="mso-bookmark:_Toc248137810"><span style="font-size:14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;text-transform:uppercase;letter-spacing:
+.75pt;mso-font-kerning:0pt;font-weight:normal">讲</span></span><span style="mso-bookmark:_Toc248137810"><span style="font-size:14.0pt;line-height:
+115%;font-family:'Calibri',sans-serif;text-transform:uppercase;letter-spacing:
+.75pt;mso-font-kerning:0pt;font-weight:normal"> </span></span><span style="mso-bookmark:_Toc248137810"><span style="font-size:14.0pt;line-height:
+115%;font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal">数据库基本概念，工作模式</span></span><span style="mso-bookmark:_Toc248137810"></span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal"><o:p></o:p></span>
+				</h2>
+			</div>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l2 level1 lfo1;border:none;mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:
+dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><a name="_Toc248137812"><span lang="EN-US" style="font-size:
+10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal"><span style="mso-list:Ignore">1.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">为什么要使用数据库</span></a><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal"><o:p></o:p></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">在</span><span lang="EN-US">corejava</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中，我们学会了如何使用</span><span lang="EN-US">IO</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">流将企业应用中的数据存储到文件中。但是直接使用文件系统来保存应用数据有其自身的缺点：（以下是参考）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo2;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">没有数据类型</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l5 level1 lfo3;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">文件系统不适合存储数据量比较大的信息</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l0 level1 lfo4;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">没有考虑并发访问问题</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo5;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">文件系统不会对数据的有效性和完整性作出检查</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l6 level1 lfo6;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">没有任何安全保护</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l7 level1 lfo7;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">对于数据备份和恢复支持不完善</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l2 level1 lfo1;border:none;mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:
+dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><a name="_Toc248137813"><span lang="EN-US" style="font-size:
+10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal"><span style="mso-list:Ignore">2.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">什么是关系型数据库</span></a><span style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal">及常见概念<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="margin-left:21.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">关系型数据库管理系统</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">（</span><span lang="EN-US">Relationship
+DataBase Management System</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">）用于对数据进行存储、操作等管理，简称为数据库（</span><span lang="EN-US">DB</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">）。是一个由一批数据构成的有序集合，这个集合通常被保存为一个或多个彼此相关的文件。这些数据被分门别类地存放在一些结构化的数据表（</span><span lang="EN-US">table</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">）里，而数据表之间又往往会形成种种内在的交叉引用关系。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">下面以用户及订单为例，说明数据库中的常见概念：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="mso-no-proof:yes"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><img width="410" height="65" src="data:image/jpg;base64,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" v:shapes="图片_x0020_1" /></span><span lang="EN-US"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-no-proof:yes"><img width="410" height="54" src="data:image/jpg;base64,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" v:shapes="图片_x0020_2" /></span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">表：逻辑上用于存储数据的单元。</span><span lang="EN-US">Table</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">（也称</span> <span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">实体集</span><span lang="EN-US"> EntrySet</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">列：</span><span lang="EN-US">column </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，</span> <span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">代表存储数据的属性。</span><span lang="EN-US">(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">也称</span> <span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">字段</span><span lang="EN-US">field )<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">行：</span><span lang="EN-US">row,<span style="mso-spacerun:yes">&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">表中的一行代表一条数据。（也称</span> <span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">实体</span><span lang="EN-US">Entry </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">主键：</span><span lang="EN-US">Primay Key, </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">唯一标识表中的一行数据的特殊字段。例如上面例子中的</span><span lang="EN-US">USERNAME</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">列和</span><span lang="EN-US">ORDERID</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">列。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">外键：</span><span lang="EN-US">Foreign Key, </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">用于定义表和表之间联系的特殊字段。例如上例中订单表的</span><span lang="EN-US">USERNAME</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">。在用户表里是主键，在订单表中就是外键，用来体现两个表之间的联系。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l2 level1 lfo1;border:none;mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:
+dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><a name="_Toc248137814"><span lang="EN-US" style="font-size:
+10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal"><span style="mso-list:Ignore">3.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">关系型数据库的工作模式</span></a><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal"><o:p></o:p></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1)</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">首先数据库中的数据是共享的，会被多个客户同时使用。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>2)</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">其次数据库设计为客户端</span><span lang="EN-US" style="font-family:Wingdings;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman';mso-char-type:symbol;mso-symbol-font-family:
+Wingdings"><span style="mso-char-type:symbol;mso-symbol-font-family:Wingdings">ß</span></span><span lang="EN-US" style="font-family:Wingdings;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman';mso-char-type:symbol;mso-symbol-font-family:
+Wingdings"><span style="mso-char-type:symbol;mso-symbol-font-family:Wingdings">à</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">服务器工作模式，客户端和服务器端之间通过</span><span lang="EN-US">SQL</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">来进行交互。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">服务器端：</span><span lang="EN-US">OracleServiceXE(</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">核心</span><span lang="EN-US">)</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US">OracleXETNSListener(</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">对外提供连接支持</span><span lang="EN-US">)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">客户端：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" align="left" style="margin-left:63.0pt;text-align:left;
+text-indent:-21.0pt;mso-char-indent-count:0;mso-list:l3 level1 lfo8"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">ü<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">sqlplus : oracle</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">提供的基于</span><span lang="EN-US">dos</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">界面的</span><span lang="EN-US">client</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">工具。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">登录：</span><span lang="EN-US">sqlplus hr/hr<span style="mso-spacerun:yes">&nbsp; </span>;<span style="mso-spacerun:yes">&nbsp; </span><span style="mso-tab-count:1"> </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">退出：</span><span lang="EN-US">exit<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" align="left" style="margin-left:63.0pt;text-align:left;
+text-indent:-21.0pt;mso-char-indent-count:0;mso-list:l3 level1 lfo8"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">ü<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">iSqlPlus: oracle</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">提供的基于浏览器界面的</span><span lang="EN-US">client</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">工具。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">访问：</span><span lang="EN-US">http://localhost:8080/apex<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l2 level1 lfo1;border:none;mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:
+dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal"><span style="mso-list:Ignore">4.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">书写并执行命令<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:'微软雅黑',sans-serif"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1)
+sqlplus</span><span style="font-family:'微软雅黑',sans-serif">命令<span lang="EN-US"> :</span>用在<span lang="EN-US">sqlplus</span>工具中的命令，例如：<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:'微软雅黑',sans-serif"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>desc </span><span style="font-family:'微软雅黑',sans-serif">表名<span lang="EN-US">;<span style="mso-spacerun:yes">&nbsp; </span>--</span>查看表结构<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:'微软雅黑',sans-serif"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>2)
+sql (Structure Query Language)</span><span style="font-family:'微软雅黑',sans-serif">命令<span lang="EN-US">/</span>语句<span lang="EN-US">: </span>结构化查询语言，用于在<span lang="EN-US">DB</span>中对数<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:'微软雅黑',sans-serif"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif">据进行操作的命令，不区分大小写，以“<span lang="EN-US">;&quot;</span>为结尾。<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-family:'微软雅黑',sans-serif"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US">--</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">查看当前用户能操作的表</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;</span>select table_name from user_tables;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:'微软雅黑',sans-serif"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>3)
+PL-SQL</span><span style="font-family:'微软雅黑',sans-serif">命令<span lang="EN-US">/</span>语句：是<span lang="EN-US">oracle</span>在<span lang="EN-US">SQL</span>语言的基础上，做了功能的扩展。用于在<span lang="EN-US">oracle<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="font-family:'微软雅黑',sans-serif"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif">中对数据进行操作的命令<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

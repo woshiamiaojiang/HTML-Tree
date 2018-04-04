@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<h2><a name="_Toc8558"></a><a name="_Toc393102201"></a><a name="_Toc22542"><span style="mso-bookmark:_Toc393102201"><span style="mso-bookmark:_Toc8558"><span style="font-size:10.5pt;line-height:173%;font-family:宋体">请求<span lang="EN-US">servlet</span>的三种方式</span></span></span></a><span lang="EN-US" style="font-size:10.5pt;line-height:173%;font-family:宋体"><o:p></o:p></span>
+			</h2>
+			<h3><a name="_Toc10342"></a><a name="_Toc393102202"></a><a name="_Toc16428"><span style="mso-bookmark:_Toc393102202"><span style="mso-bookmark:_Toc10342"><em style="mso-bidi-font-style:normal"><span style="font-size:10.5pt;line-height:
+173%;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">知识点</span></em></span></span></a><span style="mso-bookmark:_Toc10342"></span><span style="mso-bookmark:_Toc393102202"></span><span style="mso-bookmark:_Toc16428"></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="font-size:10.5pt;line-height:173%"><o:p></o:p></span></em>
+			</h3>
+			<h4 style="margin-left:21.0pt"><span style="font-size:10.5pt;line-height:156%;
+font-family:黑体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial">地址栏请求</span><span lang="EN-US" style="font-size:10.5pt;line-height:156%"><o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">http://ip:port/web</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">应用名称</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">/url-pattern<o:p></o:p></span>
+			</p>
+			<h4 style="margin-left:21.0pt"><span style="font-size:10.5pt;line-height:156%;
+font-family:黑体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial">超链接请求</span><span lang="EN-US" style="font-size:10.5pt;line-height:156%"><o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;a href=&apos;/web</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">应用名称</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">/url-pattern&apos;&gt;test&lt;/a&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;a
+href=&quot;/myweb/first&quot;&gt;</span><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Courier New';mso-hansi-font-family:
+'Courier New';mso-bidi-font-family:'Courier New'">显示当前时间</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;/a&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:42.0pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:Wingdings;
+mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">Ø<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">获取</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:'Courier New'">client</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">的数据：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">通过超级链接的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">URL</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">可以向</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">servlet</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">传递数据</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;a
+href=</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">“</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Courier New'">/myweb/first?name=tom</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">”</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&gt;</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">传递数据</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;/a&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">servlet</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">中通过</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">request</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">对象获得数据</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">String
+name = request.getParameter(“name”);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">由浏览器提交给服务器的数据称作客户端参数，习惯上也称作</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">parameter</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">，由一个名字和一个值组成，在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">servlet</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">中依据名字获取参数的值，</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">request.getParameter(“</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">参数名</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">”)</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<h4 style="margin-left:21.0pt"><span style="font-size:10.5pt;line-height:156%;
+font-family:黑体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial">表单请求</span><span lang="EN-US" style="font-size:10.5pt;line-height:156%"><o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;form
+action=&apos;/web</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">应用名称</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">/url-pattern&apos;&gt;.....&lt;/form&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:42.0pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:Wingdings;
+mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">Ø<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">获取</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:'Courier New'">client</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">的数据：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">String str =
+request.getParameter(&quot;</span><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Courier New';mso-hansi-font-family:
+'Courier New';mso-bidi-font-family:'Courier New'">表单元素名</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">/</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">参数名</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:42.0pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:Wingdings;
+mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">Ø<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">解决</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:'Courier New'">post</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">方式发送数据的中文乱码：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">request.setCharacterEncoding(“GBK”);<o:p></o:p></span>
+			</p>
+			<h3><a name="_Toc21574"></a><a name="_Toc393102203"></a><a name="_Toc1749"><span style="mso-bookmark:_Toc393102203"><span style="mso-bookmark:_Toc21574"><em style="mso-bidi-font-style:normal"><span style="font-size:10.5pt;line-height:
+173%;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">常见问题</span></em></span></span></a><span style="mso-bookmark:_Toc21574"></span><span style="mso-bookmark:_Toc393102203"></span><span style="mso-bookmark:_Toc1749"></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="font-size:10.5pt;line-height:173%"><o:p></o:p></span></em>
+			</h3>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:0cm;text-align:left;text-indent:0cm;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l1 level1 lfo2"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'Courier New';
+mso-fareast-font-family:'Courier New'"><span style="mso-list:Ignore">1、</span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">超链接后，传递的参数中的中文，显示时出现乱码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Courier New';
+mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">修改</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"> tomcat</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">根目录</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">/conf/server.xml</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">中的配置，增加</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">URIEncoding</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">属性：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;Connector
+port=&quot;8989&quot; protocol=&quot;HTTP/1.1&quot; <o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">connectionTimeout=&quot;20000&quot;
+redirectPort=&quot;8443&quot; <span style="color:red">URIEncoding=&quot;GBK&quot;</span>/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:0cm;text-align:left;text-indent:0cm;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l1 level1 lfo2"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'Courier New';
+mso-fareast-font-family:'Courier New'"><span style="mso-list:Ignore">2、</span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">表单中输入的中文，显示时出现乱码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Courier New';
+mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">在获取</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"> client </span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">数据前，添加代码：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">request.setCharacterEncoding(&quot;gbk&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

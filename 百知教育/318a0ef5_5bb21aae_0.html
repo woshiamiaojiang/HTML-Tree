@@ -1,0 +1,1646 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<div style="mso-element:para-border-div;border:solid #DBE5F1 3.0pt;padding:
+0cm 0cm 0cm 0cm;background:#DBE5F1">
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;letter-spacing:
+.75pt;mso-font-kerning:0pt;font-weight:normal">第</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">1</span><span style="font-size:14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">讲</span><span style="font-size:14.0pt;line-height:115%;
+font-family:'Calibri',sans-serif;letter-spacing:.75pt;mso-font-kerning:0pt;
+font-weight:normal"> </span><span style="font-size:14.0pt;line-height:115%;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">问题的提出</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal"><o:p></o:p></span>
+				</h2>
+			</div>
+			<div style="mso-element:para-border-div;border-top:solid #4F81BD 1.0pt;
+border-left:solid #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:solid #4F81BD .75pt;mso-border-left-alt:solid #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h3 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;border:none;
+mso-border-top-alt:solid #4F81BD .75pt;mso-border-left-alt:solid #4F81BD .75pt;
+padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><em style="mso-bidi-font-style:
+normal"><span style="font-size:12.0pt;mso-bidi-font-size:15.0pt;line-height:
+115%;font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+color:#243F60;text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">课程内容</span></em><span lang="EN-US"><o:p></o:p></span>
+				</h3>
+			</div>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">现在的业务逻辑层有很多事务控制相关代码，如何将其抽取并重用？</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:0cm;text-indent:0cm;mso-list:l0 level1 lfo1"><span lang="EN-US" style="mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">1. </span></span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">职责的分离</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">将现有业务逻辑层代码分为两部分，一部分专心做事务处理；另一部分仍是处理增删改查调用</span><span lang="EN-US">DAO</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">层方法。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">前一部分抽取为一个新类，称为<span style="background:lime;mso-highlight:lime">通知</span>类；后一部分还是原来的业务逻辑实现类，只是剥离了那些事务相关代码，称为<span style="background:lime;mso-highlight:lime">目标</span>类。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:0cm;text-indent:0cm;mso-list:l0 level1 lfo1"><span lang="EN-US" style="mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">2. </span></span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">引入代理类</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">职责分开后，需要一个新类来调用通知对象和目标对象，这个新类称为<span style="background:lime;mso-highlight:lime">代理</span>类，为了让使用者察觉不出实现发生了变动，让使用者仍认为自己调用的是目标对象（即原来的业务逻辑实现），要求新的类同目标类实现相同的<span style="background:lime;mso-highlight:lime">接口</span>，或者让代理类是目标类的子类。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">代理类应该由某种机制动态生成，否则代码量不减反增。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">代理类的生成有多种办法：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">JDK</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">提供的动态代理，只能代理接口</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">Cglib</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">提供代理接口或代理父类，它底层使用</span><span lang="EN-US">asm</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">库来修改或产生类的二进制字节码</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">Javassist</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">是另一种类似的库，但它不像</span><span lang="EN-US">asm</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">那样需要使用者了解</span><span lang="EN-US">class</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的字节码结构</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US">Spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">使用了前两种库来生成代理类，高版本的</span><span lang="EN-US">hibernate</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">是利用了</span><span lang="EN-US">Javassist</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">库来生成代理类（用于延迟加载）它们同属</span><span lang="EN-US">jboss</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">公司</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman';
+background:yellow;mso-highlight:yellow">注意</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：纯</span><span lang="EN-US">AspectJ</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">采用的是不同于代理机制的思路：它改变编译后目标类的二进制字节码，在字节码内部植入了调用通知的额外代码，</span><span lang="EN-US">Spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的</span><span lang="EN-US">AOP</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">仍是使用了</span><span lang="EN-US">JDK</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">和</span><span lang="EN-US">Cglib</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的代理功能实现的，</span><span lang="EN-US">Spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中引入</span><span lang="EN-US">AspectJ</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">主要是为了利用</span><span lang="EN-US">AspectJ</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">表达式来实现切入点匹配。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border:solid #DBE5F1 3.0pt;padding:
+0cm 0cm 0cm 0cm;background:#DBE5F1">
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;letter-spacing:
+.75pt;mso-font-kerning:0pt;font-weight:normal">第</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">2</span><span style="font-size:14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">讲</span><span lang="EN-US" style="font-size:14.0pt;
+line-height:115%;font-family:'Calibri',sans-serif;letter-spacing:.75pt;
+mso-font-kerning:0pt;font-weight:normal"> JDK</span><span style="font-size:
+14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;letter-spacing:.75pt;mso-font-kerning:0pt;
+font-weight:normal">动态代理</span><span lang="EN-US" style="font-size:14.0pt;
+line-height:115%;font-family:'Calibri',sans-serif;letter-spacing:.75pt;
+mso-font-kerning:0pt;font-weight:normal"><o:p></o:p></span>
+				</h2>
+			</div>
+			<div style="mso-element:para-border-div;border-top:solid #4F81BD 1.0pt;
+border-left:solid #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:solid #4F81BD .75pt;mso-border-left-alt:solid #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h3 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;border:none;
+mso-border-top-alt:solid #4F81BD .75pt;mso-border-left-alt:solid #4F81BD .75pt;
+padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><em style="mso-bidi-font-style:
+normal"><span style="font-size:12.0pt;mso-bidi-font-size:15.0pt;line-height:
+115%;font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+color:#243F60;text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">课程内容</span></em><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:15.0pt;line-height:115%;
+font-family:'Calibri',sans-serif;mso-fareast-font-family:宋体;color:#243F60;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal"><o:p></o:p></span></em>
+				</h3>
+			</div>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">///////////////<span style="mso-spacerun:yes">&nbsp;</span></span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">步骤<span lang="EN-US">1 </span>生成代理类的二进制代码<span lang="EN-US"> ///////////////</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// Generator </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F5F">生成器</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">参数<span lang="EN-US">1 </span>代理类名字</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">参数<span lang="EN-US">2 </span>代理类要实现的接口</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">final</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">byte</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">[]
+b = ProxyGenerator.<em style="mso-bidi-font-style:normal">generateProxyClass</em>(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;Proxy_1&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">, </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">Class[]{ContactService.</span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">class</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">});</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// Proxy_1.class</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">FileOutputStream os = </span><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> FileOutputStream(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;c:/Proxy_1.class&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">os.write(b, 0, b.</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#0000C0">length</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">os.close();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">使用反编译工具<span style="background:aqua;mso-highlight:
+aqua">查看</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black;background:
+aqua;mso-highlight:aqua">Proxy_1.class</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">的源码片段：</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black">public final class Proxy_1 extends Proxy implements
+ContactService<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black">{<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black"><span style="mso-spacerun:yes">&nbsp; </span>...<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">发现该类确实实现了</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black">ContactService</span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">接口</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">///////////////<span style="mso-spacerun:yes">&nbsp;</span></span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">步骤<span lang="EN-US">2 </span>让虚拟机<span lang="EN-US">JVM</span>加载二进制<span lang="EN-US">class ///////////////</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">类加载器<span lang="EN-US">, </span>用来加载<span lang="EN-US">class</span>到<span lang="EN-US">jvm</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">ClassLoader cl = </span><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> ClassLoader(){</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#646464">@Override</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">protected</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Class&lt;?&gt; findClass(String name)</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">throws</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> ClassNotFoundException {</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> defineClass(name, b, 0, b.</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#0000C0">length</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">};</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">Class c<span style="mso-spacerun:yes">&nbsp; </span>=
+cl.loadClass(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;Proxy_1&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">System.</span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">out</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">.println(c);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black;background:yellow;mso-highlight:yellow">注意</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:black">：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black">JDK</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">生成的代理类类名称一般格式为：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black">$Proxy</span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS';
+color:black">数字</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black">Cglib</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">生成的代理类名称一般格式为：父类名</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black">$$EnhancerByCGLIB$$</span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">字符和数字</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black">Javassist</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">生成的代理类名称一般格式为：父类名</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black">_$$_javassist<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;text-autospace:none"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:black">从类名可以简单区分是哪种实现</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">///////////////<span style="mso-spacerun:yes">&nbsp;</span></span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">步骤<span lang="EN-US">3 </span>创建类对象的实例<span lang="EN-US"> ///////////////<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">再次<span style="background:aqua;mso-highlight:aqua">查看</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black;background:aqua;mso-highlight:aqua">Proxy_1.class</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:black">发现，该类没有无参构造，只有一个构造方法：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black">public Proxy_1(InvocationHandler h)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black">{<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>super(h);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">父类构造会将</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">h</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:black">参数赋值给一个保护属性</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black">h;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS'">所以需要使用下面方法创建该代理的实例：</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">拿到构造方法<span lang="EN-US"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">Constructor ct =
+c.getConstructor(InvocationHandler.</span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">class</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">创建代理类的实例</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">ContactService service = (ContactService)
+ct.newInstance(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">InvocationHandler(){</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Object invoke(Object proxy, Method method, Object[] args)</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">throws</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Throwable {</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.</span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#0000C0">out</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">.println(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:#2A00FF">打印</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:#2A00FF">...</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">});</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">///////////////<span style="mso-spacerun:yes">&nbsp;</span></span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">步骤</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:#3F7F5F">4</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F"> </span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:#3F7F5F">调用代理对象的方法</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F"> ///////////////</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:#3F7F5F">经过测试发现</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F5F">无论调用代理类的实例中的哪个方法，最终都会调用<span lang="EN-US">InvocationHandler</span>中的<span lang="EN-US">invoke</span>方法</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">System.</span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">out</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">.println(service.toString());</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">System.</span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#0000C0">out</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">.println(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black">service.save(</span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"> Contact())</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS';
+color:black;background:aqua;mso-highlight:aqua">查看</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black;background:aqua;mso-highlight:aqua">Proxy_1.class</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:black">：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">public
+final void save(Contact paramContact)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">{<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>try<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>{<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>this.h.invoke(this, m3, new Object[] {
+paramContact });<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>catch (Error|RuntimeException localError) {
+... }<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">public
+final String toString()<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">{<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>try<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>{<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return (String)this.h.invoke(this, m2,
+null);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>catch (Error|RuntimeException localError) {
+... }<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS';
+color:black">发现确实是每个方法都调用了</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">invoke</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:black">方法，研究一下</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black">invoke</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">方法的参数，显然</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings;color:black"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp;</span></span></span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">参数</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">1</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:black">是代理对象自己</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings;color:black"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp;</span></span></span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">参数</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">2</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:black">是一个方法对象，看它们的定义如下：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">m3 = Class.forName(&quot;day2.service.ContactService&quot;)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black">.getMethod(&quot;save&quot;, new
+Class[] { Class.forName(&quot;day1.entity.Contact&quot;) });<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">m2 =
+Class.forName(&quot;java.lang.Object&quot;).getMethod(&quot;toString&quot;, new
+Class[0]);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS';
+color:black">分别拿到的是接口或是</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">Object</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:black">父类中的方法对象。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings;color:black"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp;</span></span></span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">参数</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">3</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:black">是该方法执行的的参数，是一个</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black">Object</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">数组，或是</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">null<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">///////////////<span style="mso-spacerun:yes">&nbsp;</span></span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">步骤</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:#3F7F5F">5 </span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:#3F7F5F">实现通知类</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F5F"> ///////////////</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:#3F7F5F">通知可能会有多个多种，为了通用起见，设计一个</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:#3F7F5F">Advice</span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:#3F7F5F">接口</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:#3F7F5F"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">interface</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Advice {<span style="mso-tab-count:1">&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Object around(MethodInvocation mi) </span><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">throws</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> Exception;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:#3F7F5F">其中</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:#3F7F5F">MethodInvocation</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:#3F7F5F">是一个工具，它会检查是否有下一个通知，有的话则调用下一个通知，没有则调用目标对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:#3F7F5F"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">static</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">class</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"> MethodInvocation{</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">private</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Object </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#0000C0">target</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">private</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Method </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#0000C0">method</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">;<span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">private</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Object[] </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#0000C0">args</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">;<span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">private</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Iterator&lt;Advice&gt; </span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#0000C0">iter</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> MethodInvocation(List&lt;Advice&gt; advices, Object target,
+Method method, Object[] args) {</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">this</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">.</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">target</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> = target;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">this</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">.</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">method</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> = method;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">this</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">.</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">args</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> = args;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">iter</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> = advices.iterator();</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Object </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">next</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">() </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">throws</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Exception {<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Object
+result = </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">null</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">if</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">iter</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">.hasNext()) {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>result
+= </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">iter</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">.next().around(</span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">this</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">else</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"> {</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>result
+= </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">method</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">.invoke(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">target</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">, </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#0000C0">args</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black">);<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> result;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">}</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS';
+color:#3F7F5F">给出两个通知的实现例子，在通知类中调用</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:#3F7F5F">mi.next()</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:#3F7F5F">表示继续进行通知调用（也可以不调用来起到拦截的作用）：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:#3F7F5F"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">class</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">TxAdvice </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">implements</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"> Advice {<span style="mso-tab-count:1"> </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Object around(MethodInvocation mi) </span><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">throws</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> Exception{</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Object
+result = </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">null</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">try</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">{</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.</span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#0000C0">out</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">.println(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#2A00FF">开始事务<span lang="EN-US">&quot;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>result
+= mi.</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black">next</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">();</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.</span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#0000C0">out</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">.println(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#2A00FF">提交事务<span lang="EN-US">&quot;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> result;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">catch</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">(Exception e) {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.</span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#0000C0">out</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">.println(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#2A00FF">回滚事务<span lang="EN-US">&quot;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">throw</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">e;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">finally</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"> {</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.</span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#0000C0">out</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">.println(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#2A00FF">关闭<span lang="EN-US">session&quot;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">}</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:#3F7F5F"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">class</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">BeforeAdvice</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">implements</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Advice {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Object around(MethodInvocation mi) </span><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">throws</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> Exception {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.</span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#0000C0">out</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">.println(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:#2A00FF">前置通知</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> mi.</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">next</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">();</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">///////////////<span style="mso-spacerun:yes">&nbsp;</span></span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">步骤</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:#3F7F5F">6 </span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:#3F7F5F">在</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:#3F7F5F">invoke</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:#3F7F5F">方法中调用通知对象和目标对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F"> ///////////////</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">目标对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">final</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> ContactServiceImpl target
+= </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> ContactServiceImpl();</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">通知列表</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">final</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> List&lt;Advice&gt;
+advices = </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> ArrayList&lt;Advice&gt;();</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">advices.add(</span><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> BeforeAdvice());</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">advices.add(</span><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> TxAdvice());<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">最后改动代理类的<span lang="EN-US">invoke</span>方法如下</span><span lang="EN-US" style="font-size:12.0pt;
+mso-bidi-font-size:11.0pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">InvocationHandler h = </span><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> InvocationHandler(){</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> Object invoke(Object proxy, Method method, Object[] args)</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">throws</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> Throwable {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>MethodInvocation
+mi = </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> MethodInvocation(advices, target, method, args);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> mi.proceed();</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">};<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black;background:yellow;mso-highlight:yellow">注意</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';
+mso-hansi-font-family:'Comic Sans MS';color:black">：实施过程中可以根据学员的水平适当调整，最后两步可以简化为将通知代码直接写在代理类的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black">invoke</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black">中</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+宋体;color:black"><o:p>&nbsp;</o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border:solid #DBE5F1 3.0pt;padding:
+0cm 0cm 0cm 0cm;background:#DBE5F1">
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;letter-spacing:
+.75pt;mso-font-kerning:0pt;font-weight:normal">第</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">3</span><span style="font-size:14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">讲</span><span lang="EN-US" style="font-size:14.0pt;
+line-height:115%;font-family:'Calibri',sans-serif;letter-spacing:.75pt;
+mso-font-kerning:0pt;font-weight:normal"> AOP</span><span style="font-size:
+14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;letter-spacing:.75pt;mso-font-kerning:0pt;
+font-weight:normal">的概念</span><span lang="EN-US" style="font-size:14.0pt;
+line-height:115%;font-family:'Calibri',sans-serif;letter-spacing:.75pt;
+mso-font-kerning:0pt;font-weight:normal"><o:p></o:p></span>
+				</h2>
+			</div>
+			<div style="mso-element:para-border-div;border-top:solid #4F81BD 1.0pt;
+border-left:solid #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:solid #4F81BD .75pt;mso-border-left-alt:solid #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h3 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;border:none;
+mso-border-top-alt:solid #4F81BD .75pt;mso-border-left-alt:solid #4F81BD .75pt;
+padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><em style="mso-bidi-font-style:
+normal"><span style="font-size:12.0pt;mso-bidi-font-size:15.0pt;line-height:
+115%;font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+color:#243F60;text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">课程内容</span></em><span lang="EN-US"><o:p></o:p></span>
+				</h3>
+			</div>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">可以看出，引入了代理类、通知类后，好处是：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">让通用性强的代码（例如事务控制，日志记录）在通知类中集中处理，实现了代码重用</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">让业务逻辑代码变得简洁，类的职责分工更为明确</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">还可以改进的地方是，不是所有方法都需要使用通知来对其进行增强，所以</span><span lang="EN-US">Spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">又引入了一种匹配规则，来决定哪些类、哪些方法执行时才需要引用通知，这种匹配规则称为切入点（</span><span lang="EN-US">Pointcut</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">所谓的切面，<span style="background:lime;mso-highlight:lime">即指通知（</span></span><span lang="EN-US" style="background:lime;mso-highlight:lime">Advice</span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman';background:lime;mso-highlight:lime">）</span><span lang="EN-US" style="background:lime;mso-highlight:lime">+ </span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman';background:lime;mso-highlight:lime">切入点（</span><span lang="EN-US" style="background:lime;mso-highlight:lime">Pointcut</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman';background:lime;mso-highlight:lime">）</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">，</span> <span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">（在哪些位置，做哪些增强操作）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">面向切面编程（</span><span lang="EN-US">Aspect Oriented Programming</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">），就是指这些通知类的设计开发，切入点的选择和配置。它是对面向对象编程（</span><span lang="EN-US">Object Oriented Programming</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">）的一个有力补充。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border:solid #DBE5F1 3.0pt;padding:
+0cm 0cm 0cm 0cm;background:#DBE5F1">
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;letter-spacing:
+.75pt;mso-font-kerning:0pt;font-weight:normal">第</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">4</span><span style="font-size:14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">讲</span><span lang="EN-US" style="font-size:14.0pt;
+line-height:115%;font-family:'Calibri',sans-serif;letter-spacing:.75pt;
+mso-font-kerning:0pt;font-weight:normal"> Spring</span><span style="font-size:
+14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;letter-spacing:.75pt;mso-font-kerning:0pt;
+font-weight:normal">中的</span><span lang="EN-US" style="font-size:14.0pt;
+line-height:115%;font-family:'Calibri',sans-serif;letter-spacing:.75pt;
+mso-font-kerning:0pt;font-weight:normal">AOP<o:p></o:p></span>
+				</h2>
+			</div>
+			<div style="mso-element:para-border-div;border-top:solid #4F81BD 1.0pt;
+border-left:solid #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:solid #4F81BD .75pt;mso-border-left-alt:solid #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h3 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;border:none;
+mso-border-top-alt:solid #4F81BD .75pt;mso-border-left-alt:solid #4F81BD .75pt;
+padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><em style="mso-bidi-font-style:
+normal"><span style="font-size:12.0pt;mso-bidi-font-size:15.0pt;line-height:
+115%;font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+color:#243F60;text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">课程内容</span></em><span lang="EN-US"><o:p></o:p></span>
+				</h3>
+			</div>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l2 level1 lfo3;tab-stops:18.75pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal"><span style="mso-list:Ignore">1.<span style="font:7.0pt 'Times New Roman'">&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">准备工作<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">添加必要</span><span lang="EN-US">jar</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">包</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l3 level1 lfo4;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">spring-aop...jar<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l3 level1 lfo4;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">spring-aspects...jar<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l3 level1 lfo4;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">aopalliance-1.0.jar<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l3 level1 lfo4;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">aspectjrt-1.7.4.jar<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l3 level1 lfo4;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">aspectjweaver-1.7.4.jar<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">在</span><span lang="EN-US">Spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">配置文件中，加入新的</span><span lang="EN-US">aop</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">命名空间：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">beans</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">xmlns</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;http://www.springframework.org/schema/beans&quot;</span></em><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp; </span><span style="color:#7F007F">xmlns:aop</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;http://www.springframework.org/schema/aop&quot;</span></em><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#7F007F">xmlns:xsi</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></em><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#7F007F">xsi:schemaLocation</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;</span></em><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><em style="mso-bidi-font-style:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#2A00FF"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>http://www.springframework.org/schema/beans </span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><em style="mso-bidi-font-style:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#2A00FF"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>http://www.springframework.org/schema/beans/spring-beans.xsd </span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><em style="mso-bidi-font-style:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#2A00FF"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>http://www.springframework.org/schema/aop </span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#2A00FF"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>http://www.springframework.org/schema/aop/spring-aop.xsd&quot;</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">beans</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:11.0pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l2 level1 lfo3;tab-stops:18.75pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal"><span style="mso-list:Ignore">2.<span style="font:7.0pt 'Times New Roman'">&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">通知的类型<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo5;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">前置通知</span> <span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">在目标对象方法执行前执行的通知类，需要实现</span><span lang="EN-US">MethodBeforeAdvice</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">接口</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo5;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">正常返回通知</span> <span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">在目标对象方法正常执行完毕后执行的通知类，需要实现</span><span lang="EN-US">AfterReturningAdvice</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">接口</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo5;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">异常通知</span> <span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">在目标对象方法执行出现异常后执行的通知类，需要实现</span><span lang="EN-US">ThrowsAdvice</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">接口</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">例如：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black">public void afterThrowing(Exception e){<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>...<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l4 level1 lfo5;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">v<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">环绕通知</span> <span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">在目标对象方法之前前后都要执行的通知类，需要实现</span><span lang="EN-US">MethodInterceptor</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">接口</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">例：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black">public Object invoke(MethodInvocation mi) throws Throwable {<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">环绕通知<span lang="EN-US">&quot;);<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//</span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">调用目标对象的方法<span lang="EN-US">,</span>表示放行<span lang="EN-US">, </span>它的返回值对应着目标对象的返回值<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Object
+result = mi.proceed(); <o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">环绕通知<span lang="EN-US">:&quot; + result);<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return
+result;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">配置通知类的方法与配置其他</span><span lang="EN-US">bean</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">一样：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">bean</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">id</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;advice1&quot;</span></em><span style="color:#7F007F">class</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;day3.service.Advice1&quot;</span></em><span style="color:teal">&gt;&lt;/</span><span style="color:#3F7F7F">bean</span><span style="color:teal">&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">bean</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">id</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;advice2&quot;</span></em><span style="color:#7F007F">class</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;day3.service.Advice2&quot;</span></em><span style="color:teal">&gt;&lt;/</span><span style="color:#3F7F7F">bean</span><span style="color:teal">&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">bean</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">id</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;advice3&quot;</span></em> <span style="color:#7F007F">class</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;day3.service.Advice3&quot;</span></em><span style="color:teal">&gt;&lt;/</span><span style="color:#3F7F7F">bean</span><span style="color:teal">&gt;</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l2 level1 lfo3;tab-stops:18.75pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal"><span style="mso-list:Ignore">3.<span style="font:7.0pt 'Times New Roman'">&nbsp;</span></span></span><span lang="EN-US" style="font-size:10.5pt;
+line-height:115%;font-family:宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal">AspectJ</span><span style="font-size:10.5pt;line-height:
+115%;font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">切入点表达式<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">用来控制哪些类的哪些方法需要应用通知增强的匹配规则，例如：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#2A00FF;background:white;mso-highlight:white">execution(*
+day3.service.ContactService.*(..))<o:p></o:p></span></em>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">此表达式会匹配</span><span lang="EN-US">day3.service </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">包下的</span><span lang="EN-US">ContactService</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">类的任意方法（任意参数）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l2 level1 lfo3;tab-stops:18.75pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal"><span style="mso-list:Ignore">4.<span style="font:7.0pt 'Times New Roman'">&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">将通知和切入点用切面结合起来<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF">&lt;!-- </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F5FBF">目标<span lang="EN-US"> --&gt;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">bean</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">id</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;contactService&quot;</span></em> <span style="color:#7F007F">class</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;day3.service.impl.ContactServiceImpl&quot;</span></em><span style="color:teal">&gt;&lt;/</span><span style="color:#3F7F7F">bean</span><span style="color:teal">&gt;</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">aop:config</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F5FBF">&lt;!-- </span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF">定义一个切入点<span lang="EN-US"> --&gt;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">aop:pointcut</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><span style="mso-spacerun:yes">&nbsp;</span><span style="color:#7F007F">expression</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;execution(*
+day3.service.ContactService.*(..))&quot;</span></em><span style="mso-spacerun:yes">&nbsp; </span><span style="color:#7F007F">id</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;pc1&quot;</span></em><span style="color:teal">/&gt;</span><span style="color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F5FBF">&lt;!-- </span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF">第一个<span lang="EN-US">* </span>表示匹配方法的返回值类型<span lang="EN-US"> (*</span>表示任意<span lang="EN-US">) </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp; </span></span><span style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F5FBF">包名</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp; </span></span><span style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F5FBF">类名<span lang="EN-US"> (*</span>表示任意类名<span lang="EN-US">) </span>可以是接口名 （匹配所有实现该接口的类）</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;</span></span><span style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F5FBF">第二个<span lang="EN-US">* </span>表示匹配的方法名</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;</span>(..) </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F5FBF">匹配参数<span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(..</span>表示参数的个数，类型是任意的<span lang="EN-US">)</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;</span>--&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F5FBF">&lt;!-- order </span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F5FBF">表示优先级<span lang="EN-US">, </span>数字越小，优先级越高<span lang="EN-US"> --&gt;</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">aop:advisor</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">advice-ref</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;advice2&quot;</span></em> <span style="color:#7F007F">pointcut-ref</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;pc1&quot;</span></em> <span style="color:#7F007F">order</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;20&quot;</span></em><span style="color:teal">/&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">aop:advisor</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">advice-ref</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;advice1&quot;</span></em> <span style="color:#7F007F">pointcut-ref</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;pc1&quot;</span></em> <span style="color:#7F007F">order</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;30&quot;</span></em><span style="color:teal">/&gt;</span><span style="color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">aop:advisor</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">advice-ref</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;advice3&quot;</span></em> <span style="color:#7F007F">pointcut-ref</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;pc1&quot;</span></em><span style="color:teal">/&gt;</span><span style="color:black"><span style="mso-tab-count:1">&nbsp; </span></span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">aop:config</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">其中</span><span lang="EN-US">aop:advisor</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">标签即为一个切面他利用</span><span lang="EN-US">advice-ref</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">引用了要执行的通知，利用</span><span lang="EN-US">pointcut-ref</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">引用的要匹配的切入点。<span style="background:yellow;mso-highlight:yellow">注意</span>：</span><span lang="EN-US">Spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">会自动为匹配切点的目标类生成对应的代理类，如果目标类实现了接口，</span><span lang="EN-US">Spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">利用</span><span lang="EN-US">JDK</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">动态代理来生成；如果目标类没有实现接口，</span><span lang="EN-US">Spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">也会使用</span><span lang="EN-US">cglib</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">生成代理子类。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">应用的切面之后，目标的配置与以前一样没有变化，但通过</span><span lang="EN-US">getBean(&quot;contactService&quot;)</span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">获取到的对象，实际已经不是目标对象了，已经被</span><span lang="EN-US">Spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">悄悄替换为代理对象，该代理对象执行时，就会根据切面的定义调用相关的通知。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman';background:yellow;
+mso-highlight:yellow">注意</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US">Spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">在</span><span lang="EN-US">2.5</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">以后引入了</span><span lang="EN-US">AspectJ</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">风格的通知和切入点表达式，让通知类的书写更为灵活，而不必局限于实现那些接口</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

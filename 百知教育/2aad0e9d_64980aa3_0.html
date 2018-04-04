@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<h2><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">第</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">讲</span><span style="font-family:'Times New Roman',serif;
+mso-fareast-font-family:微软雅黑"> <span lang="EN-US">JavaScript</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">事件监听模型</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">对于<span lang="EN-US">JavaScript</span>来讲，要起到和页面交互的作用，通常都会和“事件<span lang="EN-US">”</span>配合使用。所谓事件就是指浏览器中的网页发生的某种变化。比如一个按钮被点击了，再比如某个输入框的值发生了改变。浏览器能够支持的事件是事先定义好的。<span lang="EN-US">JavaScript</span>程序员通常的工作是将自己编写的一个函数与某个事件关联起来。当这个事件发生时，浏览器就会调用事先指定的函数。以此来达到交互作用。比如
+：<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;</span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;div id = “test” onclick=”f();”&gt;hello&lt;/div&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">在上面的例子中，我们就将<span lang="EN-US">id</span>为“<span lang="EN-US">test”div</span>的<span lang="EN-US">onclick </span>事件与一个叫<span lang="EN-US">f()</span>的函数关联在一起了，当这个<span lang="EN-US">div</span>被鼠标点击时，<span lang="EN-US">f</span>函数就会被执行。这种运行方式，我们称为”事件监听模型“。<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">事件监听模型一般由三部分组成：事件源，事件对象，监听器。这里事件源指的就是<span lang="EN-US">html</span>标签，当它被点击时产生事件对象<span lang="EN-US">(</span>单击事件，双击事件<span lang="EN-US">)</span>，此时监听器<span lang="EN-US">(</span>监听特定事件对象，例如<span lang="EN-US">onclick)</span>里指定的函数就会被调用执行。<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>1</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">）<span lang="EN-US">event ---&gt; event</span>代表事件对象<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">常见属性：<span lang="EN-US">type</span>（事件类型）<span lang="EN-US"> clientX</span>（事件产生点的横坐标）<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>clientY</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">（事件产生点的纵坐标）<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>2</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">）<span lang="EN-US">event.target ---&gt; </span>代表事件源（<span lang="EN-US">html</span>标签）<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>3</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">）常见事件（监听器）<span lang="EN-US"> ---&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">一般性事件监听属性 ：<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>onclick=&quot;fun();&quot;<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">单击事件<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>ondblclick<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">双击事件<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>onmouseover<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:
+11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">鼠标移入<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>onmouseout<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:
+11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">鼠标移出 <span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>onmouseomove<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:
+11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">鼠标移动<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>onmousedown<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">鼠标键按下<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>onmouseup<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">鼠标键松开 <span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>body</span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">相关的事件监听<span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>onload=&quot;fun();&quot;<span style="mso-spacerun:yes">&nbsp; </span>:<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">页面加载时触发。<span lang="EN-US"> &lt;body&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>onscroll
+:<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">页面滚动时触发。<span lang="EN-US"> &lt;body&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>onresize
+:<span style="mso-spacerun:yes">&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-size:
+11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">调整大小时触发 。<span lang="EN-US">&lt;body&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp; </span>form</span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">表单相关事件监听：<span lang="EN-US"><span style="mso-tab-count:1">&nbsp; </span> <o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>onblur<span style="mso-spacerun:yes">&nbsp; </span>: </span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">当前元素失去焦点时触发。<span lang="EN-US">&lt;input&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>onchange
+: </span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">当前元素失去焦点，并且值发生变化时触发。<span lang="EN-US">&lt;input&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>onfocus<span style="mso-spacerun:yes">&nbsp; </span>: </span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">当前元素获得焦点时触发。<span lang="EN-US">&lt;input&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>onsubmit
+: </span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">表单被提交时触发<span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;</span>&lt;form&gt;<o:p></o:p></span></span>
+			</p>
+			<h2><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">第</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑">2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">讲</span><span style="font-family:'Times New Roman',serif;
+mso-fareast-font-family:微软雅黑"> <span lang="EN-US">JavaScript</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">事件监听模型</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">在网页里添加监听器（<span lang="EN-US">js</span>代码）<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">）<span lang="EN-US">&lt;h1 onclick=&quot;js</span>代码<span lang="EN-US">&quot;&gt; </span>：
+少量<span lang="EN-US">js</span>代码<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>2</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">）<span lang="EN-US">&lt;h1 onclick=&quot;fun()&quot;&gt;</span>：当代码量比较大时，可以将代码封装成函数，在监听器里调用<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<h2><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">第</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑">3</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">讲</span><span style="font-family:'Times New Roman',serif;
+mso-fareast-font-family:微软雅黑"> </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">事件相关注意事项</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:
+微软雅黑"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">1. </span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">内部元素产生的事件，默认会扩散到外部元素，这种现象称为”事件冒泡“<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">取消事件冒泡：<span lang="EN-US"> event.cancelBubble=true;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">2. </span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">通过事件监听，可以取消标签的默认行为<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>&lt;a
+href=&quot;uri&quot; onclick=&quot;return false&quot;&gt; : </span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">取消超链接的默认行为（点击超链接不再发生跳转）<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>&lt;form
+action=&quot;&quot;<span style="mso-spacerun:yes">&nbsp;</span>method=&quot;&quot;<span style="mso-spacerun:yes">&nbsp;</span>onsubmit=&quot;return false&quot;&gt; : </span><span style="font-size:
+11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">此时点击<span lang="EN-US">submit</span>按钮，表单也不会被提交。<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

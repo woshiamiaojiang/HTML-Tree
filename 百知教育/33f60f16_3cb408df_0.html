@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<div style="mso-element:para-border-div;border:solid #DBE5F1 3.0pt;padding:
+0cm 0cm 0cm 0cm;background:#DBE5F1">
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;text-transform:
+uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">第</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal">2</span><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;text-transform:
+uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">讲</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal"> SELECT</span><span style="font-size:14.0pt;line-height:115%;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal">语句【重点】</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;
+font-family:'Calibri',sans-serif;text-transform:uppercase;letter-spacing:.75pt;
+mso-font-kerning:0pt;font-weight:normal"><o:p></o:p></span>
+				</h2>
+			</div>
+			<p class="MsoNormal"><strong style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;font-family:黑体">基础语法：<span lang="EN-US">select </span>字段名<span lang="EN-US">1,</span>字段名<span lang="EN-US">2,... from </span>表名；<span lang="EN-US"><o:p></o:p></span></span></strong>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;border:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal">1. </span><span style="font-size:10.5pt;line-height:115%;font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal">查询部分列<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;</span>eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：</span> <span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">查询员工的工号、姓、工资、入职时间</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>select
+employee_id,last_name,salary,hire_date from employees;<o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;border:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal">2. </span><span style="font-size:10.5pt;line-height:115%;font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal">查询所有列<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span></strong><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：查询员工的所有信息</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法一：</span><span lang="EN-US">select
+employee_id,first_name,last_name,email,phone_number,hire_date,<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp; </span>job_id,salary,commission_pct,manager_id,department_id
+from employees;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法二：</span><span lang="EN-US">select * from employees; <o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">注意：</span><span lang="EN-US"> *</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">在开发时不建议使用，只在学习阶段练习使用。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">原因：语义不明确；会把不需要的列也查出来，影响性能。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;border:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal">3. </span><span style="font-size:10.5pt;line-height:115%;font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal">对查询出的列进行数学运算（加减乘除）<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span></strong><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：查询员工的工号、姓、工资、所在部门、年薪</span><span lang="EN-US">(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">月薪</span><span lang="EN-US">*12)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>select
+employee_id,last_name,salary,department_id,salary*12 from employees;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">注意：</span> <span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:63.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l1 level3 lfo3"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">u<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">在</span><span lang="EN-US">sql</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">命令里，字符串类型值不能做加法操作。如果需要做字符串连接，会有其他符号完成。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:63.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l1 level3 lfo3"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">u<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">对于日期类型值，可以做加减法操作。运算单位以天为单位。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;border:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal">4. </span><span style="font-size:10.5pt;line-height:115%;font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal">可以为查询的列起别名<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">语法：</span></strong><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> select </span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">字段名</span></strong><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> as </span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">别名，表达式</span></strong><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> [as] </span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">别名</span></strong><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> from </span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">表名；其中</span></strong><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">as</span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">可以</span></strong><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></strong>
+			</p>
+			<p class="MsoNormal"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">省略。</span></strong><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span></strong>
+			</p>
+			<p class="MsoNormal"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span></strong><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：上题可以改写为</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>select employee_id &quot;id&quot;,last_name as name,salary,department_id,salary*12
+as &quot;</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">年薪</span><span lang="EN-US">&quot; <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>from employees;</span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"> <o:p></o:p></span></strong>
+			</p>
+			<p class="MsoNormal"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></strong><strong style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">注意：别名中如果出现空格或使用</span></strong><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="font-size:9.0pt">sql</span></strong><strong style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">中的关键字</span></strong><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:9.0pt">/</span></strong><strong style="mso-bidi-font-weight:
+normal"><span style="font-size:9.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">保留字，则需要使用“”引起来。</span></strong><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:9.0pt"><o:p></o:p></span></strong>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;border:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal">5. </span><span style="font-size:10.5pt;line-height:115%;font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal">字符串连接<span lang="EN-US"> || <o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="margin-left:21.0pt;mso-para-margin-left:2.0gd"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">在</span><span lang="EN-US">employees</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">表中，一个人的名字由</span><span lang="EN-US">first_name
+, last_name </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">两列组成，如果我们想把两列数据合并成一列数据的话，就可以使用字符串连接函数了。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;mso-para-margin-left:2.0gd"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US">select first_name || &apos;-&apos;
+|| last_name as name , employee_id as id , email from employees<o:p></o:p></span></strong>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;mso-para-margin-left:2.0gd"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span style="mso-no-proof:
+yes"><img width="297" height="245" src="data:image/png;base64,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" v:shapes="图片_x0020_123" /></span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span></strong><strong style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">注意：</span></strong><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:9.0pt">oralce</span></strong><strong style="mso-bidi-font-weight:
+normal"><span style="font-size:9.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的字符串常量以及日期常量，使用‘</span></strong><strong style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt"> </span></strong><strong style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">’</span></strong><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:9.0pt">(</span></strong><strong style="mso-bidi-font-weight:
+normal"><span style="font-size:9.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">单引号</span></strong><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:9.0pt">) </span></strong><strong style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">引起来。</span></strong><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:9.0pt"><o:p></o:p></span></strong>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;border:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal">6. </span><span style="font-size:10.5pt;line-height:115%;font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal">去除查询结果里的重复数据<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><span style="mso-spacerun:yes">&nbsp; </span></span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">语法：将</span></strong><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">distinct</span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">放在</span></strong><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">select</span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">后面，可以去除结果里的重复数据</span></strong><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span></strong>
+			</p>
+			<p class="MsoNormal"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span></strong><span lang="EN-US">eg: <span style="mso-spacerun:yes">&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">查询公司里所有的姓（姓唯一）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>select<span style="mso-spacerun:yes">&nbsp; </span>distinct<span style="mso-spacerun:yes">&nbsp; </span>last_name<span style="mso-spacerun:yes">&nbsp;</span>from<span style="mso-spacerun:yes">&nbsp; </span>employees;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">查询公司里所有的姓名。（姓和名联合唯一）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>select<span style="mso-spacerun:yes">&nbsp; </span>distinct<span style="mso-spacerun:yes">&nbsp; </span>last_name,first_name<span style="mso-spacerun:yes">&nbsp; </span>from<span style="mso-spacerun:yes">&nbsp;</span>employees;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border:solid #DBE5F1 3.0pt;padding:
+0cm 0cm 0cm 0cm;background:#DBE5F1">
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;text-transform:
+uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">第</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal">3</span><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;text-transform:
+uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">讲</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal"> ORDER BY</span><span style="font-size:14.0pt;line-height:115%;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal">语句【重点】</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;
+font-family:'Calibri',sans-serif;text-transform:uppercase;letter-spacing:.75pt;
+mso-font-kerning:0pt;font-weight:normal"><o:p></o:p></span>
+				</h2>
+			</div>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">语法：</span><span lang="EN-US">select ... from ... order by ...<span style="mso-spacerun:yes">&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">；</span> <span lang="EN-US">Order by </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">语句用于对查询结果进行排序</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;border:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal">1. </span><span style="font-size:10.5pt;line-height:115%;font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal">单列排序。<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoListParagraph" style="margin-left:36.5pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo2"><span lang="EN-US" style="mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">1)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">指定时可以是列的列名、列的别名、或者是列在</span><span lang="EN-US">select</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">里出现时的下标。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：按工资从大到小显示员工的工号、姓、收入</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>select employee_id,last_name,salary from
+employees order by salary; --&gt; </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">指定列名</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>select employee_id,last_name,salary from employees order by 3; --&gt; </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">列出现时的下标</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:36.5pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo2"><span lang="EN-US" style="mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">2)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">降序排列时使用关键字</span><span lang="EN-US">desc</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">（将</span><span lang="EN-US">descend</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">放在需要降序排列的列名后面）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：按工资从大到小显示员工的工号、姓、收入</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>select<span style="mso-spacerun:yes">&nbsp;</span>employee_id,last_name,salary from employees order by salary desc;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">注意：</span><span lang="EN-US">null</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">也参与排序，在</span><span lang="EN-US">oracle</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">里是最大值。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;border:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal">2. </span><span style="font-size:10.5pt;line-height:115%;font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal">多列排序<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">语法：</span><span lang="EN-US">Order by </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">还可以根据多个列进行排序，参与排序的类名字依次写在</span><span lang="EN-US">order by </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">的后</span><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">面，列名与列名之间用</span><span lang="EN-US">”,”</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">隔开。排序时先按照第一列进行排序，第一列取值相同</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的再按照第二列取值排序，依次类推</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:41.5pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo1"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">Ø<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">select employee_id,last_name,salary from employees order by
+first_name,last_name; <o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">先按</span><span lang="EN-US">first_name</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">升序排列，如果一样的</span><span lang="EN-US">first_name,</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">在按</span><span lang="EN-US">last_name</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">升序排列</span><span lang="EN-US">)<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:41.5pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo1"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">Ø<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">select * from employees<span style="mso-spacerun:yes">&nbsp; </span>order
+by first_name,last_name desc;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>(</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">先按</span><span lang="EN-US">first_name</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">升序排列，如果一样的</span><span lang="EN-US">first_name,</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">在按</span><span lang="EN-US">last_name</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">降序排列</span><span lang="EN-US">)<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:41.5pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo1"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">Ø<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">select * from employees<span style="mso-spacerun:yes">&nbsp; </span>order
+by first_name desc,last_name desc;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">先按</span><span lang="EN-US">first_name</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">降序排列，如果一样的</span><span lang="EN-US">first_name,</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">在按</span><span lang="EN-US">last_name</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">降序排列</span><span lang="EN-US">)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

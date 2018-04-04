@@ -1,0 +1,1012 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<h2><a name="_Toc8615"><span lang="EN-US" style="font-size:10.5pt;line-height:
+173%;font-family:'Courier New'">el</span></a><span lang="EN-US" style="font-size:
+10.5pt;line-height:173%;font-family:'Courier New'"><o:p></o:p></span>
+			</h2>
+			<h3><a name="_Toc13968"><span style="font-size:10.5pt;line-height:173%;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">知识点</span></a><span style="mso-bookmark:
+_Toc13968"></span><span lang="EN-US" style="font-size:10.5pt;line-height:173%"><o:p></o:p></span>
+			</h3>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSP</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中特有一种简洁的基于表达式的语言</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;text-indent:-18.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:'Wingdings 3';mso-fareast-font-family:'Wingdings 3';
+mso-bidi-font-family:'Wingdings 3'"><span style="mso-list:Ignore">}<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">使用各个作用域中的命名属性</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;text-indent:-18.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:'Wingdings 3';mso-fareast-font-family:'Wingdings 3';
+mso-bidi-font-family:'Wingdings 3'"><span style="mso-list:Ignore">}<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">使用对象中的成员变量</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;text-indent:-18.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:'Wingdings 3';mso-fareast-font-family:'Wingdings 3';
+mso-bidi-font-family:'Wingdings 3'"><span style="mso-list:Ignore">}<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">使用客户端参数以及</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">Cookie<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:18.0pt;text-align:left;text-indent:-18.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:'Wingdings 3';mso-fareast-font-family:'Wingdings 3';
+mso-bidi-font-family:'Wingdings 3'"><span style="mso-list:Ignore">}<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">进行简单的数学运算，逻辑运算</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">通过使用</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">EL</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">表达式，可以使</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSP</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">得源码变得更加简洁</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">1</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、普通运算</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>+ - * / %<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>==(eq) !=(ne) &gt; &gt;= &lt; &lt;=<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&amp;&amp;(and) ||(or) !(not)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>${empty n} </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">判断</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">n</span><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">是否</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">null/&quot;&quot;/&apos;&apos;,</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">或者集合中是否有元素，如果是则结果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">true</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">；否则</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">false</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">示例：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;!-- </span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">使用<span lang="EN-US">EL</span>进行普通运算<span lang="EN-US"> --&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${2+3}&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${2 lt 3 or<u> 3
+gt</u> 5}&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${2==3?<u>&apos;ok&apos;</u>:&apos;err&apos;}&lt;hr/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${empty &apos;
+&apos;}&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${empty
+&apos;abc&apos;}&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${empty
+&quot;&quot;}&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${empty &quot;
+&quot;}&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${empty
+null}&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">${empty &apos;&apos;}&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:Consolas;
+mso-hansi-font-family:Consolas">结果：</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:宋体"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-no-proof:yes"><img width="329" height="225" src="data:image/jpg;base64,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PJ5jRR3MiAH0GDwuedo4zzQBHHq+ox6naWV9psMAu3kVHjud/CoGBxtH+0D6EdwazZfGV4qwRQaK890wlMscTO6oElaPgqhPJXPIFbtzpFnc28EMzT5t/wDVSi4dZV4wfnB3cjrzzVSPwlpEEKxW8dxbqpYjybqRCAx3Fchs7cknb0yaANW3lM9tFM0TwmRAxjkGGTIzg+4qWmRxpDEkUahURQqqOgA6Cn0AFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUARz+d5En2fYJtp2eYDtz2zjnFcRoCXGn6Idcnt9ObUJi0Mcyq4kkLSEEP3c5VcDrxjIrt54I7mCSCZd0cilWGSMg9eRVC38O6Ra6dJp8NkqWsjbmj3MRn1GTkH6UAc9qF5NrPhq5bU9OWC90++hQZUfKxeJgy8nHyvjr61sa9quo2E0cdnbpsMZdpnhlmGc/d2xglfXJ4pT4P0A28ludPBjkkEjqZHO5gMAnnnA/kPSp7rw5pN4YDcWYdoI/KjbzGBCemQeR9aAMdvE2tS3oisNKivIoI4WuJIpVKMXUMdjlhxg8Eg11lZ0+gaVc3EdxNYxs8YAXGQMDoCo4OPcVo0AFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUARzLK0DrBIscpUhHZdwU9iRkZ+mRXIWmp65Z+A/7UbULe5uY5GbM0Bw67yu0nfkHPfsOMGuzqjPomlXUbxXGm2sqSSea6vCpDPjG4gjk44zQBni81iz1iwtb24s5orySUZihZCFWMMOSx5yGHuMdKxk8T69epbw6bHZ3MpSaSSdcBGVJmjXALjAIXOcmusl0vT57JLKaxt5LWMAJC0YKLjpgdKik0DR5YxHJpVmyCQyBTAuNx6tjHU+tAFqzme4soJpFRXkjVmEb71BIycN3Hv3qakAAAAGAOgpaACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAI50kkgkSKUwyMpCyBQSp9cHg1w8Go3+meAGvP7eX7XDO3NyiddxHlsOvv64rvKgksbOYMslrC4Z97BowctjGfrjvQBgm9vtN1HTjd6zDc2V3JLukMSIgXywV+YcfeBx6g+2axE8TaxfQ20dlq1iFxOz3czpEJNszIo5Vh90AkAA13T2ltJbi3e3iaFcYjKAqMdOOlNksLKUbZLSBxuL4aMH5j1P196AFspJJrGCWUxtI8SsxizsJI5255x6ZqeiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" v:shapes="图片_x0020_7" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:宋体;color:teal"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">2</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、获取</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">client</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">数据【重点】</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>${param.uname}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">等价于</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">jsp</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的代码：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">&lt;%=request.getParameter(&quot;uname&quot;)
+%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">示例：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%=request.getParameter(&quot;name&quot;)
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:21.0pt;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:21.0pt;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${param.name
+}&lt;br/&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">运行结果：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-no-proof:yes"><img width="413" height="103" src="data:image/jpg;base64,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" v:shapes="图片_x0020_5" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">3</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、获取命名属性【重点】</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1) </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">获取指定作用域中的命名属性</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>${requestScope.myStr }<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">等价于</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">jsp</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的代码：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">obj = request.getAttribute(&quot;myStr&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>String
+str = obj.toString();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>EL</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的作用域对象：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">pageScope</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>requestScope</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">sessionScope</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">applicationScope<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>2)</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">从作用域中搜索命名属性</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>${myStr}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">等价于</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">jsp</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的代码：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">obj =
+pageContext.findAttribute(&quot;myStr&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>String
+str = obj.toString();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>3)</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">获取命名属性中的对象属性（命名属性中存储的是实体类对象）</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>${requestScope.person.name }<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">等价于</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">jsp</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的代码：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">obj =
+reqeust.getAttribute(&quot;person&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Person
+p = (Person)obj;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>p.getName()<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">示例：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%@page
+import=<em style="mso-bidi-font-style:normal">&quot;com.zpark.entity.User&quot;</em>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">//</span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">测试数据<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">application.setAttribute(&quot;myStr&quot;,&quot;hello1&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">pageContext.setAttribute(&quot;myStr&quot;,&quot;hello2&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">request.setAttribute(&quot;myStr&quot;,&quot;hello3&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">session.setAttribute(&quot;myStr&quot;,&quot;hello4&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">User u = new
+User(&quot;zs&quot;,&quot;111&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">request.setAttribute(&quot;User&quot;,u);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-spacerun:yes">&nbsp;</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;!-- </span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">使用<span lang="EN-US">EL</span>获取命名属性中的对象属性<span lang="EN-US"> --&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">Object obj =
+request.getAttribute(&quot;User&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">User u2 = (User)obj;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">out.println(u2.getUsername());<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-spacerun:yes">&nbsp;</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${requestScope.User.username
+}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;hr/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;!-- </span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">使用<span lang="EN-US">EL</span>搜索命名属性<span lang="EN-US"> --&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%=pageContext.findAttribute(&quot;myStr&quot;).toString()
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${myStr }<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;hr/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;!-- </span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">使用<span lang="EN-US">EL</span>获取指定作用域中的命名属性<span lang="EN-US"> --&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%=request.getAttribute(&quot;myStr&quot;).toString()
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${requestScope.myStr
+}&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;hr/&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-fareast-font-family:宋体"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">运行结果：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-no-proof:yes"><img width="363" height="228" src="data:image/png;base64,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" v:shapes="图片_x0020_4" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">4</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、获取</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">cookie</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的值</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>${cookie.</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">名称</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">} </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">根据名称获取对应的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">cookie</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">对象。如</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">,${cookie.JSESSIONID}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>${cookie.</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">名称</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">.value} </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">根据名称获取对应</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">cookie</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">对象的值。如</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">,${cookie.JSESSIONID.value}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">等价于</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">jsp</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的代码：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Cookie[] cookies =
+request.getCookies();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (cookies != null){<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(int i=0;
+i&lt;cookies.length; i++){<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Cookie c =
+cookies[i];<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">获取名字是</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSESSIONID</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">cookie</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if
+(c.getName().equals(&quot;JSESSIONID&quot;)){<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">获取名字是</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSESSIONID</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">cookie</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">对象的值</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>out.println(c.getValue());<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">示例：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;!-- </span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">获取</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体">cookie</span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">中的<span lang="EN-US">sessionId --&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;
+mso-fareast-font-family:Consolas">获取<span lang="EN-US">sessionId:&lt;br/&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;
+mso-fareast-font-family:Consolas">方法<span lang="EN-US">1</span>：使用<span lang="EN-US">cookie</span>获取<span lang="EN-US">&lt;br/&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>Cookie[] cookies = request.getCookies();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>if (cookies != null){<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(int i=0; i&lt;cookies.length; i++){<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Cookie c = cookies[i];<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//</span><span style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">获取名字是<span lang="EN-US">JSESSIONID</span>的<span lang="EN-US">cookie</span>对象<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (c.getName().equals(&quot;JSESSIONID&quot;)){<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//</span><span style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">获取名字是<span lang="EN-US">JSESSIONID</span>的<span lang="EN-US">cookie</span>对象的值<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>out.println(c.getValue());<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-spacerun:yes">&nbsp;</span>%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-spacerun:yes">&nbsp;</span>${cookie.JSESSIONID.value
+}&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">运行结果：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;border:solid windowtext 1.0pt;mso-border-alt:
+solid windowtext .5pt;padding:0cm;mso-no-proof:yes"><img width="375" height="145" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXcAAACRCAIAAAC3yG+CAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAgAElEQVR4nO2deXwV1b3Af2fu3D3JTXKzEZKQEJawBBCiBsUFcQFciM/WSi1abalIRcQ+sdiKVq1WW6V1q320drFULU+LTy1GK4sbUQICCRAI2fd9vevMnXl/nGQY587MnXvv3BDlfD/3k8/Nb878zu+cOec35/zOmbnoL+9+QVEUz/PtbS0GxE7NnThp4gRHnAUZDHwgMDDsaWhuP9XQyvBUamoGAp7neXu8I8mZihCCsSIj0fzJx3uuvPTCnLSkAMfzvD5qaQN6/8CJc/In6qOOQCDIQdvs9s72dp934MqL52dPyACesxppGO3GaU7Iyky/8Pxzmlrbd312kDbaE5OSfR53b3eHMzVjzBwNhVBGdk6m0xHgOL1cDAAAIAAwGo06aiQQCBLo2lMnJ09KWzj/PCtt4NgAALgCTFCyQHZ62o3XXflZ+eHaxuacnFyWYQb6ehKTU8bMUJPJTBsoJsDprpmiDLrrJBAIAvSsgkkzpkxGHOf1h+jACGDBnFlWs+V4TUNW1iSf1+N2Ddvscdozm9ZxK+NnDeakU2nPR2hvqIEMywY++fxLA21YuGAOTRP3QSCceej83FyK59mApPsiAECAeODFPZviYUp+3rDb2zvQn5Kc4nYNWaxWjWOBud6fmzIX8sjo6Tkcma28qpMZGBr+pOzL0l2fDLt9APDmO/9ZcnHxouJzHPGKflDPuReBQFCANgLPcSgAAKJeR1G83UQjBB6WYxgesNcBQABG4GfNmF764V5wplKI8rhd9rgELTnxPG1KzKIQMENhDH8kKiAoKsMw7MEjxz7bf6ji+ClE0RRlyEhPBYCu7r433931xtvvF86YcsG58+bPmWk00jIKlak8VA4As+cVRWitrqy7c3VTU8Nr29+yWK2x07zuztUA8Nzvt+qbxXiDZZlD5WUAMK+omKZjFZXDuVgs1jPbhCoPlXu9Hu0ljUXl0H6OR4jn+NPTJQpRJgMVAIR4MBkMgQDvZzmO5xAAQhTP82YKzpk3q+JYbc6kfMbv5zkOUZR6NkXMTxlTmpEaRoFhoGwLhtcciHspAnMlXuHlf/zr4JEqr89PUQaDyVpYkH9x8bxZ0/MsFvP+L499Vl5x+NipY9WNlSfqzMa3F8ybecuN143naVRtdVVLU915Fyw2WyxiyUWXLTuzhsWIjtbmysPl+Hv6hCxxb6ytrqo7VYW/z55blJ6ZFeVZQoKWproF51+kd1FiQuWh8o62ZgCgaePcouLEJKckQXCDiV5nLKADHHDAwWgH5gEoFEAcMo12aJORZnnGz/DAIwCOAmCBj49PZPweBIAoimEYk9msng3PMlSc3cA2AusyWuy8PxCBrXzQ4GPfwWMURU3Oy124YNb558yKj7NxHLyy/Z0Ax33/O9cVzZ3hcnvLDlZ+fvBobWPrvoPHblt5vVhDxDMmn9f7xWe7pxUUCu04WBIuLMv09nQlJacKLUaQRGrmGaa3t+ei4vm/fe6lK66S8ZK11VVN9TULii9KTHLi2qs8VI5dRuWh8r7erkWLl5otFsGn4IqN7CyMUJ82e1xR8Xh3NLXVValpGbhotdVVh8vLJE4huMFErxMAaNqoe+XQfo4biXcIq9I8BJiAgUJGw8gIxWw0MBzvYzie5xAA8GA3GpITEwcG+5OdKRwn4zLy23400N2IEADPId7jTnEmp0xFvlYI+C001dVX4zg6hwM8heHjkvLbpv+vNoO/4hkMBhoAfr7+Vh6A53k2wAHA/iNVHo/vlhuv4QJgsZgWX7hgyUVFq//7VwYDPZ5DMcNDgz6Pe8r0mSqSbxJu17AzNR03cbPFkpSc6vV6WJYJsIG+3q5pBYW486RnZnV1tjc11jnT0mnaGNlZOMevV31OnlogfE9OSW2qr/F5PJB0OkEExQmpM0bQLMcjCiEe6FGfwvMAPAx52XgLbaAo7HysJprnGC8LAY4HAD7A22z2ptaO1LQMWb0evyWz8GbEebiAhwK/zW60oC7wDgEXMBt6kzKmGy2pHMsAxwDr6xka0mJrcFgGIQoAvH6WNpyeBxko2kCPbKvhsbEBHqeUnK5l640wCDeZzXhoKkgqD5dXHi7Pm1IAABLJ5KkFeD48eUpBxZdfsCwDouG97NS3uaHObLXFxZ8OcgVLBI5WVlxz1WVDQ4P431e37xCPF/AgoqO9HQAWXXwJjrl4PZ6bvr3ik4/2AkB6RsbHZQeTk+VHyy8+/7vND2wMTqaSqThHLBeUrPx2CQA88vhTP1qzVlxqmz2upanO5/WaLRaWZbxej8VipWnj8NAghSizKPyUmpZxsqoiwAYiPiu4PsXRCjwm8vt8IJpnqVw+FcSzudT0CeJD+KIP9PWAqC0FB020h1EkzaO/r+dweRk21ZHkjCaqonvlUIMuf0d7D2IYxDDIz/J+BpiRz9CQp3/A1TfgGhhwDw+6OYYZ6h8eGPQwLM9yvIE29Pb1U5RBdo0pPt5siUtyZk5IS+dSkj12qgm56yHAAMsib3ecwZOeZJ2QbM9IsNppI4/sGsvPf/UDCAFCfoblATZs/s2a+x5bc99jHj8DCOHva+57TJxSenoo8Ax2ybKSRYuXAkDFof0sy0yeWrBo8VKT2Tx7btGSZSWTpxYES/DpA309taeqLlx85ZJlJQuKL+rp6sAR5WB8Xm9fb1eyM1VoGcESgQ9Kd15yQdH/vPy37kFf96Bv72flP7r9lhef/51wdFpu5o/vvhcf/eWvni7f/wUAvP7q33/5q6e7B33NHf1Tp02//ZaVXo8n2JJXt/0NALoHfSfrWwFASKaSKXYxQo5trS1ej2ftXetP1remZ2S8un1H96Bv7V3rJRnl5OVbbXFlH3/Y3FD76e73AaBg9lx8iGVZn8g2l2s4yrNU6hP3oonZeUuWlSxZVuLzeXG3gXAuHwa7GNwGliwroSgD9imYlsb6KdNnLllWcskVV1ttcbgtpaZluIYGh0cdNzYyOydPbCTLMqdOHHOmpotnf5LidLQ24+kP1g8Ah0Y9jiyyOoPRq3Lovp4+i9FgMBjwjR2BzHZefnSAE2+3nKxrttjiDRTq7x/0DnkMtEF2w/+J5F/PqF3tsmYnpVrNXDf4+oHngeMgEIAABwEvBFiv29/T1z8YcCRaPJ0qZT1tBi/Jy2Aw8DzP+BmL2WQ0WVn+tL+jLCOei+d5hmUpCo9leIlC9RwdSc6cvHwAMFssE7PzWprqxPfGkJjM5sJ55+L0iUnO7Nx84T4smfr293YDwMTsXBUJpre35551ax55/ClhHDFrduF9m37+wrPP3PTd79msthee27Ly5luEXj1rdiH+cuvtq/EXi9X643Ub7lm3xu1xB69YLbr4ktt/8CMASE52/vjue1949hm3x+32uFUybWttdbvcU6dOw4duue2HsrUhmfDTtDE7J6/ycPmJY0cAQOhaiUlOZ2r6yaqKxOQUs8XS39fTVF9DjQ60IztLpT49HhcX4Oyj275y8qYIh1QuX3DpfF7vyaqKvCkFQr8tmD3X6z3t9SZNniouAh5nOdPS7Y0Jvd1deA6IjcSbXcVjHzw6FmcnLg7LMk2NdQWz5mIlNG2cMn3m0UPlw0ODkpiLus5g9KocmjaZh4cHB102R5wVRjbISEGAAPhAgGts7TQYzQaDAXieZRieZ1Q2yxxP2zqlbkVDV9LE/Gl2fhCxXuB4CASAYXmGHXKzje29NivVOuc99aKqkJKU0N03cKK2oWjuzC0Pr8PCex953uP1/f7xn+B/fUzgyLFqhCAxIewVdDwaj9g8qy3OIFrSstvjuADn8bgkVwK3EkncVyIRkHRpzNSp09wud1trKwAc/vLLH6/bIGvPujtX46EKAKRnyE91s7MnBbse9Uzz86fMPeecld8uEWZnspoliOO4eLTf1dmOR92z5xVVHir/ZPd7AGAym/OnzairORHNWSr1GRefYI9PqDxc3tRYJ5llaLx8GEmHlEVY38EWAgBNG5Odqb09Xfhm1tRYNzE7D+sXO+Xa6qoPd+4QJiyS4gwPDbqGBvFsXZxdcMxFRacselUObaAos83e2tXf2NIxIkMIH8jOTDXTNAAggADPN7X1BICyWq0IEKI499BwosNhoCheOkQ4zam8tzKPXd/f3mh3UsAEgGWBYcDPQCAw0OuhaEvtnI+USihDUE6zp+ft/fxI+aHjC+bM8PrZEfN5hBAl/AsAZQcqEaIuPn+u1NDxEQvGrSQ7J09FEiV4UgMAJ+tbk5OdH5TuvGfdGr2UW6zWHe+8j6M2WemJWnyNz+ttaTp9+01MchbMmlt19HB/Xw+WzJ5XJMzza6urcJuO7CxQrU/c8bDD2vvBu1FGNFTK+8VnuwFAWAI7WVWBDyWnpLY1N+BJk8/jTk6RWVKcPLXA7Rru6mzHHkG2OOr+IqROWfSqHAohZDKa4uLiHckp+JOQmGQwUJmpSYjj/X7GzzBen6+htYtDlM1mQwgBhSwWc31t3aS8XAMFlOozk3YrWMw+5B4An4/z+jmPj/f7EeOPMzIJJlblxGD4oM+F586lDIaq2qaahmZBiCiERCGYmobm6oZWk8lYvGB2sIaY4nEPB9jTC3Bdne32+ITgaG5vd5c9PsGZlq4iEZiQmWmz26qrT4qF1dUnbXbbhMxM2aMAcGD/F26X+59vvoNDucEJ1FHPFP87a3ZhXUvXq9t3fPLR3o8/2qOuEN/5tWSN12vxzCiys0C1PjGJSc5Lrrh69tyigb6ens6R263Gy4exWu2UgRIHgwJswOMe+be/t5sLcIXnnIdv9eJkcfEJZqutt7urt7tLKdgvQVKc4Kz1JfrKoSiKQhRCFKJGPyzD2ExG4DmWZViW8fv9rd19FG202e2IQhRFGSjEej0NdbW5+fmja1CKuAf748HD+7yMh61v7q1p6fMzLA/Ibja5h5k5J5eEUVx+ZJlJ+DidSUsunE8ZjNveLO3rH8LCNatKNt75Xfy9r39o25ulFEVfveQCi8UiOT1KNxN8XSUSv89XXVWJv3e0Nne0NeN2z7JMednH5WUfsyyD78+SuK9EIgaHSzY/sPGD0p1Y8kHpzs0PbPztcy8lJztlj+LvQ0ODrS3NAHC0suLXTzwWVknVMz1aWfHXl09vF46PT8icePr2KPgmcanxUPxkVYXP64XRKYDQTI9XHurv6wHRYhzuUZGdpV6f/X09DbXVwr80bRQWqpQun2wV4WX1pvqa/tGIb3VVJV6aEYqPg9M4ZiTOMTsnr7uzvbuzXdDv83o//2Q3LiYA1FZXdbQ14/Xc4OLgoGHdqaqO1mahUMcrD0ksVNf58a6dweFbvSqHpigKeF4c8zUYDFzAzzAsAPDA9w15DUaL1W4HwEMFSEyI2/vBf6bPnGazWnge/Lzi7WVm/Yp+xmdkPAN97vpOL2ubTJsDx5qOZycZkxx2ivcF/H6lc+WQOgae55cuPr+6rqWxtf23W/+x+nslEzPSUpwOs9nM83xbZ/cft7015PbNmznlkuI5Qc9qQcRuxmyxTCsorDxcXneqCkfRgiUA4EhyWqzWD3fuwGfJjmnxXU48Tg6WSFh71/qpU6fhFWIAiI9P2PtZuRDllRxdefMt+ImBRx5/CgsXXXzJ7174w6aN8rGbCDKdNbvwpRee/ck9d2H5O6W7sDw52fnb515a+e2SzQ9sxCvZgjaaNs4rKj5UXobDKPDVpdDJUwqE1VNxkDKys9TrMzHJ2dxQh6+RZDuslssnBgeGDpR9jP8tmD1PiP6mZ2a5XMM4dOJIck4pmFVbffy0DckpeAIlvOTAbLFMnzWn7OMP8ZqOyWzGUy2l4uDCCqEZPLWRmKei00AbrDaZiJJelYN2V7b6fKw4YMHx3EBvd7zViBBye1mDySI8eI0QspiNnM/1i5/9/IHHfuVwOPwBzscoe5maa9ihPgNt7BgymUwGhw1OzNiZU35hZ48rJ9lo4P0eylFfFDo0MyHRXN/SfOncKR6fzCTL7/P95X9LaxvbAn5vXk7m7Bn5iQnxFcdPHTp2ykAb58+euvK6ywNyoSOrmd5z+FTxzPyQBkSAxo0PwU9Ljavnp74ByNZnyEoO9/GfaAjriacxaB66Vw6dYDUNj8RKR9aXKKASHMker4sLBCxx8RazFWDkIW2riY6zGB5+9DfXfuuG5KREnucZVm2eHGC5tj4eaGOa01Iz8//aAQCgsejT3IOLO/uHXYN9mRO07pTByI49TBbznatWvLtr396yIw1tPfUtnTzPUQZDXHz8dZdfcN68GX42kgcaxoD+vp6ero6CWXNVJIRokK1PvJ0v2RnJoxviXWoCUcaMte/iHYPmEU3lKEE/86sn7v/ZA16LcdDlxVMfHsBksZhGV6RGnsamIMFusVD844/+clJ+zqWXXY4QuH0cpzrnODH93zAdAECyt7d+/m78pSEsY4MfZMJiHljgr1my8Ly5Bbv2fVl5osFmNS8unnvevAKKovyMcoz5TK8x4biauoQQDbL12dPZ4RoajOxRA7PFovvDq80NdY4kp5YHF8egeURTOUrQCUmO+++592ebH5yQmjLsC7i9LM9xPAKeB4QA8UBRlNVCx5sNPZ1dD/7ikWkzC77/w7UGCnkZzqs8V4oF6uFaP8slJyWuvHYJXMsDQICHQIALyMRivqKQcFYhPB0ye27R2DyOrMUe2TDKmTIGYlA5aM/Rzn17/rP9lb8uW7782hXXOlNT/CzHcDzHAUWBkUIGA9Xb2fXOW2/vLN256vYfXHHVUgDws1y/ixmzXjoh0VzT1HhR4RSW1fPFvzaLce+RWMVlCAQChnbYTZcvXXpu8cJ33nz17rvuzsyYMHPWzNy8HKvV7PH46msbKo8ebevouGTxoue2bk1OSgIAly8w6Gb4sfsJA+AAWJ+3o39ootPh8bMh5mkEAmE8gU60DuOnl4EHNsAeqzxafeJoe1srywYoA5WZmTWtYNbMWbMMNA0ATIDrdzFjPFECgCS7sbu1hjfZctKSMpITTPq9iWrvkZqLC8lYhkCIIejjqh4TTeGPmZZ/5R3H8x4/5/KxLt+ZWayxGCkL7+7t7fawvMFoCvlqvrAY6mzTURuBQJCAPqjoEv9voimaQrQBUQgZKMQEOB/D+QP6/gpS2FAImWhkNRlMdMjNxgQCYXwhfeG2n+XC2o07NnA872X4sZ+pEQiE6NFz6kEgEAjB0GT+QSAQYgrdNPrLEgQCgRALkF/1QSQCgUCIEnrAQ7wMgUCIIST6SyAQYkvQT0fL4fX6mpraWlvbfb5xuMxNOEsxm02ZmRnZ2RMslhA/bUo4s6CuoRAv3/V4vJ9+Wj5rem52dro51C/VEghjhs/na2rqOHqi/sILi6xWrb/iShh7QnuZ6pN18TZj8oTs9kHOG97rwAmEGGKhISOB6m1rGnIzU6fp9nsPBN0JPWNqbmlfdNF5TQNcgAPVXysgEMYUXwCaB7jsjAnHP/5C8DKNDXU1J0/4fF5dsjCbLfnTpudMIi4sKkJ7GYZhfBzN8RxxMYTxBseDj6MZZuRnVRsb6tqbGy664Nz0NH1eKNnR2XXwUAUAEEcTDZqivwF+LF8mQyCEgfi98TUnT1x2yQXO5KTmPn3m9lnpaeefO3/X3s+Il4kGTV6GAiBPQhPGJ+K9GF6vJynRoZeLAYDmPjYz0eH3+0InJSijycsAko/InJsT3kvb9zcyYaUnEELz1ZaJ9J7YI4Q4juxcjYpoxzKKP5EdBEKIDIgIukP2lY5/NHkZhPSZMREvQ9Adsigx/tF0J0AKHyU2/2zjnt0f4u8VFUce2vygy+WS6HENDTx+3w9cQwNKyjV+BD2uoYGH1n23paEmSoVj/GlpqLl/dYmOZlce3Lfl4fWM3xdryzVeQY5l9/z7jZhaQhjn0H429JRHy1gG+xG73Q4A+ROgYt+/Gk7s83h9VtqX6RgJnomV4O9U1KMkQQ8AANI/UN1cX/P4T+/wuIcB4N6HthQuWCgWWm1xD/zqD1m5+WGlFDS/9PSDt6zZCLrG1ykAFGbFDg8NbL57VV9PZ5Iz7ZFnX4mLd0iM/OnjvxcLRzISXUEVDTxSbD+fvLUVf1m0YrWSJCR4LKOlGUdDrPV/s6E4HtQ/IGq1kg/G5XIdOHCgtrZm9erV27ZtA4A0Z9JtV/mLcrtuKO5ffs7AtJyRn6mVnI7kdEbwEfQgiFwny/iefmh95cF9YqF7eOCZX2xYu/HRv75d9thz2/72+ydbGmrEwrUbH339z8+yjE97SkF5VeWBS68qKZg975k/7cjJy9elKqjROH1YBX/95Wcfe+6Vv75dNrdo4Rt/e1F8FBuZkOBQqXl1DUYjffnVN8iefnHJaedCodMu5uKS1WGUFwDgdFuNESG7CfmofLTNmBQuMKa2tiY3N7ewcM7WrVuLi4v37P7wVF2LhzF3DtmP1BuHvJZeTyIe4wSfrku/AtBHoawztcfFOVPSKATOlBSL1UYhqK8+lpWTN3POfArBzDnzrTZ7V1tzWCkpBO7hgb2lO2bNWaBLDWgpiNLHYjbfseFB7EfOveDSns52wRWGNBJXeLAGPsBqzP3S60cczUc7RlzMpdeH4WIohdVPwrhCk5dRaWQYp9MJAJ9/+tHfXnqq/tPn7NBV024GAI8vYDLCoNcmq0eQuIcH1t963aprilddU7z+1uvcwwPB8g/e/ieFoKWh5o7vXI4lFQf2SfQAQMXBffjoy88/oa78g7f/KQi72lvuW/3tii8///VDG57avL7+1PENt5e0NNQkJDguW1ry6svPelyDL/5682VLSybl5SMAEJXC63H193RqT4m/1508luRMnTAxq6WhZtOPv4utEpvkHh5gGd9Tm9eX7S0V7BeKLPmIy/jrhzYImUqqCyvENUkhqDiw76nN68XDq/J9e84570KL2SwxUvZaUHJuHWswGmlBwgfYT3e9i79zASbY+Mv+6/Tk6LL/Cs/FSNohYXyibY1JNWpgs9lramr2/PuVdHb/NZO7AGCQTWhuNC86LyXO6HnnUPaVV1+PU4qVUKO3XPfwwKa7Vl37re8tXXEjABwq37fprlVPvvAKAIjlAOD3+/Z/tvv32941mcyHyvdtffaJJ194RdADAG7XcEdr06v/Lmusr/n1wz9pbqhJdqbIKu/t6d793o6tr5cKEYQtf9r+9CMbl5XcNK9oYWN9DYyO4JYsW3Fo/6c/+s6VySlpd9//CIXAmZpWc+JoVcXBeUULqyoOVhz8fHnJTWGlBIDyfXuWl9xkMZvRqP3NDTUSk/x+HwJ49c8vPPniK3HxDqHIkhDJ8NDAprtWrV6/aV7RQgDY+uwT3Z3tFAKWkamu5SU37dzx2pJlK0wms2BDY33NL+67w+0avv+RLVgJRkgwPDTw2P133v/olpzcfL/f9/QjGydMzJ4yfaYwaFLSADguM3qBOloas3PVfmMvApdBnMz4R/OMiZL5YDIyMrb+7uEZxg8BgEFmE+1y0icnGauOHO1+4/OUK0rWTpw4cSQz0bkIASBACGqrj2VNyrv86hVYPnve/KxJebXVxyRyigKLxXzjqh/uLn1r5fLiJzdvwIYJehACe1zcshU3UhRkZmXlT5tJKSt3pqS4XMPrb7+huaHmdHFGi5k7Of+Fv+3InZzvGh74+T23rVp99+vvlW16dMsD625tbqjJnZy/ftOjT27esHJ58c63Xrvy2htSUtO0p6QoaG6oqa6qmFowk6KAGrVfyaQ77tmU4HCIjZdcBVzG2fPm43/PX3QpLohsdU0tmNnX29XZ1uwaHmisP4VtyJ2c/+c3/vP6e2Xl+/Y88eB6lvVJjKytPtbUUHv/2ptXLi++teSSIwc/72hrEmo+WAPPsZJrjb94PMPBreg/b2wVWtp/3tgq29JUPmTGNP7RIS7zjz8/O3Vq/ntNCzc8f6wndU2tdc1x9vpBNsHJfGkcrqs+efrt5dIZ9eiIRhJHsNnsKSlpwfLm+prbbrgcAWwvLXv6pW32uDixHskAHiE15Q6H4w/b/m/ra+/+/Y/P3nbD5c31NbKJa08eS3amZmZlUQhyJ+fPXXD+sSMHKATzz124vbRse2nZPT99pK66ypmSoj0lheDYkQPTZxQ6HA6x2VpMCrZQJY1sdTkcjsuXlRw7cuDT3aW5eVMEG/Dn5tvX9vV0dbY2S4xEAHMXnL/t7b24LNtLy64uuZGSCwBhDf29XV+xcPTLzNlzJenf3z7iYpbeODJven/71rCmS8TLjH+ijcu8/cY272DLD9Y9/Mgvn1p7192nGjuvvP72let+l3bpM9WWH9rNfNu+pw5+8amsHiyZVjCzuaHuw51vYeHxIwc9bldmVhaWHz9ykELgGhr4dHdpX0/n1IJZV169gkJw9MgB9/CwxLmI15jwdyXlTfU1VRVfWszmn/7iqakFs/p6OsV6mupr1t5S0lRfk5Ka1trc0NHajG34cv++iVnZ4iK8+ucXL7rsKofDoT0ly/gOfvFp8aJLhU6C+6qSSfs/24NTfrjzreaGumkFMyXVKK4olvG9+6/XcEGUqqtw3oLDB8oOHyhbXnIjzvfvf3wOH/pkdyn2lRIjxVlQCLa/stU1NCDUWLCGlJRU19DAs08+xDI+lVW/9/454mKWf2c1hWD5d0YczXv/DM/REMY50cZlGhtqpsy+FH/fsGFDT08PXk4qLJxTWDinpeVb+/e+8+Wuv+z75ENQiMvEJzi2/OGVDXesevnFZwDAmZK25Q+vWMxmi9n84ONbHthwh9s1jIVmi+WdN19bec0lALD4yuX45iwxT+LCHA555XmT81/c8sSD/30nAFyxfMWC8xYCQNH5Fz72sw3zFpx/821r8OmT8vKvu+G7995xM1b+4ONb5p+70O/3PbF546EDnwPAD9bee831NwJA3mStKTtam202e+G8+YKR+G+wSTguYzQab7iyWDA+PkG6b8XhcKy9d9OjD6LegHIAAArnSURBVGwAAJs97lvf/f6Rg/spBIXz5gdXF87ImZLa1dE+MSsL/3s0NV2chcVsbqirERvpcDiEa4FL53A4hgYH0KjlEg04+otE3h/rGRzoT3AkCpZfc5N0U0ywJCTEyYx/UFNviCcYP9r98bKlF7v9MrsRspKMYT3H1NxHnpaEF7Y8MSk3H3scAGioq/nNLx98/JnfB7sPv9/3+OaN191w0/xzFwap0dOGCBJoh2XZj3aVXnbl1dGrksVmQjvf++jixRcBwO73dnzvphta+gM66p+YaPj7a28sXlqio86zDfIc05gyNDhw4mjFtdffKFRF5aEDzpRUq8USXDl4NisZSA4NDqxbvaqnu1OQPPzEFjwW00h9Xc2JoxXf/+FapcsRbGQ09PV0JSYmxe7Sk7jM+EfrjEnpUob1oD1pDwkJjhf+9A/8/cAX+x7atMGZkvb81ldkX9s++tTEV+otIcHx19f/L2IDnnvmidJ33/rFE1sSgoZOskZGQ2dH2/+88Nu8/Ck33xr2PEg7pFGNf6KKy3QMkBlQ5Jx7/sJ/7ypTSWCxmH/51O/0zXT9Tzat/8kmfXUqkZExYfOjT8Y6F+Jlxj8hvIzf7zebjUAmO4TxCgKgaQMbYGmDtleyEcYctQvj9/uaGprzcibwPJn9EsYpHA+5WekNtY15U/LOtC0EedC2N3YpHbNYTLlZ6TOm5/kC2peSCIQxBSEwG+BwRXVdUwdppuMTxAYU32nK88ByvI/hyLUjjGcQAouRog1kvD1OQf0uEsElEAgxhDbR5A5AIBBiCP3+e6VKx1ysdSxNIRCixE57zrQJBBkQCZgRCISYQn7NhkAgxBbiZQgEQmwhXoZAIMQW4mUIBEJsIV6GQCDEFuJlCARCbCFehkAgxBbiZQgEQmwJ7WWC34YX1vvxCATCWY4+L/5R8TtkbzGBcJYj/4RBWKMVQQNCSPI9WA9xOgTC2Yb8WEbsC8S+Q0miBHY0YtcTqZ2RgLOL0q9JbFZxysSBEgiyKMZlhN4lGZKouxg0io4mnll4nsflFb7IphlbowiErxOKXkZwLrJuRcmP8KPoaGLEjB9LCISzGbU1Jsl8J/hQzKz62vMNG9ARCNGgtsYkRHCVHI3sKdrzVgp5iOWSCFHI9IJcPONTyVecWOw6NQ6CiCshEEKi6GVUorYqAdHgUwQ/JfFWwf8qyQVHoDG92BLZzT7B+rF5wWtkwdWipEpLkJhAODuR9zLivg2hlpx0QWXMEjK9Fnm4NoQkRvVAIHzzUFvJDt7zoj6HEicDOQ8lyUJpZqQlEiSkUdFDIBDGA5pmTCERz18gKGys5JjCHSIppR+DoRaBQIgY+TUmpdVrYeeIbBgirGVsjXFTif+KWI/uiCtBNvpDAsMEAib03l+NqG/Vkx3OhDsDCksePLxS0S/ZGST+V0mPWFVw8JhAIAgodgyJawj3OQPZE0k/JBDOQkLs/VVyMSC6gatol5xI9vIRCGchZHBBIBBiC3lXHoFAiC1avUzEM52xmSLJrvKMQb5nkLOwyISvKVrfladxM97XYv4Vsjd+LUqhBZWSfmPKSBj/6PNGTowWTxQ7Qt7blbYXKz0JNQ5Rf6BMIhH2LgUv8wWH7YnTIcQOxeeYtMujaaC6eCX1PYTjAfWHLdSPilHf5ay9yPwZfYch4WxD06487XMl2Seh1XfNnQ3ouIQv2YGtcS/SWVXbhPGGPjOm4AeXhENKrV/pzQzhInmYU+mQyrZjXcyIhrDGXLzCmzQw6rUNZ7qkhLMTPeMy4wHZe3tw1/qaxmUwKvGvMxsaIxBk0epl1DsqiMYmY9nEJY8axTQj/CXi56qUVMlqDqlf3dGo2E8gjD1hrGSL/1VptWGt9USJes/UPRQi/h48AlKXK5mtNHPUol993ie7piZ2aureikDQCz1nTHqt9Whfc5GgJR4kzkLpX8khpSXwCAirNlRcT3AVEWdBGLfE9hdsx77pa8zxjMRlwh07KA2CgueJGjUjDe8wJBB0J7SX0dIrlBawI2vK0XSA8TwF0MWqyEZDgmeRLAWO27oifJOI1dOS0QwQgnemhoW+nSd41KCvQo0IwxCVOWmwZkEu7AMmEMaeEGOZyLpr8FnBPT/4NhtuLuq5K1keQYnEvVcyEBCnUZGLfYTEXyjVg6yeKGNVEkj0lzA2aHrfnUSi3oHVb9SxaNBKW2Bl/ZdSoeBr0uskRqoUR+V0UK40AkF3QryRU7tcr3MjQOzd1PenaImPjv/+puJihASgvHFGth6+FgUnfE0hbYtAIMQW8q48AoEQW4iXIRAIsYV4GQKBEFuIlyEQCLFF67vyZHf3hlyfUkkvm0XE+SptV1PXo1G/0lHZ/TIqViml16IflDfdqejXUm8qqkLqHxu5kp3hllf2qFKTIOiI4rvygnsI3j8acp+F5NqrpA+WR5NvsBkh9WjRr7KZMFiPUj2opNeuP7h+1O0MWW9KNwMte2pU7NdXrmSnXtcRFN5JRNCR0DMmlc0Xson1uk4q+cqOetR3A0avP1zlY9Bew7VTnF5soVL3jr4eokfJTsLXCD3jMmF1LR1vILHr0sGatWQka4+WGziIhvER5HtGUPFQush1QaU+yUBmDFB7jknpPqY0mQ+pJ9z00cArb8OPtX4VwhoYhmuPOBfd7VEvr5Ke2Mm1XF/iNcYJal5GdtIOCu5fpWWrpFG57YfrC4JjLrzCYweR6VfKEcLp4eF6pZgi20slvVecXqk+QblcusiVvIn69ZXVH7IqCLEgqhlTNHEBfUEIyUZqhIhgjDKNTH9M4x3aO4xS/IUf/Vk42VuCivFKh6KUK9kZsT2EMSa0l9Hu49EooNNIQWOm/CjBckGVyogsMlT061sPEVsVDRHU5xgz3uwhqKB1LBPyKvIiQL8pcazHSurpgxVGXA8ab+bCFCDcfOEMDftDBu+ilOtCZPVJ0IuoZkzhNmu9ukGsu5OS/ljbH41cS4Rb6f6vdK5e1zcauYqduttDiBGKl0EiUQoHqpwYfAORTa/eN9TzFeSSZMFnyerRWC6JWllrtRwKqSekXMVO2aJpvF5Rljf6cqnLQ9oJ0V1HIH4nxpDKJRAIsYU8LUkgEGIL8TIEAiG2EC9DIBBiC/EyBAIhthAvQyAQYgvxMgQCIbaQd+WFsc9CclRlv4ysVSH3m6joBw37X8LdPwKhtq6Eu18mRnIlOyPeL6NySvBZhOgh78qL8B1rsnqU6kElvXb9wfWjbmfIelO6Gcjapt1+feVKdup1HSGiZ7gJYUHeladVf7jKx6C9hmsnr7BbX6l7R18P0aNkJ+FrBHlXXniatWQka4+WGziIhvER5HtGUPFQush1QaU+yUBmDCDvytNfvwphDQzDtUeci+72qJdXSU/s5FquL/Ea4wTyrrzIkdWv3sPD9UoxRbaXSnqvOL1SfYJyuXSRK3kT9esrqz9kVRBiAXlXXlSZRqY/pvEO7R1GKf7Ck3flEXSFvCsvQlT061sPEVsVDRHU5xgz3uwhqEDelaeWPlhhxPWg8WYuTAHCzRfO0LA/ZPAuSrkuRFafBL0g78oLQ3+s7Y9GriXCrXT/VzpXr+sbjVzFTt3tIcQIxcsgkSiFA1VODL6ByKZX7xvq+QpySbLgs2T1aCyXRK2stVoOhdQTUq5ip2zRNF6vKMsbfbnU5SHthOiuIxC/E2NI5RIIhNhCnpYkEAixhXgZAoEQW4iXIRAIseX/AZrqG48LuGwJAAAAAElFTkSuQmCC" v:shapes="图片_x0020_3" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">5</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">pageContext</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">注意：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">jsp</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">的隐含对象只能在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">&lt;%= %&gt;</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">和</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">&lt;%%&gt;</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中使用，不能在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">EL</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中使用。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">该对象在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSP</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">和</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">EL</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中都有，但含义不同：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSP</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">pageContext</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">，代表页面作用域对象；</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>2</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">EL</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">pageContext</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">，提供了在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">EL</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中可以使用</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSP</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">隐含对象的一种方式。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">如，</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">${pageContext.session.id} </span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">等价于</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> &lt;%=session.getId() %&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>${pageContext.request.contextPath}</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">等价于</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> &lt;%=request.getContextPath()
+%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">示例：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;!-- </span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">获取<span lang="EN-US">session</span>中的<span lang="EN-US">sessionId --&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">方法<span lang="EN-US">2</span>：使用<span lang="EN-US">session</span>获取<span lang="EN-US">&lt;br/&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%=session.getId()
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${pageContext.session.id
+}&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">运行结果：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;border:solid windowtext 1.0pt;mso-border-alt:
+solid windowtext .5pt;padding:0cm;mso-no-proof:yes"><img width="283" height="65" src="data:image/png;base64,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" v:shapes="图片_x0020_2" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">6</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、访问数组或集合元素</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">(</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">命名属性中的数组和集合</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>${myArr[0]}<span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">获取命名属性</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt">myArr</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">中数组的第</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">1</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">个元素</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>${myList[0]}<span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">获取命名属性</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt">myList</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">中</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">list</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">集合的第</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">1</span><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">个元素</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>${myMap[&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">键的名称</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">&quot;]}<span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">根据键的名称获取命名属性</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt">myMap</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的对应键值</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>${myMap.</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">键的名称</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">示例：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">//</span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">测试数据<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">// list</span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">集合<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">List&lt;User&gt; list =
+new ArrayList&lt;User&gt;();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">list.add(new
+User(&quot;zs&quot;,&quot;111&quot;));<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">list.add(new
+User(&quot;ls&quot;,&quot;222&quot;));<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">list.add(new
+User(&quot;ww&quot;,&quot;333&quot;));<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">pageContext.setAttribute(&quot;myList&quot;,list);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">// map</span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">集合<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">Map map = new HashMap();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">map.put(&quot;aaa&quot;,new
+User(&quot;zs&quot;,&quot;111&quot;));<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">map.put(&quot;bbb&quot;,new
+User(&quot;ls&quot;,&quot;111&quot;));<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">map.put(&quot;ccc&quot;,new
+User(&quot;ww&quot;,&quot;111&quot;));<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">pageContext.setAttribute(&quot;myMap&quot;,map);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><span style="mso-spacerun:yes">&nbsp;</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:宋体"><span style="mso-tab-count:
+1">&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">&lt;!-- </span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">使用<span lang="EN-US">EL</span>操作命名属性中的数组和集合<span lang="EN-US"> --&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${myList[1].username
+}&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:Consolas">${myMap[&quot;ccc&quot;].username
+}&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:7.8pt;margin-right:0cm;
+margin-bottom:7.8pt;margin-left:0cm;mso-para-margin-top:.5gd;mso-para-margin-right:
+0cm;mso-para-margin-bottom:.5gd;mso-para-margin-left:0cm;text-align:left;
+text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">${myMap.aaa.username
+}&lt;br/&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">运行结果：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-no-proof:yes"><img width="390" height="129" src="data:image/png;base64,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" v:shapes="图片_x0020_1" /></span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

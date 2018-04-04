@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<h2><a name="_Toc1479"><span style="font-family:宋体;mso-ascii-font-family:'Courier New';
+mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">监听器</span></a><span style="mso-bookmark:_Toc1479"></span><span lang="EN-US" style="font-family:'Courier New'"><o:p></o:p></span>
+			</h2>
+			<h3><a name="_Toc24813"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">知识点</span></a><span lang="EN-US"><o:p></o:p></span>
+			</h3>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">Listener </span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">称作监听器，当</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">web</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">应用中某一特定事件发生时会调用相应的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">Listener</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，常见的监听器分为</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">2</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">类：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:42.0pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+tab-stops:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">Ø<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">生命周期对象监听器：监听</span><span style="mso-bidi-font-size:10.5pt;line-height:115%"> </span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">生命周期对象</span><span style="mso-bidi-font-size:10.5pt;line-height:115%"> </span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">的创建和销毁</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:42.0pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l0 level1 lfo1;
+tab-stops:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">Ø<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">命名属性监听器：监听</span><span style="mso-bidi-font-size:10.5pt;line-height:115%"> </span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">生命周期对象中命名属性的添加、修改和删除</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">自定义监听器的步骤：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:0cm;text-align:left;text-indent:0cm;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l1 level1 lfo2"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:Consolas;
+mso-fareast-font-family:Consolas;mso-bidi-font-family:Consolas"><span style="mso-list:Ignore">1、</span></span><span style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">写代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:Consolas;
+mso-fareast-font-family:Consolas"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">生命周期对象监听器：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">implements
+ServletRequestListener</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:105.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">implements
+HttpSessionListener<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:105.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">implements
+ServletContextListener<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">命名属性监听器：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">implements
+ServletRequestAttributeListener<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:84.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">implements
+HttpSessionAttributeListener<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:84.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">implements
+ServletContextAttributeListener</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">举例：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">public class
+MySessionListener implements HttpSessionListener {<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>// </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Courier New';
+mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">当</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">HttpSession </span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">创建时调用</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>public void sessionCreated(HttpSessionEvent
+arg0) {<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;=======sessionCreated=========&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>// </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Courier New';
+mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">当</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">HttpSession </span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">销毁时调用</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>public void
+sessionDestroyed(HttpSessionEvent arg0) {<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;-----------
+sessionDestroyed -----------&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:0cm;text-align:left;text-indent:0cm;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l1 level1 lfo2"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'Courier New';
+mso-fareast-font-family:'Courier New'"><span style="mso-list:Ignore">2、</span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">配置</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%"> web.xml</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>&lt;!-- </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Courier New';
+mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">监听器</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"> --&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>&lt;listener&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;listener-class&gt;com.zpark.lns.MySessionListener&lt;/listener-class&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>&lt;/listener&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

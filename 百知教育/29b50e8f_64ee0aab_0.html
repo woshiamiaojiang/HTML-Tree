@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<h2><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">第</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑">7</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">讲</span><span style="font-family:'Times New Roman',serif;
+mso-fareast-font-family:微软雅黑"> <span lang="EN-US">JavaScript</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的对象类型</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>JavaScript</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中也可以使用对象。但是对对象的使用不像</span><span lang="EN-US">Java</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中那样严谨，没有严格的封装，多态，继承的特性。</span><span lang="EN-US">JavaScript</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">里没有类，我们可以将对象看成是包含多种数据的集合。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<h2><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:
+微软雅黑">1.</span><span lang="EN-US"> </span><span style="font-family:宋体;mso-ascii-font-family:
+Cambria;mso-hansi-font-family:Cambria">对象创建</span><span lang="EN-US"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">通常我们会采用</span><span lang="EN-US">JSON</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">串的方式创建对象，对象创建时没有固定的模板，属性可以随时任意添加。具体语法如下：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>var </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">对象名</span><span lang="EN-US"> = { </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">属性名</span><span lang="EN-US">:</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">属性值</span> <span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">，属性名：属性值</span><span lang="EN-US">,
+.......}</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">；</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">还有另外一种创建方式，类似</span><span lang="EN-US">Java</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">一样</span><span lang="EN-US">new Object()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">创建。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>var
+student = new Object();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;</span>student.id = 1 ;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;</span>student.name = “liucy”;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">上例中我们就创建了一个</span><span lang="EN-US">student</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">对象。由</span><span lang="EN-US">id </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">和</span><span lang="EN-US"> name </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">两个属性组成。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<h2><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:
+微软雅黑">2.</span><span lang="EN-US"> </span><span style="font-family:宋体;mso-ascii-font-family:
+Cambria;mso-hansi-font-family:Cambria">对象访问</span><span lang="EN-US"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span>1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）通过</span> <span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">对象名</span><span lang="EN-US">.</span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">属性名</span> <span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">访问；</span><span lang="EN-US">----&gt; <span style="mso-spacerun:yes">&nbsp;</span>alert(stu.age);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span>2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）通过</span> <span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">对象名</span><span lang="EN-US">[&quot;</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">属性名</span><span lang="EN-US">&quot;]</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">访问；</span><span lang="EN-US">----&gt;<span style="mso-spacerun:yes">&nbsp; </span>alert(stu[&quot;sex&quot;]);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span>3</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）遍历对象的所有属性，使用</span><span lang="EN-US">for..in</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">语法</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for( </span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">变量名</span><span lang="EN-US"> in </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">对象</span><span lang="EN-US">){<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>alert( </span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">对象名</span><span lang="EN-US">[</span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">变量名</span><span lang="EN-US">] );<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">循环每执行一次，都会从对象中取得一个属性名赋值给变量。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<h2><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:
+微软雅黑">3.</span><span lang="EN-US"> </span><span style="font-family:宋体;mso-ascii-font-family:
+Cambria;mso-hansi-font-family:Cambria">对象的方法</span><span lang="EN-US"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>JavaScript</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">里对象只有属性，没有功能。但是我们可以通过代码模拟</span><span lang="EN-US">java</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的对象，使其含有属性和方法（函数）。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>var teacher ={ name:&quot;luxw&quot; , age:18 };<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>teacher.getName = function(){<span style="mso-spacerun:yes">&nbsp; </span>return this.name; }<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>teacher.setName = function(name){
+this.name=name; }<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">此处</span><span lang="EN-US">this</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">为</span><span lang="EN-US">JavaScript</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">里的关键字，代表当前对象。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<h2><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">第</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑">8</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">讲</span><span style="font-family:'Times New Roman',serif;
+mso-fareast-font-family:微软雅黑"> <span lang="EN-US">JavaScript</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的数组类型</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;</span>Java</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的数组是固定长度，并且只能存放同一类型的数据。这些在</span><span lang="EN-US">JavaScript</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">中都没有那么严格的限制，</span><span lang="EN-US">JavaScript</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">里的数组长度不固定，可以任意添加数据，对数据类型也没有特殊限制（任意类型都可）。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<h2><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:
+微软雅黑">1.</span><span lang="EN-US"> </span><span style="font-family:宋体;mso-ascii-font-family:
+Cambria;mso-hansi-font-family:Cambria">对象创建</span><span lang="EN-US"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">通常我们会采用</span><span lang="EN-US">JSON</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">串的方式创建数组，数组创建时没有固定的长度，元素可以随时任意添加。具体语法如下：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>var </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">数组名</span><span lang="EN-US"> = [</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">元素</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，元素</span><span lang="EN-US">2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，元素</span><span lang="EN-US">3</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，</span><span lang="EN-US">..... ]</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">；</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">还有另外一种创建方式，类似</span><span lang="EN-US">Java</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">一样</span><span lang="EN-US">new Array()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">创建。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>var
+arr = new Array();<o:p></o:p></span>
+			</p>
+			<h2><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:
+微软雅黑">2.</span><span lang="EN-US"> </span><span style="font-family:宋体;mso-ascii-font-family:
+Cambria;mso-hansi-font-family:Cambria">数组访问</span><span lang="EN-US"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span>1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）通过下标访问（打印，赋值）里面的一个元素；</span><span lang="EN-US"> ----&gt; arr[2];<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span>2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）通过</span><span lang="EN-US">for</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">循环遍历，下标从</span><span lang="EN-US">0</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">开始，最大下标</span><span lang="EN-US">arr.length-1<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>for(int i=0;i&lt;arr.length;i++){<span style="mso-spacerun:yes">&nbsp;</span>.......<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span>3</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）遍历数组的所有元素，使用</span><span lang="EN-US">for..in</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">语法</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for( </span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">下标</span><span lang="EN-US"> in </span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">数组</span><span lang="EN-US">){<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>alert( </span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">数组名</span><span lang="EN-US">[</span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">下标</span><span lang="EN-US">] );<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">循环每执行一次，都会从数组中取得一个下标赋值给变量。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">通过上述访问，我们会发现，在</span><span lang="EN-US">JavaScript</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">里对象和数组本质是一样的，都可以存放多个不同类型的数据。差别只是数组用下标访问，对象用属性名访问。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<h2><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:
+微软雅黑">3.</span><span lang="EN-US"> </span><span style="font-family:宋体;mso-ascii-font-family:
+Cambria;mso-hansi-font-family:Cambria">数组的常见函数</span><span lang="EN-US"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>push():</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">在数组结尾处添加一个元素</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>pop()
+: </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">删除数组最后一个元素</span><span lang="EN-US">,</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">并且返回这个元素值</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>shift():</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">删除数组第一个元素</span><span lang="EN-US">,</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">并将元素值返回</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>unshift():</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">在数组开始位置</span><span lang="EN-US">(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">第一个元素之前</span><span lang="EN-US">)</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">添加一个元素</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>reverse():</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">颠倒数组的数据</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>join(str):</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">将数组元素用</span><span lang="EN-US">str</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">连接成字符串返回</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>sort():</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">对数组元素排序</span><span lang="EN-US"> , </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">默认按照字母顺序升序排列</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">如果需要按照其他顺序排列</span><span lang="EN-US">,</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">需要在调用</span><span lang="EN-US">sort()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">给定一个函数</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>array.sort( function(v1,v2){ return v1-v2};<span style="mso-spacerun:yes">&nbsp; </span>);<o:p></o:p></span>
+			</p>
+			<h2><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">第</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑">8</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">讲</span><span style="font-family:'Times New Roman',serif;
+mso-fareast-font-family:微软雅黑"> <span lang="EN-US">JavaScript</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的其他常见数据类型</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑"><o:p></o:p></span>
+			</h2>
+			<h2><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:
+微软雅黑">1.</span><span lang="EN-US"> Math</span><span style="font-family:宋体;
+mso-ascii-font-family:Cambria;mso-hansi-font-family:Cambria">类型常见函数</span><span lang="EN-US"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>abs()<span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">绝对值<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>sqrt()<span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">开平方<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>round()<span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">四舍五入<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>ceil()<span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">向上靠拢截取数据<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>floor()<span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">向下靠拢截取数据<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>random()<span style="mso-spacerun:yes">&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">获得<span lang="EN-US">0--1</span>的随机数<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<h2><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:
+微软雅黑">2.</span><span lang="EN-US"> String</span><span style="font-family:宋体;
+mso-ascii-font-family:Cambria;mso-hansi-font-family:Cambria">类型常见函数</span><span lang="EN-US"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>str.indexOf(&quot;a&quot;);<span style="mso-spacerun:yes">&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">在<span lang="EN-US">str</span>里查找字符串<span lang="EN-US">a,</span>如果<span lang="EN-US">a</span>出现返回<span lang="EN-US">a</span>的下标<span lang="EN-US">,</span>如果没有<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">返回<span lang="EN-US">-1<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>str.charAt(1);<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">获取下标为<span lang="EN-US">1</span>的字符<span lang="EN-US">,str</span>的初始下标<span lang="EN-US">0<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>str.split();<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">拆分字符串<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>str.substring(begin,length);<span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">截取子串<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>str.charCodeAt(2);<span style="mso-spacerun:yes">&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">返回指定位置字符的<span lang="EN-US">ASCII</span>编码<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>str.replace(&apos;s&apos;,&apos;b&apos;);<span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">将<span lang="EN-US">str</span>里的第一个<span lang="EN-US">s</span>字符替换成<span lang="EN-US">d<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">注意：在<span lang="EN-US">javascript</span>里求字符串的长度用<span lang="EN-US">length</span>属性<span lang="EN-US">.<o:p></o:p></span></span>
+			</p>
+			<h2><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:
+微软雅黑">3.</span><span lang="EN-US"> </span><span style="font-family:宋体;mso-ascii-font-family:
+Cambria;mso-hansi-font-family:Cambria">日期类型</span><span lang="EN-US"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">1</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">）创建<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>var<span style="mso-spacerun:yes">&nbsp; </span>time = new Date();<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>-----&gt; </span><span style="font-size:
+11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">用来获取当前系统时间<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>var<span style="mso-spacerun:yes">&nbsp; </span>time2 = new Date(&quot;1996-07-12&quot;);
+---&gt; </span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">创建一个指定时间的日期对象<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">2</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">）常见函数<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>getFullYear()<span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">获得四位的年<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>getDate()<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">获取日期里的日<span lang="EN-US">,</span>返回值介于<span lang="EN-US">(1--31)<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>getMonth()<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">获取日期里的月<span lang="EN-US">,</span>返回值介于<span lang="EN-US">(0--11)<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>getDay()<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">获取日期里的星期<span lang="EN-US">,</span>返回值介于<span lang="EN-US">(0--6)<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>getTime()<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">获得日期的毫秒表示<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>toLocalString()<span style="mso-spacerun:yes">&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">将日期转换为本地时间表示<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<h2><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">第</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑">9</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">讲</span><span style="font-family:'Times New Roman',serif;
+mso-fareast-font-family:微软雅黑"> <span lang="EN-US">JavaScript</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中的异常的处理</span><span lang="EN-US" style="font-size:11.5pt;line-height:173%;font-family:'微软雅黑',sans-serif;
+color:#333333"><o:p></o:p></span>
+			</h2>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">程序运行后没有任何反应，就产生了异常，一般是语法错误，无法处理。<span lang="EN-US">JavaScript</span>还可以自定义异常，语法如下：<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>1</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">）创建：<span lang="EN-US"> throw new Error(&quot;</span>错误的描述信息<span lang="EN-US">&quot;);<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>2</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">）处理：<span lang="EN-US"> try{ <span style="mso-spacerun:yes">&nbsp;</span>.........<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US">throw new Error(&quot;......&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;</span>}catch(e){ <span style="mso-spacerun:yes">&nbsp;</span>document.write( e.message);<span style="mso-spacerun:yes">&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<h2><a name="_Toc11323"></a><a name="_Toc393102207"></a><a name="_Toc28055"><span style="mso-bookmark:_Toc393102207"><span style="mso-bookmark:_Toc11323"><span lang="EN-US" style="font-size:10.5pt;line-height:173%">Servlet</span></span></span></a><span style="mso-bookmark:_Toc28055"><span style="mso-bookmark:_Toc393102207"><span style="mso-bookmark:_Toc11323"><span style="font-size:10.5pt;line-height:173%;
+font-family:宋体;mso-ascii-font-family:Cambria;mso-hansi-font-family:Cambria">的生命周期</span></span></span></span><span style="mso-bookmark:_Toc11323"></span><span style="mso-bookmark:_Toc393102207"></span><span style="mso-bookmark:_Toc28055"></span><span lang="EN-US" style="font-size:10.5pt;
+line-height:173%"><o:p></o:p></span>
+			</h2>
+			<h3><a name="_Toc5737"><span style="font-size:10.5pt;line-height:173%;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">知识点</span></a><span style="mso-bookmark:
+_Toc5737"></span><span lang="EN-US" style="font-size:10.5pt;line-height:173%"><o:p></o:p></span>
+			</h3>
+			<h4><a name="_Toc393102208"></a><a name="_Toc20051"><span style="mso-bookmark:
+_Toc393102208"><span lang="EN-US" style="font-size:10.5pt;line-height:156%">Servlet</span></span></a><span style="mso-bookmark:_Toc20051"><span style="mso-bookmark:_Toc393102208"><span style="font-size:10.5pt;line-height:156%;font-family:黑体;mso-ascii-font-family:
+Arial;mso-hansi-font-family:Arial">的处理过程</span></span></span><span style="mso-bookmark:_Toc393102208"></span><span style="mso-bookmark:_Toc20051"></span><span lang="EN-US" style="font-size:10.5pt;line-height:156%"><o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">1</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">）输入</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">URL</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">后，回车，向</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">server</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">发请求</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">2</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">）解析</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">URL</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">地址，获取</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">/web</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">应用名称，定位</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">web.xml<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">3</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">）解析</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">URL</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">地址，获取</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">/url-pattern</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">，定位</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;servlet-mapping&gt;</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">中的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;url-pattern&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">4</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">）匹配到对应的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;servlet-mapping&gt;</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">中的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;servlet-name&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">5</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">）匹配到对应的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;servlet&gt;</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">中的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;servlet-name&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">6</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">）定位到</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;servlet&gt;</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">中的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;servlet-class&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">7</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">）</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">server</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">检测当前内存中是否存在当前类的对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Courier New'"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">不存在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">-</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">使用反射，创建当前类的对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Courier New'"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">存在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">-</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">直接使用获取的对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">8</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">）调用</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">service</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">方法，处理客户端请求，最后把结果响应</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">client</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<h4><a name="_Toc393102209"></a><a name="_Toc7392"><span style="mso-bookmark:
+_Toc393102209"><span style="font-size:10.5pt;line-height:156%;font-family:黑体;
+mso-ascii-font-family:Arial;mso-hansi-font-family:Arial">生命周期方法</span></span></a><span style="mso-bookmark:_Toc393102209"></span><span style="mso-bookmark:_Toc7392"></span><span lang="EN-US" style="font-size:10.5pt;line-height:156%"><o:p></o:p></span>
+			</h4>
+			<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;mso-table-layout-alt:fixed;border:none;
+ mso-border-alt:solid windowtext .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:.5pt solid windowtext;mso-border-insidev:.5pt solid windowtext"> 
+				<tbody>
+					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">&nbsp; 
+						<td width="142" valign="top" style="width:106.5pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;background:#B3B3B3;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" align="center" style="text-align:center"><strong><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+  'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">阶段</span></strong><strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span></strong>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.5pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;background:#B3B3B3;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" align="center" style="text-align:center"><strong><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+  'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">调用方法</span></strong><strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span></strong>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.55pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;background:#B3B3B3;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" align="center" style="text-align:center"><strong><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+  'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">调用时间</span></strong><strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span></strong>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.55pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;background:#B3B3B3;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" align="center" style="text-align:center"><strong><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+  'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">调用次数</span></strong><strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span></strong>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:1">&nbsp; 
+						<td width="142" valign="top" style="width:106.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+  mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+  mso-bidi-font-family:'Courier New'">实例化</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+  mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+  mso-bidi-font-family:'Courier New'">构造方法</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+  mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+  mso-bidi-font-family:'Courier New'">第</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">1</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+  'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">请求</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Courier New'">1<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:2">&nbsp; 
+						<td width="142" valign="top" style="width:106.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+  mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+  mso-bidi-font-family:'Courier New'">初始化</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Courier New'">init<o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+  mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+  mso-bidi-font-family:'Courier New'">第</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">1</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+  'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">请求</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Courier New'">1<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:3">&nbsp; 
+						<td width="142" valign="top" style="width:106.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+  mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+  mso-bidi-font-family:'Courier New'">服务</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Courier New'">service<o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+  mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+  mso-bidi-font-family:'Courier New'">有请求即调用</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Courier New'">N<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:4;mso-yfti-lastrow:yes">&nbsp; 
+						<td width="142" valign="top" style="width:106.5pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+  mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+  mso-bidi-font-family:'Courier New'">销毁</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Courier New'">destroy<o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+  mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+  mso-bidi-font-family:'Courier New'">停服务</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="142" valign="top" style="width:106.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Courier New'">1<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">当用户第</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">1</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">次访问时被创建，并调用</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">service</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">方法</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">当第</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Courier New'">2</span><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Courier New';mso-hansi-font-family:
+'Courier New';mso-bidi-font-family:'Courier New'">次请求到达时不创建新对象，继续调用已存在对象的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">service</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">方法</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">当应用停止服务器或</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">tomcat</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">关闭时对象被销毁</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-no-proof:yes"><img width="492" height="173" src="data:image/jpg;base64,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d2YIrOBJXgvRCgO0nDKR83DD862PB1veDxfqE2oRXaObCEwi6uhcMELychgBgcHityHQba/S5F1a7bS7lMskDMSZWIAy34AADtitO10mys7+6voIdtzebfOkLElgowAMngDngYHJrnpydd8zVo9L9fP/AC+80kuTTqXKKKK6jIKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAzPElw9r4c1CaPhlt3wfTjFeUWqhLdQK9h1C0W/064s24E8TJn0yMV49CskDSWs6lZoWKOp7EcGu7CNao8fM0/dfQmooortPGL1tpvn6fLetMVWNtu1Iy5HGctj7o7Zqez8Pz3dklxv2earNGNmVwP7zZ+XODjrVaw1E6e3mRW6NMM7ZSzDGRjBAOCPrSLfg2kdvcWsVwIc+UzFgUB5I4PIzzg1m+fodEfZWXN+pPFpMTmyR71UlvUDRp5ZO3JIGTnjkU7TtLLywNNs3StKqxSKTwinJOCO/H1FUp7yScW3AQ20YjQr1OCSD9eatya5cS6omoNFGHRCgjGQvIIJ/Ekmhqdgi6V1ddv+CQ/YIorGG4ubrymuFLRRiMtkDjJPbJ+tWX8P3Eenm6dyrCETFSny7T23Z+9jnGKqi/DWUdtPaxz+SCInYsCgPbg8jPPNEuoC4gRZ7WKSZIxGs5LBto6ZAOCR60PnEnStr289/wCtvxKlFFFaGA1xlGHtXa+B7ua38P8AkrC9yBMxXyzwgPO0+hzn864ieQRxMSccV6T4J059O8NQCVSstwxndT23dB+WK4MfGUoJRlyu/ZP8z1sr0qNtXVi/u1S44VI7VT3J3NUlvpsML+bIzTTf35Ofyq5RXkRwkObmm3J+f6Lb8D6B1Xa0dF5BRRRXWZBRRRQAUVHJPDCMyypGP9pgKrtrGmL97UbUfWZf8admJtIuUVUXVtNfhNQtWPtMp/rVlJEkGUdWHqpzRZgmnsOooopDCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACuN8ZeFZbuQ6tpibrkD99Cv/AC1A7j/aH612VFVCTg7ozq041I8sjxaK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" v:shapes="图片_x0020_1" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Courier New'"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">使用以下代码，验证一下</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">servlet</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">的各个阶段：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">public
+class CycleServlet extends HttpServlet {<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">构造</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>public CycleServlet() {<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;----------in
+CycleServlet------------&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">初始化</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>public void init() {<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;----------in
+init------------&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// service<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>public void service(HttpServletRequest
+request, HttpServletResponse response)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>throws ServletException,
+IOException {<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;----------in
+service------------&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// destroy<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>public void destroy() {<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;----------in
+destroy------------&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">特殊情况：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">&lt;servlet&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Courier New'"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;servlet-name&gt;......&lt;/servlet-name&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Courier New'"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;servlet-class&gt;......&lt;/servlet-class&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Courier New'"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Courier New'"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;/servlet&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Courier New'">&lt;load-on-startup&gt;</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">：代表该</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">serlvet</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">tomcat</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">启动时就实例化和初始化。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

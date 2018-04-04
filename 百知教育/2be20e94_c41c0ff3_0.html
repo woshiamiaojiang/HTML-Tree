@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<h2><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">第</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑">3</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">讲</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑">JDBC</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">实用工具类</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑"><o:p></o:p></span>
+			</h2>
+			<h4 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 21.0pt"><a name="_Toc248126418"><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:
+'Times New Roman'"><span style="mso-list:Ignore">1.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">工具类版本</span></a><span style="mso-bookmark:_Toc248126418"><span lang="EN-US" style="font-family:'Times New Roman',serif;
+mso-fareast-font-family:微软雅黑">1</span></span><span style="mso-bookmark:_Toc248126418"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：将获得连接与关闭资源</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">代码抽取</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑"><o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal" style="margin-left:21.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">首先思考现有代码中，哪些部分有重复代码？答案显然是，获取连接和关闭资源的代码大量重复，在每个</span><span lang="EN-US">Jdbc</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">代码中都出现了这两段功能代码。重复就说明代码能够重用。那么根据以前学过的函数的作用，我们可以考虑将通用操作抽取为工具类的两个静态方法：此处参考范例代码</span><span lang="EN-US"><a href="jdbc/src/day2/EmpDaoImpl.java">jdbc\src\util\JdbcUtil1.java</a></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">。这里我们解释一下编程时使用到的技巧：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）工具类的定义：这两个函数与具体的业务无关，所以将它们单独存放在一个类里，</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方便其他程序的调用，更好的重用。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）关于</span><span lang="EN-US">static</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">方法：相对于非</span><span lang="EN-US">static</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">方法，</span><span lang="EN-US">static</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">方法调用更加方便，通过类名可以直</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">接调用。所以常见的工具类里的方法一般都是</span><span lang="EN-US">static</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>3</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US">util</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">包：对于代码通常建议大家使用包来管理。在划分包的时候，一般是按照功能</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">划分，而不是按照时间。</span><span lang="EN-US">util</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">包一般用来存放的是工具类。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>4</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）关闭资源函数中的异常处理：关闭资源时为什么三次关闭操作不写到一个</span><span lang="EN-US">try</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">块内，</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">答案是其中一次关闭如果发生异常，则造成以后的关闭方法不能执行，因此应当分别</span><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">捕获。此外，在资源关闭前需要加非空判断。如果资源为</span><span lang="EN-US">null</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，说明资源在创建过程</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中出现问题，资源没有被成功创建，那么就不需要关闭。否则资源为</span><span lang="EN-US">null</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，调用相应</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的</span><span lang="EN-US">close</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">函数时会出现空指针异常。</span> <span style="mso-spacerun:yes">&nbsp;</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<h4 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 21.0pt"><a name="_Toc248126419"><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:
+'Times New Roman'"><span style="mso-list:Ignore">2.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">工具类版本</span></a><span style="mso-bookmark:_Toc248126419"><span lang="EN-US" style="font-family:'Times New Roman',serif;
+mso-fareast-font-family:微软雅黑">2</span></span><span style="mso-bookmark:_Toc248126419"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：将连接配置定义在配置文件中</span></span><span style="mso-bookmark:_Toc248126419"></span><span lang="EN-US" style="font-family:
+'Times New Roman',serif;mso-fareast-font-family:微软雅黑"><o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">考虑：将驱动名，连接字符串等信息写死在</span><span lang="EN-US">java</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">代码中会有什么缺点？答案是如果连接的数据库发生了修改，必须重新编译</span><span lang="EN-US">java</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">类，不够灵活。解决方法是将这些易变的信息（又不是经常变，否则应当使用参数传递过来）写在一个外部文件中（这种文件一般称为“配置文件”）。在</span><span lang="EN-US">CoreJava</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">课程中，我们都有读取外部</span><span lang="EN-US">txt</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">文件的经历，现在我们仍然选用文本文件保存易变信息，只不过它的文件后缀名不是</span><span lang="EN-US">.txt</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，习惯上将后缀名取为</span><span lang="EN-US">.properties</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">.properties</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">文件中格式采用</span><span lang="EN-US">key=value</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">的形式</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">.properties</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">文件中的注释使用</span><span lang="EN-US">#</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">开头</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">.properties</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">文件中不能出现中文（习惯上都是以</span><span lang="EN-US">ISO-8859-1</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">编码）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">我们都知道读取文件采用</span><span lang="EN-US">FileReader</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">输入流，这里介绍一种新的获取输入流的手段，</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">即使用</span><span lang="EN-US">InputStream is = JdbcUtil2.class.getResourceAsStream(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">类路径</span><span lang="EN-US">); </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">好处是将来在</span><span lang="EN-US">Web</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">环境下，读取配置文件不会产生路径问题。此方法使用的文件路径是相对于</span><span lang="EN-US">classpath</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">的路径。就是说文件路径开始符号</span><span lang="EN-US">&quot;/&quot;</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">代表本机</span><span lang="EN-US">ClassPath</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">路径，它会随着环境的变化而变化。在运行时，</span><span lang="EN-US">JVM</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">会自动使用</span><span lang="EN-US">classpath</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">替换</span><span lang="EN-US">&quot;/&quot;</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">。如果配置文件（假设名称为</span><span lang="EN-US">conf.properties</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">）在</span><span lang="EN-US">com.kettas.conf</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">包下，则路径写为：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>JdbcUtil2.class.getResourceAsStream(&quot;/com/kettas/conf/conf.properties&quot;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">根据配置文件内容的特点，读入以后我们选择使用</span><span lang="EN-US">Properties</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">集合保存配置信息。</span><span lang="EN-US">Properties</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">是</span><span lang="EN-US">Hashtable</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">的子类，存放主键和值都是字符串的键值对。需要数据时，可以通过</span><span lang="EN-US">getProperty(&quot;key&quot;)</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">来获取主键对应的值。此处参考范例代码</span><span lang="EN-US"><a href="jdbc/src/day2/EmpDaoImpl.java">jdbc\src\util\JdbcUtil2.java</a></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<h4 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 21.0pt"><span lang="EN-US" style="font-family:
+'Times New Roman',serif;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">3.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span lang="EN-US" style="font-family:'Times New Roman',serif;
+mso-fareast-font-family:微软雅黑"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">工具类版本</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:微软雅黑">3</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：将读文件的动作写入静态初始化块</span><span lang="EN-US" style="font-family:'Times New Roman',serif;mso-fareast-font-family:
+微软雅黑"><o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">考察我们写好的</span><span lang="EN-US">JdbcUtil2.java</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">代码，如果将读取配置文件的代码写在获取资源的函数里，那么用户每次调用函数获取资源时，</span><span lang="EN-US">jvm</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">都会去读一次文件，这样会影响代码执行效率。实际上，在一段相对稳定的时间内，配置文件的内容不会发生改变，那么就没有必要多次反复的读取文件。所以我们需要将读取配置文件的代码放在一个只执行一次的地方：静态代码块。而同时</span><span lang="EN-US">Properties</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">集合会在</span><span lang="EN-US">static</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">代码块了被使用，需要在</span><span lang="EN-US">static</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法里被使用，那么：可以将</span><span lang="EN-US">Properties p </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">定义为静态成员变量。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

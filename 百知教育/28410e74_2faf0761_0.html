@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<h1><span lang="EN-US">JavaScript </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">模块四</span><span lang="EN-US"> BOM</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">编程</span><span lang="EN-US"><o:p></o:p></span>
+			</h1>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">与<span lang="EN-US">DOM</span>类似，<span lang="EN-US">BOM</span>（<span lang="EN-US">browser
+object model</span>）全称为“浏览器对象模型”。是一组和浏览器相关的内置对象，以及对象的方法。在这些对象和方法中，<span lang="EN-US">window</span>是最上层对象。一个<span lang="EN-US">window</span>对象代表一个浏览器窗口。之前的<span lang="EN-US">document</span>是<span lang="EN-US">window</span>的属性，在使用<span lang="EN-US">window</span>对象的方法或者属性时，<span lang="EN-US">window</span>可以省略不写。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></strong><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">BOM</span></strong><strong style="mso-bidi-font-weight:normal"><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">提供的常见功能函数和属性：<span lang="EN-US"><o:p></o:p></span></span></strong>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>1</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">）<span lang="EN-US">var w = window.open(&quot;url&quot;);<span style="mso-spacerun:yes">&nbsp; </span><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">打开一个新的浏览器窗口，并在新窗口里显示<span lang="EN-US">url</span>指定资源。<span lang="EN-US">w</span>代表新窗口<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>2</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">）<span lang="EN-US">window.close(); <span style="mso-spacerun:yes">&nbsp;</span>---&gt; </span>关闭浏览器窗口<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>3</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">）<span lang="EN-US">var id = window.setTimeOut(fun,time);<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">设定<span lang="EN-US">time</span>毫秒后，执行<span lang="EN-US">fun</span>函数。<span lang="EN-US">id</span>是定时器的编号。<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>window.clearTimeOut(id);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>4</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">）<span lang="EN-US">var id = window.setInterval(fun,time);<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">周期性执行<span lang="EN-US">fun</span>函数，每次间隔<span lang="EN-US">time</span>毫秒。<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>window.clearInterval(id);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>5</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">）提示框<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>window.alert(&quot;&quot;);<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>----&gt; </span><span style="font-size:11.5pt;
+font-family:'微软雅黑',sans-serif;color:#333333">警告框<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>var ba =
+window.confirm(&quot;&quot;);<span style="mso-spacerun:yes">&nbsp; </span>---&gt; </span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">确认框<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>var str =
+window.prompt(&quot;</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333">提示信息<span lang="EN-US">&quot;); ---</span>》提示输入框<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>6</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">）<span lang="EN-US">location</span>属性<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">从<span lang="EN-US">js</span>代码跳转到<span lang="EN-US">servlet</span>程序，或者其他<span lang="EN-US">jsp</span>页面，<span lang="EN-US">html</span>页面借助代码<span lang="EN-US">:<span style="mso-spacerun:yes">&nbsp;&nbsp; </span><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;
+color:#333333"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>---&gt;<span style="mso-spacerun:yes">&nbsp; </span>window.location.href=&quot;</span><span style="font-size:11.5pt;font-family:'微软雅黑',sans-serif;color:#333333">下一个程序的<span lang="EN-US">uri&quot;;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

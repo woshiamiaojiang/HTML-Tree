@@ -1,0 +1,1532 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<div style="mso-element:para-border-div;border:solid #DBE5F1 3.0pt;padding:
+0cm 0cm 0cm 0cm;background:#DBE5F1">
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><a name="_Toc20688"></a><a name="_Toc12444"></a><a name="_Toc393122602"><span style="mso-bookmark:_Toc12444"><span style="mso-bookmark:_Toc20688"><span style="font-size:14.0pt;line-height:115%;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">第</span></span></span></a><span style="mso-bookmark:_Toc393122602"><span style="mso-bookmark:_Toc12444"><span style="mso-bookmark:_Toc20688"><span lang="EN-US" style="font-size:14.0pt;
+line-height:115%;font-family:'Calibri',sans-serif;letter-spacing:.75pt;
+mso-font-kerning:0pt;font-weight:normal">2</span></span></span></span><span style="mso-bookmark:_Toc393122602"><span style="mso-bookmark:_Toc12444"><span style="mso-bookmark:_Toc20688"><span style="font-size:14.0pt;line-height:115%;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">讲</span></span></span></span><span style="mso-bookmark:_Toc393122602"><span style="mso-bookmark:_Toc12444"><span style="mso-bookmark:_Toc20688"><span style="font-size:14.0pt;line-height:115%;
+font-family:'Calibri',sans-serif;letter-spacing:.75pt;mso-font-kerning:0pt;
+font-weight:normal"> </span></span></span></span><span style="mso-bookmark:
+_Toc393122602"><span style="mso-bookmark:_Toc12444"><span style="mso-bookmark:
+_Toc20688"><span style="font-size:14.0pt;line-height:115%;font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;letter-spacing:
+.75pt;mso-font-kerning:0pt;font-weight:normal">值栈（</span></span></span></span><span style="mso-bookmark:_Toc393122602"><span style="mso-bookmark:_Toc12444"><span style="mso-bookmark:_Toc20688"><span lang="EN-US" style="font-size:14.0pt;
+line-height:115%;font-family:'Calibri',sans-serif;letter-spacing:.75pt;
+mso-font-kerning:0pt;font-weight:normal">ValueStack</span></span></span></span><span style="mso-bookmark:_Toc393122602"><span style="mso-bookmark:_Toc12444"><span style="mso-bookmark:_Toc20688"><span style="font-size:14.0pt;line-height:115%;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">）</span></span></span></span><span style="mso-bookmark:_Toc20688"></span><span style="mso-bookmark:_Toc12444"></span><span style="mso-bookmark:_Toc393122602"></span><span lang="EN-US" style="font-size:
+14.0pt;line-height:115%;font-family:'Calibri',sans-serif;letter-spacing:.75pt;
+mso-font-kerning:0pt;font-weight:normal"><o:p></o:p></span>
+				</h2>
+			</div>
+			<div style="mso-element:para-border-div;border-top:solid #4F81BD 1.0pt;
+border-left:solid #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:solid #4F81BD .75pt;mso-border-left-alt:solid #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h3 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;border:none;
+mso-border-top-alt:solid #4F81BD .75pt;mso-border-left-alt:solid #4F81BD .75pt;
+padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><a name="_Toc285"></a><a name="_Toc19463"></a><a name="_Toc393122603"><span style="mso-bookmark:_Toc19463"><span style="mso-bookmark:_Toc285"><em style="mso-bidi-font-style:normal"><span style="font-size:12.0pt;mso-bidi-font-size:15.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;color:#243F60;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal">课程内容</span></em></span></span></a><span style="mso-bookmark:_Toc285"></span><span style="mso-bookmark:_Toc19463"></span><span style="mso-bookmark:_Toc393122603"></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="font-size:12.0pt;
+mso-bidi-font-size:15.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+mso-fareast-font-family:宋体;color:#243F60;text-transform:uppercase;letter-spacing:
+.75pt;mso-font-kerning:0pt;font-weight:normal"><o:p></o:p></span></em>
+				</h3>
+			</div>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l0 level1 lfo1;tab-stops:21.0pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><a name="_Toc12152"><span lang="EN-US" style="font-size:10.5pt;
+line-height:115%;font-family:宋体;mso-bidi-font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal"><span style="mso-list:Ignore">1.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">值栈的组成</span></a><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal"><o:p></o:p></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">值栈的通俗概念：是</span><span lang="EN-US">Struts2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">自己设计的一种作用域，它的作用范围仅限于一次请求。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">值栈由两部分组成：</span><span lang="EN-US">ROOT</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">（根）部分，</span><span lang="EN-US">Context(</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">上下文</span><span lang="EN-US">) </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">部分</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l0 level1 lfo1;tab-stops:21.0pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><a name="_Toc22291"><span lang="EN-US" style="font-size:10.5pt;
+line-height:115%;font-family:宋体;mso-bidi-font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal"><span style="mso-list:Ignore">2.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">获取值栈</span></a><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal"><o:p></o:p></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black;
+background:white;mso-highlight:white">ValueStack vs = ActionContext.<em style="mso-bidi-font-style:normal">getContext</em>().getValueStack();</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l0 level1 lfo1;tab-stops:21.0pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><a name="_Toc14062"><span lang="EN-US" style="font-size:10.5pt;
+line-height:115%;font-family:宋体;mso-bidi-font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><span style="mso-list:Ignore">3.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:0pt;
+font-weight:normal">操作值栈的<span lang="EN-US">Root</span>部分</span></a><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><o:p></o:p></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">值栈的</span><span lang="EN-US">Root</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">部分的数据结构是“栈”，类似于</span><span lang="EN-US">List</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，符合“后进先出”的规则</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black;background:
+white;mso-highlight:white">vs.push(</span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black;background:white;mso-highlight:white">对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black;background:white;mso-highlight:white">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F;background:white;
+mso-highlight:white">// </span><span style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F;
+background:white;mso-highlight:white">向<span lang="EN-US">Root</span>压入对象至栈顶</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">（这里最好画一个示意图，先压入的值在栈的底部，后压入的值在栈的顶部）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black;background:
+white;mso-highlight:white">Object</span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black;background:white;mso-highlight:white">对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black;background:white;mso-highlight:white">=
+vs.pop(); </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:
+'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F;
+background:white;mso-highlight:white">// </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F;background:white;mso-highlight:white">从<span lang="EN-US">Root</span>栈顶弹出对象</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black;background:
+white;mso-highlight:white">Object</span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+'Comic Sans MS';color:black;background:white;mso-highlight:white">对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black;background:white;mso-highlight:white">=
+vs.peek(); </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:
+'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F;
+background:white;mso-highlight:white">// </span><span style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F;background:white;mso-highlight:white">获得<span lang="EN-US">Root</span>栈顶对象，不弹出</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实例</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：存字符串值</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="margin-left:2.8pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:dash-small-gap #336699 .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:.5pt dash-small-gap #336699;mso-border-insidev:.5pt dash-small-gap #336699"> 
+				<tbody>
+					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">&nbsp; 
+						<td width="167" valign="top" style="width:125.45pt;border:dashed #336699 1.0pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">java</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="517" valign="top" style="width:387.95pt;border:dashed #336699 1.0pt;
+  border-left:none;mso-border-left-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black"> String execute() {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>ValueStack
+&nbsp; vs = ActionContext.<em style="mso-bidi-font-style:normal">getContext</em>().getValueStack();</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>vs.push(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#2A00FF">字符串对象<span lang="EN-US">&quot;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF">&quot;success&quot;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">}<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:1">&nbsp; 
+						<td width="167" valign="top" style="width:125.45pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">jsp</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:宋体"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="517" valign="top" style="width:387.95pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#3F7F7F;background:white;mso-highlight:white">s:property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';background:white;mso-highlight:white">&nbsp; <span style="color:teal">/&gt;<o:p></o:p></span></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes">&nbsp; 
+						<td width="167" valign="top" style="width:125.45pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">输出结果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  宋体;background:white;mso-highlight:white"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="517" valign="top" style="width:387.95pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-bidi-font-family:宋体;background:white;mso-highlight:white">字符串对象</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+  mso-bidi-font-family:微软雅黑;color:teal;background:white;mso-highlight:white"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实例</span><span lang="EN-US">2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：存一个</span><span lang="EN-US">User</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实体对象</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="margin-left:2.8pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:dash-small-gap #336699 .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:.5pt dash-small-gap #336699;mso-border-insidev:.5pt dash-small-gap #336699"> 
+				<tbody>
+					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">&nbsp; 
+						<td width="167" valign="top" style="width:125.45pt;border:dashed #336699 1.0pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">java</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="517" valign="top" style="width:387.95pt;border:dashed #336699 1.0pt;
+  border-left:none;mso-border-left-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black"> String execute() {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>User
+&nbsp; u1 = </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"> User();</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>u1.setName(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#2A00FF">王五<span lang="EN-US">&quot;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>u1.setAge(21);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>ValueStack
+&nbsp; vs = ActionContext.<em style="mso-bidi-font-style:normal">getContext</em>().getValueStack();</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>vs.push(u1);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF">&quot;success&quot;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">}<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:1">&nbsp; 
+						<td width="167" valign="top" style="width:125.45pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">jsp</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="517" valign="top" style="width:387.95pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#3F7F7F;background:white;mso-highlight:white">s:property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';background:white;mso-highlight:white">&nbsp; <span style="color:#7F007F">value</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;name&quot;</span></em><span style="color:teal">/&gt;<o:p></o:p></span></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes">&nbsp; 
+						<td width="167" valign="top" style="width:125.45pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">输出结果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="517" valign="top" style="width:387.95pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS'">王五</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:宋体;color:teal;background:white;mso-highlight:white"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实例</span><span lang="EN-US">3</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：存多个</span><span lang="EN-US">User</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实体对象</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="margin-left:2.8pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:dash-small-gap #336699 .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:.5pt dash-small-gap #336699;mso-border-insidev:.5pt dash-small-gap #336699"> 
+				<tbody>
+					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">&nbsp; 
+						<td width="167" valign="top" style="width:125.45pt;border:dashed #336699 1.0pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">java</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="517" valign="top" style="width:387.95pt;border:dashed #336699 1.0pt;
+  border-left:none;mso-border-left-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black"> String execute() {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>User
+&nbsp; u1 = </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"> User();</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>u1.setName(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#2A00FF">王五<span lang="EN-US">&quot;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>u1.setAge(21);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>User
+&nbsp; u2 = </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"> User();</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>u2.setName(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#2A00FF">张三<span lang="EN-US">&quot;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>u2.setAge(22);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>ValueStack
+&nbsp; vs = ActionContext.<em style="mso-bidi-font-style:normal">getContext</em>().getValueStack();</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>vs.push(u1);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>vs.push(u2);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF">&quot;success&quot;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">; </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">}<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:1">&nbsp; 
+						<td width="167" valign="top" style="width:125.45pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">jsp</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:teal;background:white;
+  mso-highlight:white"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="517" valign="top" style="width:387.95pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#3F7F7F;background:white;mso-highlight:white">s:property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';background:white;mso-highlight:white">&nbsp; <span style="color:#7F007F">value</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;name&quot;</span></em><span style="color:teal">/&gt;</span></span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes">&nbsp; 
+						<td width="167" valign="top" style="width:125.45pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">输出结果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:teal;background:white;mso-highlight:white"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="517" valign="top" style="width:387.95pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS'">张三</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:宋体;color:teal;background:white;mso-highlight:white"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">根据上三个实例，总结规律：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">s:property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:teal">/&gt;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">标签如果没给</span><span lang="EN-US">value</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">属性，那么从表示从栈顶取出对象显示，如果给了</span><span lang="EN-US">value</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">属性，按从上至下找栈中对象的属性，找到为止并显示。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">在页面添加</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">s:</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:#3F7F7F">debug</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"> <span style="color:teal">/&gt;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">标签，观察</span><span lang="EN-US">debug</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">标签所展示的</span><span lang="EN-US">Root</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">栈结构，发现</span><span lang="EN-US" style="background:yellow;mso-highlight:yellow">struts</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman';background:yellow;mso-highlight:yellow">会将当前</span><span lang="EN-US" style="background:yellow;mso-highlight:yellow">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman';background:yellow;mso-highlight:yellow">对象压入栈</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">，由此解释的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">s:property</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"> <span style="color:teal">/&gt;</span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">取值原理，示例见下：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实例</span><span lang="EN-US">4</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：访问</span><span lang="EN-US">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的属性</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="margin-left:2.8pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:dash-small-gap #336699 .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:.5pt dash-small-gap #336699;mso-border-insidev:.5pt dash-small-gap #336699"> 
+				<tbody>
+					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">&nbsp; 
+						<td width="167" valign="top" style="width:125.45pt;border:dashed #336699 1.0pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">java</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="517" valign="top" style="width:387.95pt;border:dashed #336699 1.0pt;
+  border-left:none;mso-border-left-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">class</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> ValueStackAction {</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">private</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> String </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#0000C0">name</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> String execute() {</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#0000C0">name</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black"> = </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#2A00FF">李四<span lang="EN-US">&quot;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF">&quot;success&quot;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">; <o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:宋体;color:black">}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">}<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:1">&nbsp; 
+						<td width="167" valign="top" style="width:125.45pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">jsp</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:teal;background:white;
+  mso-highlight:white"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="517" valign="top" style="width:387.95pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#3F7F7F;background:white;mso-highlight:white">s:property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';background:white;mso-highlight:white">&nbsp; <span style="color:#7F007F">value</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;name&quot;</span></em><span style="color:teal">/&gt;</span></span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes">&nbsp; 
+						<td width="167" valign="top" style="width:125.45pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS'">输出结果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="517" valign="top" style="width:387.95pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS'">李四</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:宋体"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l0 level1 lfo1;tab-stops:21.0pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><a name="_Toc1863"><span lang="EN-US" style="font-size:10.5pt;
+line-height:115%;font-family:宋体;mso-bidi-font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><span style="mso-list:Ignore">4.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:0pt;
+font-weight:normal">操作值栈的<span lang="EN-US">Context</span>部分</span></a><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><o:p></o:p></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">值栈的</span><span lang="EN-US">Context</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">部分的数据结构是“</span><span lang="EN-US">Map</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">”，以“键值对”的方式进行存取。</span><span lang="EN-US">Context</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中已经预置了一些常用对象的</span><span lang="EN-US">key</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，例如：</span><span lang="EN-US">request</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，</span><span lang="EN-US">session</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，</span><span lang="EN-US">application</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">，</span><span lang="EN-US">action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">等，当然也可以自己向</span><span lang="EN-US">Context</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中存入新的</span><span lang="EN-US">key</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">和</span><span lang="EN-US">value</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，要注意</span><span lang="EN-US">OGNL</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">如果从</span><span lang="EN-US">Context</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中取值，语法为“</span><span lang="EN-US">#key</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">”，以区别从</span><span lang="EN-US">Root</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">部分按属性名取值</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实例</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：存取</span><span lang="EN-US">session</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的值</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="margin-left:2.8pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:dash-small-gap #336699 .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:.5pt dash-small-gap #336699;mso-border-insidev:.5pt dash-small-gap #336699"> 
+				<tbody>
+					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">&nbsp; 
+						<td width="168" valign="top" style="width:126.15pt;border:dashed #336699 1.0pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">java</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="516" valign="top" style="width:387.25pt;border:dashed #336699 1.0pt;
+  border-left:none;mso-border-left-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black"> String execute() {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Map&lt;String,
+&nbsp; Object&gt; map = ActionContext.<em style="mso-bidi-font-style:normal">getContext</em>().getSession();</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>map.put(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;name&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">, </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;zhangsan&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">);<o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF">&quot;success&quot;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">; <o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">}<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:1">&nbsp; 
+						<td width="168" valign="top" style="width:126.15pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">jsp</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:teal;background:white;
+  mso-highlight:white"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="516" valign="top" style="width:387.25pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#3F7F7F;background:white;mso-highlight:white">s:property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';background:white;mso-highlight:white">&nbsp; <span style="color:#7F007F">value</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;</span></em></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:#2A00FF;
+  background:white;mso-highlight:white">#session.</span></em><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF;background:white;mso-highlight:white">name&quot;</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:teal;background:white;
+  mso-highlight:white">/&gt;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes">&nbsp; 
+						<td width="168" valign="top" style="width:126.15pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS'">输出结果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="516" valign="top" style="width:387.25pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS'">张三</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:宋体"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实例</span><span lang="EN-US">2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：存取</span><span lang="EN-US">application</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的值</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="margin-left:2.8pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:dash-small-gap #336699 .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:.5pt dash-small-gap #336699;mso-border-insidev:.5pt dash-small-gap #336699"> 
+				<tbody>
+					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">java</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border:dashed #336699 1.0pt;
+  border-left:none;mso-border-left-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black"> String execute() {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Map&lt;String,
+&nbsp; Object&gt; map = ActionContext.<em style="mso-bidi-font-style:normal">getContext</em>().get</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:宋体;color:black">Application</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black">();</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>map.put(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:宋体;color:#2A00FF">age</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#2A00FF">&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black">, </span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF">&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:#2A00FF">18</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">);<o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF">&quot;success&quot;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">; <o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">}<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:1">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">jsp</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:teal;background:white;
+  mso-highlight:white"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#3F7F7F;background:white;mso-highlight:white">s:property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';background:white;mso-highlight:white">&nbsp; <span style="color:#7F007F">value</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;</span></em></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:#2A00FF;
+  background:white;mso-highlight:white">#application.age</span></em><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF;background:white;mso-highlight:white">&quot;</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:teal;background:white;
+  mso-highlight:white">/&gt;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS'">输出结果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:宋体">18<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实例</span><span lang="EN-US">3</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：存取</span><span lang="EN-US">request</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的值</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="margin-left:2.8pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:dash-small-gap #336699 .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:.5pt dash-small-gap #336699;mso-border-insidev:.5pt dash-small-gap #336699"> 
+				<tbody>
+					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">java</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border:dashed #336699 1.0pt;
+  border-left:none;mso-border-left-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black"> String execute() {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>HttpServletRequest
+&nbsp; req = ServletActionContext.<em style="mso-bidi-font-style:normal">getRequest</em>();</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>req.setAttribute(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;aaa&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">, </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;bbb&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">);<o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF">&quot;success&quot;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">; <o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">}<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:1">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">jsp</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:teal;background:white;
+  mso-highlight:white"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#3F7F7F;background:white;mso-highlight:white">s:property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';background:white;mso-highlight:white">&nbsp; <span style="color:#7F007F">value</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;</span></em></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:#2A00FF;
+  background:white;mso-highlight:white">#request.aaa</span></em><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF;background:white;mso-highlight:white">&quot;</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:teal;background:white;
+  mso-highlight:white">/&gt;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS'">输出结果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:宋体">bbb<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实例</span><span lang="EN-US">4</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：存取</span><span lang="EN-US">action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的属性（可以不讲，</span><span lang="EN-US">Context</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的</span><span lang="EN-US">#action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">与</span><span lang="EN-US">Root</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">栈顶的</span><span lang="EN-US">action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">引用的是同一个</span><span lang="EN-US">action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">对象）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="margin-left:2.8pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:dash-small-gap #336699 .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:.5pt dash-small-gap #336699;mso-border-insidev:.5pt dash-small-gap #336699"> 
+				<tbody>
+					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">java</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border:dashed #336699 1.0pt;
+  border-left:none;mso-border-left-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#7F0055;background:white;
+  mso-highlight:white">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black;background:white;mso-highlight:white"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055;background:white;mso-highlight:white">class</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black;background:white;
+  mso-highlight:white"> ContextAction {<o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055;background:white;mso-highlight:white">private</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black;background:white;
+  mso-highlight:white"> String </span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#0000C0;background:white;mso-highlight:white">password</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black;background:white;
+  mso-highlight:white">;<o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> String execute() {</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#0000C0;background:white;
+  mso-highlight:white">password</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black;background:white;mso-highlight:white"> = </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#2A00FF;background:white;mso-highlight:white">&quot;123456&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black;background:white;
+  mso-highlight:white">;<o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF">&quot;success&quot;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">; <o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:宋体;color:black">}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">}<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:1">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">jsp</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:teal;background:white;
+  mso-highlight:white"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#3F7F7F;background:white;mso-highlight:white">s:property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';background:white;mso-highlight:white">&nbsp; <span style="color:#7F007F">value</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;</span></em></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:#2A00FF;
+  background:white;mso-highlight:white">#action.password</span></em><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF;background:white;mso-highlight:white">&quot;</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:teal;background:white;
+  mso-highlight:white">/&gt;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS'">输出结果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">123456</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  宋体"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实例</span><span lang="EN-US">5</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：自定义</span><span lang="EN-US">key</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">和</span><span lang="EN-US">value<o:p></o:p></span>
+			</p>
+			<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="margin-left:2.8pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:dash-small-gap #336699 .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:.5pt dash-small-gap #336699;mso-border-insidev:.5pt dash-small-gap #336699"> 
+				<tbody>
+					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">java</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border:dashed #336699 1.0pt;
+  border-left:none;mso-border-left-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black"> String execute() {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="background:white;mso-highlight:white">ActionContext.<em style="mso-bidi-font-style:normal">getContext</em>().put(</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF;background:white;
+  mso-highlight:white">&quot;ccc&quot;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black;background:white;mso-highlight:white">, </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#2A00FF;background:white;mso-highlight:white">&quot;ddd&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black;background:white;
+  mso-highlight:white">);</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF">&quot;success&quot;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">; <o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">}<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:1">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">jsp</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:teal;background:white;
+  mso-highlight:white"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#3F7F7F;background:white;mso-highlight:white">s:property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';background:white;mso-highlight:white">&nbsp; <span style="color:#7F007F">value</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;</span></em></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:#2A00FF;
+  background:white;mso-highlight:white">#ccc</span></em><em style="mso-bidi-font-style:
+  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF;background:white;
+  mso-highlight:white">&quot;</span></em><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">/&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS'">输出结果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:宋体">ddd<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实例</span><span lang="EN-US">6</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：使用</span><span lang="EN-US">OGNL</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">配合</span><span lang="EN-US">ValueStack</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">存值，主要是利用了</span><span lang="EN-US">ValueStack.setValue</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法，它可以作为一种通用的存值方法，既可以向</span><span lang="EN-US">Context</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">存值，也可以向</span><span lang="EN-US">Root</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">存值：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="margin-left:2.8pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:dash-small-gap #336699 .5pt;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:.5pt dash-small-gap #336699;mso-border-insidev:.5pt dash-small-gap #336699"> 
+				<tbody>
+					<tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">java</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border:dashed #336699 1.0pt;
+  border-left:none;mso-border-left-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+  normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#7F0055;background:white;
+  mso-highlight:white">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black;background:white;mso-highlight:white"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055;background:white;mso-highlight:white">class</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black;background:white;
+  mso-highlight:white"> ContextAction {<o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055;background:white;mso-highlight:white">private</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black;background:white;
+  mso-highlight:white"> String </span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#0000C0;background:white;mso-highlight:white">password</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black;background:white;
+  mso-highlight:white">;<o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> String execute() {</span><span lang="EN-US" style="font-size:
+  14.0pt;mso-bidi-font-size:11.0pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="font-size:14.0pt;mso-bidi-font-size:11.0pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black"><span style="mso-tab-count:
+  2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">ValueStack vs = ActionContext.<em style="mso-bidi-font-style:
+  normal">getContext</em>().getValueStack();</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#3F7F5F">参数<span lang="EN-US">1: </span>是一个<span lang="EN-US">ognl</span>表达式<span lang="EN-US">, </span>参数<span lang="EN-US">2: </span>要存储的值</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>vs.setValue(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;#request.ccc&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">, </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;ddd&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>vs.setValue(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;#session.eee&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">, </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;fff&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>vs.setValue(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;password&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">, </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">&quot;123456&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:black">);<o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black"> </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF">&quot;success&quot;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">; <o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:宋体;color:black">}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:black"><o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:black">}<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:1">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  background:white;mso-highlight:white">jsp</span><span style="mso-bidi-font-size:
+  10.5pt;font-family:宋体;mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:
+  'Comic Sans MS';background:white;mso-highlight:white">代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:teal;background:white;
+  mso-highlight:white"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#3F7F7F;background:white;mso-highlight:white">s:property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';background:white;mso-highlight:white">&nbsp; <span style="color:#7F007F">value</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;</span></em></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:#2A00FF;
+  background:white;mso-highlight:white">#request.ccc</span></em><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:#2A00FF;background:white;mso-highlight:white">&quot;</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:teal;background:white;
+  mso-highlight:white">/&gt;</span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:teal;
+  background:white;mso-highlight:white">&lt;br/&gt;<o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#3F7F7F;background:white;mso-highlight:white">s:property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';background:white;mso-highlight:white">&nbsp; <span style="color:#7F007F">value</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;</span></em></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">#session.eee<em style="mso-bidi-font-style:normal"><span style="background:white;mso-highlight:
+  white">&quot;</span></em></span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">/&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:宋体;color:teal;background:white;mso-highlight:white">&lt;br/&gt;<o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+  'Comic Sans MS';color:#3F7F7F;background:white;mso-highlight:white">s:property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';background:white;mso-highlight:white">&nbsp; <span style="color:#7F007F">value</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;</span></em></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS';color:#2A00FF">password<em style="mso-bidi-font-style:normal"><span style="background:white;mso-highlight:
+  white">&quot;</span></em></span><span lang="EN-US" style="mso-bidi-font-size:
+  10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+  color:teal;background:white;mso-highlight:white">/&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:宋体;color:teal;background:white;mso-highlight:white">&lt;br/&gt;<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr> 
+					<tr style="mso-yfti-irow:2;mso-yfti-lastrow:yes">&nbsp; 
+						<td width="156" valign="top" style="width:117.25pt;border:dashed #336699 1.0pt;
+  border-top:none;mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-alt:
+  dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+  mso-ascii-font-family:'Comic Sans MS';mso-hansi-font-family:'Comic Sans MS'">输出结果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+  mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+							</p>&nbsp; 
+						</td>&nbsp; 
+						<td width="528" valign="top" style="width:396.15pt;border-top:none;border-left:
+  none;border-bottom:dashed #336699 1.0pt;border-right:dashed #336699 1.0pt;
+  mso-border-top-alt:dash-small-gap #336699 .5pt;mso-border-left-alt:dash-small-gap #336699 .5pt;
+  mso-border-alt:dash-small-gap #336699 .5pt;padding:0cm 5.4pt 0cm 5.4pt">&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:宋体">ddd<o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:宋体">fff<o:p></o:p></span>
+							</p>&nbsp; 
+							<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+  font-family:'Comic Sans MS';mso-fareast-font-family:宋体">123456<o:p></o:p></span>
+							</p>&nbsp; 
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

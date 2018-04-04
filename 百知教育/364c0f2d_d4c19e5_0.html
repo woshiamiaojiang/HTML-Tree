@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<p class="MsoNormal" align="left" style="margin-left:42.0pt;text-align:left;
+text-indent:-21.0pt;mso-list:l0 level1 lfo1"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">1.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span lang="EN-US" style="font-size:14.0pt">Hibernate</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的对象状态</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">人为的把它所操作的的实体对象划分成了</span><span lang="EN-US" style="font-size:14.0pt">3</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">种状态。</span><span lang="EN-US" style="font-size:14.0pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-left:63.0pt;text-align:left;
+text-indent:-21.0pt;mso-list:l0 level2 lfo1"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">a)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">临时（</span><span lang="EN-US" style="font-size:14.0pt">transinet</span><span style="font-size:
+14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">特点：临时状态的实体，它的数据没有存储在数据库中。</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">获得临时状态？</span><span lang="EN-US" style="font-size:14.0pt"><br />Person p = new Person();<br />p.setXXX()…<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-left:63.0pt;text-align:left;
+text-indent:-21.0pt;mso-list:l0 level2 lfo1"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">b)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">持久化（</span><span lang="EN-US" style="font-size:14.0pt">persistent</span><span style="font-size:
+14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">特点：实体的数据存储在了数据库中，并且这个实体纳入了</span><span lang="EN-US" style="font-size:14.0pt">Session</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">缓存。</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">获得持久化状态？</span><span lang="EN-US" style="font-size:14.0pt"><br />get()|</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">游离（</span><span lang="EN-US" style="font-size:14.0pt">detache</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US" style="font-size:14.0pt">Query</span><span style="font-size:14.0pt;font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">、</span><span lang="EN-US" style="font-size:14.0pt">session.save()</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、</span><span lang="EN-US" style="font-size:14.0pt">session.update()<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-left:63.0pt;text-align:left;
+text-indent:-21.0pt;mso-list:l0 level2 lfo1"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">c)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">游离状态</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">特点：实体的数据存储在了数据库中，并且这个实体没有纳入到</span><span lang="EN-US" style="font-size:14.0pt">session</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">缓存中。</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">获得游离状态？</span><span lang="EN-US" style="font-size:14.0pt"><br />persistente ---</span><span lang="EN-US" style="font-size:14.0pt;font-family:
+Wingdings;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman';
+mso-char-type:symbol;mso-symbol-font-family:Wingdings"><span style="mso-char-type:
+symbol;mso-symbol-font-family:Wingdings">à</span></span><span style="font-size:
+14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">从</span><span lang="EN-US" style="font-size:14.0pt">session</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中清空（</span><span lang="EN-US" style="font-size:14.0pt">.clear.close().evict()</span><span style="font-size:
+14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US" style="font-size:14.0pt"><br style="mso-special-character:line-break" /><br style="mso-special-character:line-break" /><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-left:42.0pt;text-align:left;
+text-indent:-21.0pt;mso-list:l0 level1 lfo1"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">2.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span lang="EN-US" style="font-size:14.0pt">Hibernate</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的延迟加载</span><span lang="EN-US" style="font-size:14.0pt">(</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">懒加载</span><span lang="EN-US" style="font-size:14.0pt"> lazy)<br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">加载：把数据库中的数据，查询到内存中来。</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman';color:red">立即加载</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：当调用了对应的查询方法之后，</span><span lang="EN-US" style="font-size:14.0pt">hibernate</span><span style="font-size:
+14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">不管用户需不需要这个数据，都立即发送</span><span lang="EN-US" style="font-size:14.0pt">sql</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">进行查询。</span><span lang="EN-US" style="font-size:14.0pt">get()|Query<br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman';color:red">延迟加载：</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">当调用了对应的查询方法之后，</span><span lang="EN-US" style="font-size:14.0pt">hibernate</span><span style="font-size:
+14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">不会立即发送</span><span lang="EN-US" style="font-size:14.0pt">sql</span><span style="font-size:14.0pt;font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">查询数据，只有当用户需要使用数据时，才会进行查询。</span><span lang="EN-US" style="font-size:14.0pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-left:63.0pt;text-align:left;
+text-indent:-21.0pt;mso-list:l0 level2 lfo1"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">a)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">一般属性的延迟加载</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">当调用了</span><span lang="EN-US" style="font-size:14.0pt">session.load</span><span style="font-size:
+14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">方法之后，</span><span lang="EN-US" style="font-size:14.0pt">hibernate</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">不会立即发送</span><span lang="EN-US" style="font-size:14.0pt">sql</span><span style="font-size:14.0pt;font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">查询数据，只有当用户第一次使用属性数据时，才会进行查询。</span><span lang="EN-US" style="font-size:14.0pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-left:63.0pt;text-align:left;
+text-indent:-21.0pt;mso-list:l0 level2 lfo1"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">b)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">关系属性的延迟加载</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">当调用了查询方法之后，</span><span lang="EN-US" style="font-size:14.0pt">hibernate</span><span style="font-size:
+14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">不会立即发送</span><span lang="EN-US" style="font-size:14.0pt">sql</span><span style="font-size:14.0pt;font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">查询关系属性数据，只有当用户第一次使用关系属性数据时，才会进行查询。</span><span lang="EN-US" style="font-size:14.0pt"><br />Hibernate</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">为什么引入延迟加载？</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">本质的想法：减少内存的占用。</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">延迟加载异常：</span><span lang="EN-US" style="font-size:14.0pt"><br />org.hibernate.LazyInitializationException</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：当延迟加载时，发现</span><span lang="EN-US" style="font-size:14.0pt">session</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">已经关闭（等价事务的结束）</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">解决延迟加载：</span><span lang="EN-US" style="font-size:14.0pt"><br />1</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、扩大事务边界。</span><span lang="EN-US" style="font-size:14.0pt"><br /><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">把延迟加载的代码，放置在事务的内部。</span><span lang="EN-US" style="font-size:14.0pt"><br /><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>OpenSessionInView---&gt;Filter--</span><span lang="EN-US" style="font-size:14.0pt;font-family:Wingdings;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman';mso-char-type:symbol;
+mso-symbol-font-family:Wingdings"><span style="mso-char-type:symbol;mso-symbol-font-family:
+Wingdings">à</span></span><span lang="EN-US" style="font-size:14.0pt">Spring<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-left:63.0pt;text-align:left;
+text-indent:0cm;mso-list:l1 level1 lfo2"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">2、</span></span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">改变延迟加载的默认策略</span><span lang="EN-US" style="font-size:14.0pt"><br /><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:16.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:Consolas;mso-hansi-font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt">关系属性</span><span lang="EN-US" style="font-size:16.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:black;mso-font-kerning:0pt"> fetch=FetchType.EARGE<br /><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:16.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:Consolas;mso-hansi-font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt">一般属性</span><span lang="EN-US" style="font-size:16.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:black;mso-font-kerning:0pt"><span style="mso-spacerun:yes">&nbsp;</span>@Proxy(lazy=false)</span><span lang="EN-US" style="font-size:14.0pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-left:147.0pt;text-align:left;
+text-indent:21.0pt"><span style="font-size:16.0pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:Consolas;mso-hansi-font-family:Consolas;mso-bidi-font-family:
+Consolas;color:black;mso-font-kerning:0pt">将</span><span lang="EN-US" style="font-size:16.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-font-kerning:0pt">load</span><span style="font-size:16.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:Consolas;mso-hansi-font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt">改为</span><span lang="EN-US" style="font-size:16.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:black;mso-font-kerning:0pt">get<br style="mso-special-character:
+line-break" /><br style="mso-special-character:line-break" /></span><span lang="EN-US" style="font-size:14.0pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-left:42.0pt;text-align:left;
+text-indent:-21.0pt;mso-list:l0 level1 lfo1"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">3.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span lang="EN-US" style="font-size:14.0pt">Hibernate</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的锁</span><span lang="EN-US" style="font-size:14.0pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

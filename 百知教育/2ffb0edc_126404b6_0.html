@@ -1,0 +1,771 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<div style="mso-element:para-border-div;border:solid #DBE5F1 3.0pt;padding:
+0cm 0cm 0cm 0cm;background:#DBE5F1">
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;text-transform:
+uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">第</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal">1</span><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;text-transform:
+uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">讲</span><span style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal"> </span><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;text-transform:
+uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">单行函数</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+text-transform:uppercase;letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:
+normal"><o:p></o:p></span>
+				</h2>
+			</div>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l6 level1 lfo5;border:none;mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:
+dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal"><span style="mso-list:Ignore">1.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">基本概念及预备常识<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l5 level2 lfo6"><span lang="EN-US" style="mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">a)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">所谓单行函数就是作用与表里的每一行数据，执行一次的函数。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US">select
+employee_id,first_name,abs(salary) from employees;<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>abs()</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">是计算绝对值的函数。这条</span><span lang="EN-US">sql</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">执行后，会返回</span><span lang="EN-US">107</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">条结果，</span><span lang="EN-US">abs</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">会针对</span><span lang="EN-US">employees<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">表里的每一行计算一次，得到一个结果。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l5 level2 lfo6"><span lang="EN-US" style="mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">b)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span lang="EN-US">DUAL</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">表</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">一行一列的特殊表，属于</span><span lang="EN-US">SYS</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">用户。如果我们只需要函数执行一次，可以使用</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">个表。</span><span lang="EN-US">dual</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">表里的数据没有任何意义，只是为了维护</span><span lang="EN-US">select</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">语句的完整性。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>eg : select
+abs(-10) from ???; <o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">如果问号处我们写入</span><span lang="EN-US">employees</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">，那么该条查询语句会针对表里的每一行执行一次。虽然</span><span lang="EN-US">abs(-10)</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">与表里数据没有任何关系，但仍然会返回</span><span lang="EN-US">107</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">行结果。如果填入</span><span lang="EN-US">dual</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，那么因为</span><span lang="EN-US">dual</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">表里只有一行数据，所以该条查询语句只会有一个结果。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l6 level1 lfo5;border:none;mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:
+dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><a name="_Toc248137847"><span lang="EN-US" style="font-size:
+10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal"><span style="mso-list:Ignore">2.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">字符串相关函数</span></a><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal"><o:p></o:p></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l8 level2 lfo1;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">length(str) --</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">获取字符串</span><span lang="EN-US">str</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的长度</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span>eg</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：查询员工的姓、及姓的长度</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>select last_name,length(last_name) from
+employees;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">查姓的长度是</span><span lang="EN-US">5</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的员工</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>select * from employees where
+length(last_name) = 5;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l8 level2 lfo1;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">字符串连接</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;mso-para-margin-left:2.0gd"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>select &apos;a&apos; || &apos;b&apos; from
+dual;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;mso-para-margin-left:2.0gd"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">也可以使用函数</span> <span lang="EN-US">select
+concat(&apos;a&apos;,&apos;b&apos;) from dual;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l7 level1 lfo2;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">substr(str,begin,length) <o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">对</span><span lang="EN-US">str</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">做截取，从</span><span lang="EN-US">begin(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">下标从</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">开始</span><span lang="EN-US">)</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">开始截</span><span lang="EN-US">length</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">位</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;mso-para-margin-left:2.0gd"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US">select
+substr( &apos;abcdefg&apos; , 2 , 4 ) from dual;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">对</span><span lang="EN-US">’abcdefg’</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">取子串，从第二个元素开始取</span><span lang="EN-US">4</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">位，得到的结果为</span> <span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span><span style="mso-no-proof:yes"><img width="162" height="39" src="data:image/png;base64,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" v:shapes="图片_x0020_128" /></span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-- </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">查找姓名是以</span><span lang="EN-US">&apos;S&apos;</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">开头的员工信息</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>select employee_id,fist_name,salary from
+employees where substr(first_name,1,1)=&apos;S&apos;;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l7 level1 lfo2;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">instr(str1,str2,begin) -- </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">在</span><span lang="EN-US">str1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">里查找</span><span lang="EN-US">str2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，从</span><span lang="EN-US">begin</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">（下标从</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">开始）开始查找。找到返回</span><span lang="EN-US">str2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">首字母所在的下标，否则返回</span><span lang="EN-US">-1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：</span> <span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">查找姓中含有</span><span lang="EN-US">&apos;g&apos;</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">的员工信息</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US">select
+employee_id,fist_name,salary from employees where instr(first_name,&apos;g&apos;,1)!=-1;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l7 level1 lfo2;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">lower(str) , upper(str) -- </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">将</span><span lang="EN-US">str</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">转换成小写</span><span lang="EN-US">/</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">大写</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：查找姓是以</span><span lang="EN-US">&apos;k&apos;</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">或者</span><span lang="EN-US">&apos;K&apos;</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">开头的员工信息</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US">select
+employee_id,fist_name,salary from employees <o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US">where lower(
+substr(first_name,1,1) ) = &apos;k&apos; ; <o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US">---&gt; </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">先计算</span><span lang="EN-US">substr</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">，其结果作为</span><span lang="EN-US">lower</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">函数的参数代入运算，直至得到最终结果</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">注意：与</span><span lang="EN-US">java</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">一样，函数可以嵌套调用，只要参数类型匹配即可。执行时，从最内层</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">开始，由里向外，逐层计算。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l6 level1 lfo5;border:none;mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:
+dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal"><span style="mso-list:Ignore">3.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">数学相关函数<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo7"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">mod(num1,num2) -- </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">取模，</span><span lang="EN-US">num1%num2<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：打印员工编号为基数的员工信息</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>select * from employees where
+mod(employee_id,2)=1;<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo7"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">trunc(n,length) --</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">对数字</span><span lang="EN-US">n</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">进行截断，精度到小数点后</span><span lang="EN-US">length</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">位</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo7"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">round(n1, length) --</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">对数字</span><span lang="EN-US">n</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">四舍五入，精度到小数点后</span><span lang="EN-US">length</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">位</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US">select round(123.45678,3) from dual --123.457<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt"><span lang="EN-US">select
+round(123.45678,0) from dual --123<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt"><span lang="EN-US">--</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">查询工号、姓、工资、日薪</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>select
+employee_id,last_name,salary,round(salary/22,2) from employees<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo7"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">abs(num) --</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">对</span><span lang="EN-US">num</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">取绝对值</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo7"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">获取随机数：</span><span lang="EN-US">dbms_random.random()
+, </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">产生一个很大的随机数（可正，可负）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">请随机产生一个正整数</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>select
+dbms_random.random() from dual; <o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">请随机产生一个</span><span lang="EN-US">100</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">以内的正整数</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>select mod(
+abs(dbms_random.random()) , 100) from dual; <o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">请随机查询</span><span lang="EN-US">employees</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">表里的一行数据</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>select
+employee_id,first_name,salary from employees<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>where
+employee_id= mod(abs(dbms_random()),107)+100;<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">注意：表里一共</span><span lang="EN-US">107</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">行数据，</span><span lang="EN-US">employee_id</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">从</span><span lang="EN-US">100</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">开始。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l6 level1 lfo5;border:none;mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:
+dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><a name="_Toc248137840"><span lang="EN-US" style="font-size:
+10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal"><span style="mso-list:Ignore">4.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">日期相关操作和函数</span></a><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal"><o:p></o:p></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">时间与日期是数据库中常用的数据类型，在处理很多运算的时候都需要用到。比如</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">银行应用在处理开户业务时要存储开户日期，电信应用在结算通讯费用是也要用到通话</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">时间。下面我们就来学习</span><span lang="EN-US">oracle</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">数据库中关于日期和实践的相关运算和函数。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l9 level2 lfo3;
+tab-stops:list 42.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">SYSDATE</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">表示当前系统时间</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US">Select
+sysdate from dual;<span style="mso-spacerun:yes">&nbsp; </span>---&gt;</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">获取当前系统时间</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">在</span><span lang="EN-US">sysdate</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">提供的时间数据中，不仅包含年月日的信息，还包括时分秒的信息，</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">甚至可以精确到毫秒。本例中我们只看到了年月日信息是因为</span><span lang="EN-US">oracle</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">默认的日</span> <span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">期显示格式省略了时分秒等额外信息。</span><span lang="EN-US">oracle</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">里默认的日期格式为</span><span lang="EN-US">&apos;dd-mon-rr&apos;</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>2</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">）显示明天的时间</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;</span>select
+sysdate+1 from dual<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">注意：对于日期进行算术运算时，默认单位是天</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:41.75pt;text-indent:-21.0pt;mso-list:
+l0 level1 lfo4;tab-stops:list 41.75pt"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp;</span></span></span><span lang="EN-US">add_months(myDate, num) --</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">对</span><span lang="EN-US">myDate</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">做月份的算术运算</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:41.75pt"><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US">--</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">显示上个月的今天</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:41.75pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>select add_months(sysdate, -1) from dual<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:41.75pt;text-indent:-21.0pt;mso-list:
+l0 level1 lfo4;tab-stops:list 41.75pt"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp;</span></span></span><span lang="EN-US"><span style="mso-tab-count:
+1"> </span>last_day(myDate) -- </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">获取</span><span lang="EN-US">myDate</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">所在月份的最后</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">天</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:41.75pt;text-indent:0cm;
+mso-char-indent-count:0"><span lang="EN-US">eg</span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">：</span><span lang="EN-US">--</span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">获取当前月份的最后</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">天</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:41.75pt;text-indent:0cm;
+mso-char-indent-count:0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;</span>select last_day(sysdate) from dual<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:41.75pt;text-indent:-21.0pt;mso-list:
+l0 level1 lfo4;tab-stops:list 41.75pt"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp;</span></span></span><span lang="EN-US">months_between(myDate1,myDate2)
+--</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">计算两个日期之间相隔几个月，返回值为小数</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:41.75pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo4;tab-stops:list 41.75pt"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">round(myDate,</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">日期格式字符串</span><span lang="EN-US">) --</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">对</span><span lang="EN-US">myDate</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">日期，根据指定日期格式做四舍五入</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:41.75pt;text-indent:-21.0pt;mso-list:
+l0 level1 lfo4;tab-stops:list 41.75pt"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp;</span></span></span><span lang="EN-US">trunc(myDate, </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">日期格式字符串</span><span lang="EN-US">) --</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">对</span><span lang="EN-US">myDate</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">日期，根据指定日期格式做截断</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:41.75pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">可选日期格式字符串</span><span lang="EN-US">:<span style="mso-spacerun:yes">&nbsp; </span>year--</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">按年截断</span><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span>month-</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">按月截断</span><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span>day-</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">星期</span><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">省略格式字符串表示截断时分秒。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:41.75pt"><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US">select
+trunc(sysdate,&apos;yyyy&apos;) from dual --</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">年的第</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">天</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:41.75pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>select trunc(sysdate,&apos;mm&apos;) from dual --</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">月的第</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">天</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:41.75pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>select trunc(sysdate,&apos;day&apos;) from dual --</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">星期</span><span lang="EN-US">(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">周</span><span lang="EN-US">)</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">的第</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">天</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:41.75pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>select trunc(sysdate) from dual; --</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">当天的零时零分零秒</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l6 level1 lfo5;border:none;mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:
+dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal"><span style="mso-list:Ignore">5.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span style="font-size:10.5pt;line-height:115%;
+font-family:宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;
+mso-font-kerning:0pt;font-weight:normal">类型转换相关操作和函数<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l4 level1 lfo8"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">to_number(str) --</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">将给定的字符串</span><span lang="EN-US">str</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">转换成数字类型值</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US">select to_number(&apos;1234&apos;) from dual; ---&gt; </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">将字符串</span><span lang="EN-US">1234</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">转换成数字</span><span lang="EN-US">1234<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">注意：如果给定的</span><span lang="EN-US">str</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">不是有纯数字组成，</span><span lang="EN-US">sql</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">无法执行，报异常。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l4 level1 lfo8"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">to_char(myValue,&apos;fmt&apos;) -- </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">将给定的</span><span lang="EN-US">myValue</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">值按照指定格式</span><span lang="EN-US">fmt</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">转换成字符串类型值</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US">to_char(myNumber,&apos;</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">格式字符串</span><span lang="EN-US">&apos;) --</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">将数字变成字符串</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">常见格式：</span><span lang="EN-US">0</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">或者</span><span lang="EN-US">9</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">表示占位，还可以使用各种货币符号￥</span><span lang="EN-US">$</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">等。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>eg : </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">请用科学计数法显示员工的工资信息</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>select
+employee_id,first_name,to_char(salary,&apos;$999,999.00&apos;) from employees;<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">注意：当实际数值超过给定的字符串格式时，数据无法正常显示，会出现若干</span><span lang="EN-US">***</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US">2</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US">to_char(myTime,&apos;</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">格式字符串</span><span lang="EN-US">&apos;) --</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">将给定的日期值转换成字符串时间表示<span style="color:red">【重点】</span></span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US" style="color:red"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">因为</span><span lang="EN-US">oracle</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">默认的日期显示格式省略了时分秒等额外信息。如果我们想在现实</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">时间的时候看到时分秒的信息的话，就需要手动指定日期的显示格式了。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">常见格式字符串：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">年：</span><span lang="EN-US"> yy<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>yyyy<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>rr<span style="mso-spacerun:yes">&nbsp;&nbsp;</span>rrrr<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>year(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">年的英文全拼</span><span lang="EN-US">)<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">月：</span><span lang="EN-US"> mm<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>mon(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">英文单词缩写</span><span lang="EN-US">)<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>month<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">日：</span><span lang="EN-US"> dd<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>ddsp(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">英文全拼</span><span lang="EN-US">)<span style="mso-spacerun:yes">&nbsp; </span>ddth<span style="mso-spacerun:yes">&nbsp;&nbsp;</span>ddspth(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">英文全拼的序数词</span><span lang="EN-US">)<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">星期：</span><span lang="EN-US"> d<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>dy(</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">英文单词缩写</span><span lang="EN-US">)<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>day<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">小时：</span><span lang="EN-US"> hh---am</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">，</span><span lang="EN-US">pm<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>hh24<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">分钟：</span><span lang="EN-US">mi<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">秒：</span><span lang="EN-US">ss<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">作用：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l3 level1 lfo9"><span lang="EN-US" style="mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">a)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">把</span><span lang="EN-US">myTime</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">日期类型根据指定的日期格式字符串，转换成字符串显示</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US">--</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">按照年月日时分秒的格式，显示当前日期时间</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>select
+to_char(sysdate,&apos;yyyy-mm-dd hh24:mi:ss day&apos;) from dual;<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l3 level1 lfo9"><span lang="EN-US" style="mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">b)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">根据给定的日期格式字符串，获取日期的不同部分</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US">--</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">显示当前月份</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt"><span lang="EN-US">select
+to_char(sysdate, &apos;mm&apos;) from dual<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt"><span lang="EN-US">--</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">显示员工的工号、姓、入职日期、入职月份</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt"><span lang="EN-US">select
+employee_id,last_name,hire_date,to_char(hire_date,&apos;mm&apos;) from employees<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt"><span lang="EN-US">--</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">查询当前月份入职的员工</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt"><span lang="EN-US">select
+employee_id,hire_date from employees <o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>where
+to_char(hire_date,&apos;mm&apos;)=to_char(sysdate,&apos;mm&apos;)<o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l4 level1 lfo8"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">l<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">to_date(strDate, </span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">日期格式字符串</span><span lang="EN-US">) --</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">根据给定的日期格式字符串，把字符串转成日期</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US">eg</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US">--</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">输出</span><span lang="EN-US">2008-8-8</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">是星期几</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>select
+to_char(to_date(&apos;08-01-08&apos;,&apos;mm-dd-yy&apos;), &apos;day&apos;) from dual<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;mso-para-margin-left:4.0gd"><span lang="EN-US">--</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">查询</span><span lang="EN-US">1998</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">年</span><span lang="EN-US">12</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">月</span><span lang="EN-US">3</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">日之后入职的员工</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;mso-para-margin-left:4.0gd"><span lang="EN-US">select * from emp where hiredate &gt;= to_date(&apos;1998-12-3&apos;,&apos;yyyy-mm-dd&apos;);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:41.75pt"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt;margin-left:21.0pt;margin-right:0cm">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l6 level1 lfo5;border:none;mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:
+dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:
+0pt;font-weight:normal"><span style="mso-list:Ignore">6.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;</span></span></span><span lang="EN-US" style="font-size:10.5pt;
+line-height:115%;font-family:宋体;color:#365F91;text-transform:uppercase;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal">NVL</span><span style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+text-transform:uppercase;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:
+normal">函数<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoListParagraph" style="margin-left:41.65pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l1 level1 lfo10"><span lang="EN-US" style="mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">1)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">问题引入：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;mso-char-indent-count:2.0"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">与</span><span lang="EN-US">java </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">语言类似，</span><span lang="EN-US">Oracle</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">中使用</span><span lang="EN-US">NULL</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">代表一个值不存在。需要注意的是</span><span lang="EN-US">NULL<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;mso-char-indent-count:2.0"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">值参与运算总返回</span><span lang="EN-US">NULL</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">，这给我们的运算过程带来问题。当我们计算</span><span lang="EN-US">employees</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">中每</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;mso-char-indent-count:2.0"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">个员工每月实发工资（工资</span><span lang="EN-US">+</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">奖金，奖金是工资</span><span lang="EN-US">*</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">奖金比率）时，问题就出现了：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span lang="EN-US">Select employee_id , first_name , salary , commission_pct , <o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:52.5pt;mso-char-indent-count:
+5.0"><span lang="EN-US">(salary + salary*commission_pct) as sum <o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:42.0pt;mso-char-indent-count:4.0"><span lang="EN-US">from employees</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">；</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">其运行结果是</span> <span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">：</span> <span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-no-proof:yes"><img width="442" height="501" src="data:image/png;base64,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" v:shapes="图片_x0020_113" /></span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">我们发现很多员工的实发工资变成了</span><span lang="EN-US">NULL</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，这很显然是不对的。造成这个错误的</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">原因在于有的员工的</span><span lang="EN-US">commission_pct</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">为</span><span lang="EN-US">NULL , </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">在计算总工资时，由于有空值参与，</span><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp; </span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">所以导致整个运算结果为空。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoListParagraph" style="margin-left:41.65pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l1 level1 lfo10"><span lang="EN-US" style="mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">2)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">问题解决：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>nvl(n1,n2) --</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">判断</span><span lang="EN-US">n1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">是否是</span><span lang="EN-US">null</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，是</span><span lang="EN-US">null</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">执行</span><span lang="EN-US">n2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，否则执行</span><span lang="EN-US">n1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">。</span><span lang="EN-US">(n1==null?n2:n1)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实际上我们希望当</span><span lang="EN-US">commission_pct</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">为</span><span lang="EN-US">NULL</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">时，它的值按</span><span lang="EN-US">0</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">来处理。这时我们就</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">可以使用</span><span lang="EN-US">NVL</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">函数解决此问题（将</span><span lang="EN-US">NULL</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">转化为默认值进行计算）。我们将刚才的</span><span lang="EN-US">SQL<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">改写成如下形式</span> <span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span lang="EN-US">select employee_id , first_name , salary , commission_pct , <o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:21.0pt"><span lang="EN-US">(salary + salary* <strong style="mso-bidi-font-weight:normal">nvl(commission_pct,0)</strong>)
+as sum <o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:42.0pt;mso-char-indent-count:4.0"><span lang="EN-US">from employees;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">查询结果如下所示：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-no-proof:yes"><img width="441" height="397" src="data:image/jpg;base64,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" v:shapes="图片_x0020_118" /></span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">我们看到，原来总工资为空的数据现在都恢复正常了。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

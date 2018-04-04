@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<h2><a name="_Toc17654"><span lang="EN-US" style="font-size:14.0pt;line-height:
+173%">jsp</span></a><span style="mso-bookmark:_Toc17654"><span style="font-size:14.0pt;line-height:173%;font-family:宋体;mso-ascii-font-family:
+Cambria;mso-hansi-font-family:Cambria">简介</span></span><span style="mso-bookmark:
+_Toc17654"></span><span lang="EN-US" style="font-size:14.0pt;line-height:173%"><o:p></o:p></span>
+			</h2>
+			<h3><a name="_Toc25930"></a><a name="_Toc393102194"></a><a name="_Toc15470"><span style="mso-bookmark:_Toc393102194"><span style="mso-bookmark:_Toc25930"><em style="mso-bidi-font-style:normal"><span style="font-size:12.0pt;mso-bidi-font-size:
+15.0pt;line-height:173%;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">知识点</span></em></span></span></a><span style="mso-bookmark:_Toc25930"></span><span style="mso-bookmark:_Toc393102194"></span><span style="mso-bookmark:_Toc15470"></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:15.0pt;line-height:173%"><o:p></o:p></span></em>
+			</h3>
+			<h4><span style="font-family:黑体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial">简介</span><span lang="EN-US"><o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSP </span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">全称</span><span style="mso-bidi-font-size:10.5pt"> <span lang="EN-US">Java Server Pages</span></span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，是</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">servlet</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">发展中的一个升级产品。与</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">Servlet</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">类似，运行在服务器内部，能够接受用户的请求，并产生动态的输出结果。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">所有的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSP</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">源文件都以</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> “.jsp”</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">结尾；</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">Jsp</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">源文件既可以保存在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">web</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">应用的根目录下，也可以保存在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">web</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">应用下的某个子目录中；</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">通过</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSP</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">可以将</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">Java</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">代码嵌入到</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">html</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">标签中，产生动态的输出结果。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<h4><span style="font-family:黑体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial">第</span><span lang="EN-US">1</span><span style="font-family:黑体;mso-ascii-font-family:
+Arial;mso-hansi-font-family:Arial">个</span><span lang="EN-US">JSP<o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">time.jsp<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">&lt;%@ page pageEncoding=<em style="mso-bidi-font-style:normal">&quot;UTF-8&quot;</em>contentType=<em style="mso-bidi-font-style:normal">&quot;text/html&quot;</em>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">&lt;html&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>&lt;head&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;title&gt;</span><span style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">第<span lang="EN-US">1</span>个<span lang="EN-US">JSP</span>页面<span lang="EN-US">&lt;/title&gt;<o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>&lt;/head&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>&lt;body&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;h1&gt;&lt;font color=<em style="mso-bidi-font-style:normal">&quot;green&quot;</em>&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;%= <strong style="mso-bidi-font-weight:normal">new</strong> java.util.Date()%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>&lt;/font&gt;&lt;/h1&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>&lt;/body&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;/html&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">如果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">time.jsp</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">保存在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">web</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">应用的根下：</span><span style="mso-bidi-font-size:
+10.5pt"> <span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US"><a href="http://localhost:8989/jsp_day1/time.jsp"><span style="mso-bidi-font-size:
+10.5pt">http://localhost:8989/jsp_day1/time.jsp</span></a></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> <o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">如果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">time.jsp</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">保存在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">web</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">应用的某个子目录下面：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US"><a href="http://localhost:8989/jsp_day1/subdir/time.jsp"><span style="mso-bidi-font-size:
+10.5pt">http://localhost:8989/jsp_day1/subdir/time.jsp</span></a></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">运行结果（每次刷新页面内容自动更新）：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-fareast-font-family:宋体"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-no-proof:yes"><img border="0" width="510" height="92" src="data:image/png;base64,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" v:shapes="图片_x0020_4" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;mso-fareast-font-family:宋体"><o:p></o:p></span>
+			</p>
+			<h4><span lang="EN-US">jsp</span><span style="font-family:黑体;mso-ascii-font-family:
+Arial;mso-hansi-font-family:Arial">的特征</span><span lang="EN-US"><o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:21.0pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l2 level1 lfo1"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:Wingdings;
+mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">ü<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">不需要编译，就可以直接运行（如果</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">jsp</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">有编译错误，会显示在浏览器上）</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:21.0pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l2 level1 lfo1"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:Wingdings;
+mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">ü<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">代码修改之后，不需要重新启动服务器</span><span style="mso-bidi-font-size:10.5pt;line-height:115%"> <span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:21.0pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l2 level1 lfo1"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:Wingdings;
+mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">ü<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">不需要配置，浏览器可以向访问</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">HTML</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">文件一样访问</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">JSP <o:p></o:p></span>
+			</p>
+			<h4><span lang="EN-US">Jsp</span><span style="font-family:黑体;mso-ascii-font-family:
+Arial;mso-hansi-font-family:Arial">和</span><span lang="EN-US">servlet</span><span style="font-family:黑体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial">的关系</span><span lang="EN-US"><o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSP</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">更擅长于显示结果，</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">Servlet</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">更擅长于处理业务</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:21.0pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l1 level1 lfo2"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:Wingdings;
+mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">ü<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">JSP</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">是将</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">java</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">代码嵌入到</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">html</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">中，</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">html</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">是</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">jsp</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">得主体</span><span style="mso-bidi-font-size:10.5pt;line-height:115%"> <span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:21.0pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l1 level1 lfo2"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:Wingdings;
+mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">ü<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">Servlet</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">是将</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">HTML</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">嵌入到</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">java</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">中，</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">java</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">是</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%">Servlet</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">的主体</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%"><o:p></o:p></span>
+			</p>
+			<h3><a name="_Toc8585"><em style="mso-bidi-font-style:normal"><span style="font-size:10.5pt;line-height:173%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">课堂案例</span></em></a><span style="mso-bookmark:_Toc8585"></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="font-size:10.5pt;line-height:173%"><o:p></o:p></span></em>
+			</h3>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:21.0pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l0 level1 lfo3;
+tab-stops:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">Ø<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">演示</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:'Courier New'">“</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">第</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:'Courier New'">1</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">个</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:'Courier New'">JSP”<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Courier New';
+mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">详见附件</span><span class="MsoHyperlink"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Courier New';mso-bidi-font-weight:bold"> jsp</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">_day1</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">中源代码：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">time.jsp<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Courier New'"><o:p>&nbsp;</o:p></span>
+			</p>
+			<h2><a name="_Toc17353"><span style="font-size:10.5pt;line-height:173%;
+font-family:宋体">脚本元素</span></a><span lang="EN-US" style="font-size:10.5pt;
+line-height:173%;font-family:宋体"><o:p></o:p></span>
+			</h2>
+			<h3><a name="_Toc3076"></a><a name="_Toc393102196"></a><a name="_Toc4528"><span style="mso-bookmark:_Toc393102196"><span style="mso-bookmark:_Toc3076"><em style="mso-bidi-font-style:normal"><span style="font-size:10.5pt;line-height:
+173%;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">知识点</span></em></span></span></a><span style="mso-bookmark:_Toc3076"></span><span style="mso-bookmark:_Toc393102196"></span><span style="mso-bookmark:_Toc4528"></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="font-size:10.5pt;line-height:173%"><o:p></o:p></span></em>
+			</h3>
+			<h4><span style="font-family:黑体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial">表达式脚本</span><span lang="EN-US"><o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">语法：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">&lt;%=<span style="mso-spacerun:yes">&nbsp;</span>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">功能：计算表达式的值，并且输出。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">注意：没有</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">;</span><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">分号</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-spacerun:yes">&nbsp; </span>/ <span style="mso-tab-count:1">&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">表达式必须有计算结果。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:Consolas;mso-hansi-font-family:
+Consolas">示例：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%=2+3
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">&lt;%=new java.util.Date() %&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:Consolas;mso-hansi-font-family:Consolas">运行结果：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+宋体"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-no-proof:yes"><img border="0" width="264" height="49" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAAxCAIAAACplqB5AAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACe0lEQVR4nO3c2xKjIBBFUZma//9l5oGqFEMfkEurJO71ZBnF9tICigkxxgPA//48HQCwIxIDEEgMQCAxAIHEAAQSAxBIDEAgMQCBxAAEEgMQSAxA+GtnhRCKOYynwtuIxDjIBLweTSlAIDEAoZoYIQTb2QBeQidGCCHGGGMkN/BO4bSfnZLknmiATdDHAASRGDSfgJMag3YU3klf959Kg6zAO1EhAAKdb0AgMQCBxAAEEgMQSAxAIDEAofxQae7zvbRW/5Pfq9+T5HtRbGL0lWVt+aFyHOOprTUdTx6SnS+HQfSMr6stXLtU2vHf/6K5TIx0LPIg3GPKC7xih2vxjw51qS0/UY5LPLUA1uNpz/9E2xl24/rJC6lloyzwfK+8tZpS/fVAGqPes73iqPWPbF8/Ov1BtpcfLccrnsTeSrzikWzJ09vKI8/Pezv+pwYl/WAf49Lq7pT9wGsuHvmh2PruyLySS+4wJOLBoXr6zxDkKUkTRa4fps5dZEvL6/r+rYx2e662WzyWbUVPl/OZ/t5BqK1/CbFdqHQbk/ng0hCU7VHbKu0xt9a69g24P57R7qmLz11vh6v52aQabkrlzUTfUGz3Y73M3b7O3S0ey/GT5u+tLo5ajZF87179qvx6vfSyW29WuYR32/5aP9j53u2W7BVPzByzty1bGxRdOBdefZX1/Z12d2IUJ6b2CO+4oNNyj/bfDi0+lXJ3z3ukNJGf3/1bWeIFapqozbe/Nn6qbrX+IOv0p+nyR+Psfz18GuREPI03xMUqXse/5xQPFd4oavQ49G/dy+6JCzziB/sYwDoSAxBIDEAgMQCBxAAEEgMQzkfX8jwXL/QPCO/7Q1/w0DMAAAAASUVORK5CYII=" v:shapes="图片_x0020_3" /></span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<h4><span style="font-family:黑体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial">声明脚本</span><span lang="EN-US"><o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">语法：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">&lt;%!<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;</span>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">功能：用于</span><span style="mso-bidi-font-size:
+10.5pt"> </span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">定义方法、变量。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">示例：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%!<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+宋体"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">int m = 2;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+宋体"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">int n = 4;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+宋体"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">public Date getNow(){<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+宋体"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">return new Date();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+宋体"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%=m %&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%=getNow()
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%=m+n
+%&gt;&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas">&lt;%=getNow() %&gt;&lt;hr/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">运行结果：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-no-proof:yes"><img border="0" width="247" height="77" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPcAAABNCAIAAAD1v2UXAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADy0lEQVR4nO2d266jMAxFYXT+/5eZB6Qowo5zcyC11nqiFMwGdlOTCzmv6zoAQvPvawEAy8HlEB9cDvH5U9ee55mWSdzh11Fcfp5n7uzHR4Cfg4wF4oPLIT6VbIR0BQJAWQ7xsVxOQQ4xKLoci0MYdJdjcYiE4nJZX/6iHgB/6m2fAL8OmQnEh5pEiA8uh/jgcogPLof44HKIDy6H+Dzry2VNeUtV471Xe6VkOsqiekxjrFNvs25p+644jnpKew3rySXJ9WrLSfVA9vmqEWz9k43xT5ffJ7Z0rFAecEVXgpL+3qau0vYDcVz0lATM67HXJ7WNsg3/5EFKPy01YP2sTCp9Eo+24va6rkazPi5BqbQoiZmhXaS9fW8cLz03slzw0qMiIw8fK1ee33dbv0s5GDAv/3bQ6nmepXygS4+M07W7EVb+SNQtd2gU97p9rf1Y8l+e/C/LP04io+V/qe1H6X1UWM1ueiQyWR2Ok5Y36dyqu1xmYGmNzM8ms8wcNYeTmVwLY3vNYxeN7Xp6n89cSEXYDtZ0PN/ujCVPrVwUJGTKPh+zPe9/h930SO4s2b3M+ha9LL/ZRCIkcvMt9dB89uIiz+t8Az597lZYeum5Mo7RMkiW04/HHhe88vv587152+WPq1yqXToWJPrvoNaNDOix43jxTnvFvZDf35fvi9KEljSp6+W3xlfFo5arZapfDcfv1dneQFgVOaDHaCN87OJ1/VtucVdwI1TvdWg/ui6J5BvCEzAvB3iAyyE+uBzig8shPrgc4oPLIT7FFn7fnoYAH2K9DRR/QwyUVqF9upIBuEBeDvGx3tK/W+c+gDEqeTlGhwDoLi/1hgX4RcjLIT64HOKjuPzDMR0AKyiaeJ83FgBMQlEN8SEvh/jgcogPLof44HKIDy6H+OByiA/zCtVDqdt3xXHUU9prWM9hvjZM7cXU9Vqy9neGGWEnWyeZV8iK07V+tZ6SgHk99vqktlG24Z88SOmnpQasn5UJ8wp1b+81VnAsjiwXlo5dlJHHX1bIvEKOLP0jqiJHn4zpUUexzJ+O+iNRt9yhUdzr9jGv0Evspkcik9XhOGl5k95+zCvkjF00tuv5ZNT5xbxCN3lq5aIgIVP2+Zi7jXXaTY/EcSTkJgX5wbxCv0VuvqUems9eXOR5nW/Ap8/dCksvPVfGwbxCPTCvkDP2Gz4m61jceae94l64mFeo/avh+L062xsIqyIH9BhthI9dvK5/yy3uCm6E6r0O7UfXJZF8Q3gC5uUAD3A5xAeXQ3xwOcQHl0N8cDnEB5dDfP4D2Tf5aFNFNHMAAAAASUVORK5CYII=" v:shapes="图片_x0020_2" /></span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<h4><span style="font-family:黑体;mso-ascii-font-family:Arial;mso-hansi-font-family:
+Arial">普通脚本</span> <span lang="EN-US"><o:p></o:p></span>
+			</h4>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">语法：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">&lt;% %&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">功能：用于</span><span style="mso-bidi-font-size:
+10.5pt"> </span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">直接输入</span><span style="mso-bidi-font-size:10.5pt"> </span><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">普通的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">java</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">代码，通常用于书写程序逻辑代码。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">示例：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:Consolas">&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (m+n == 5){<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;font color=<em style="mso-bidi-font-style:normal">&quot;red&quot;</em>&gt;OK!&lt;/font&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} else {<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;font color=<em style="mso-bidi-font-style:normal">&quot;blue&quot;</em>&gt;&lt;%=m+n
+%&gt;&lt;/font&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(int i=0; i&lt;5;
+i++){<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>hello!!&lt;br/&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>&lt;%<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+Consolas"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span>%&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:Consolas;mso-hansi-font-family:
+Consolas">运行结果：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:Consolas;mso-fareast-font-family:宋体"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;
+padding:0cm;mso-no-proof:yes"><img border="0" width="160" height="108" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABsCAIAAABihy61AAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACEUlEQVR4nO3a0VLDIBRFUa7j//8yPsRmmAiE0LQ1O3s9VapReyZwJ3Mi55zE9fXpP0CvZcBwBgxnwHAGDGfAcAYMZ8Bw3533In5f9J+FRERK6dADk3hcevNTrfXdq1W/v7V+K807OCLlvBPtYuJDzDlXf6q1rmn1gJd0F37gl+YZDLd/Bo/fwdUTdF1MU5v56de5m2bA6y5dbtcd5USzvt6MOdNTz1nXuaFmwOUZPJJx6xMv7zy9X2+LPsUbbrXWr/AuTw5ZePWAl215MXgGj3jRdh0R1Su31m+lN60MTtGb4bn1ZSr2zM3nvrveuk751t9/ZOIRG4/jKJxnMJwBwxkwnAHDGTCcAcNVAp54PhAPg+u7Vzu0ro5KwDY0SNyi4QwYrt/osKFxeZ1Ghw0Ngk6jw4YGweFGhw2Na3HIgnsqYBsa/19lurGhQeL4CucZDGfAcAYMZ8BwBgxnwHA2OuBsdMC5RcMZMJyNDjgbHXA2OuBsdMA5ZMHZ6ICz0QHn+ArnGQxnwHAGDGfAcAYMZ8BwNjrgbHTAuUXDGTCcjQ44Gx1wNjrgbHTAOWTB2eiAs9EB5/gK5xkMZ8BwBgxnwHAGDGfAcDY64Gx0wLlFwxkwnI0OOBsdcDY64Gx0wDlkwdnogLPRAef4CucZDGfAcAYMZ8BwBgxnwHAGDGfAcAYMZ8BwBgxnwHAGDGfAcAYM9wOnMdMpXN077gAAAABJRU5ErkJggg==" v:shapes="图片_x0020_1" /></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:Consolas;mso-fareast-font-family:宋体"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="text-align:left"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:Consolas;mso-fareast-font-family:
+宋体"><o:p>&nbsp;</o:p></span>
+			</p>
+			<h3><a name="_Toc19089"><em style="mso-bidi-font-style:normal"><span style="font-size:10.5pt;line-height:173%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">课堂案例</span></em></a><span style="mso-bookmark:_Toc19089"></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="font-size:10.5pt;line-height:173%"><o:p></o:p></span></em>
+			</h3>
+			<p class="MsoNormal" align="left" style="margin-top:10.0pt;margin-right:0cm;
+margin-bottom:10.0pt;margin-left:21.0pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;mso-list:l0 level1 lfo3;
+tab-stops:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">Ø<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">演示</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;line-height:115%;font-family:'Courier New'">“JSP</span><span style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New'">的脚本元素</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;line-height:115%;font-family:'Courier New'">”<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Courier New';
+mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">详见附件</span><span class="MsoHyperlink"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Courier New';mso-bidi-font-weight:bold"> jsp</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">_day1</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Courier New';mso-hansi-font-family:'Courier New';mso-bidi-font-family:'Courier New'">中源代码：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Courier New'">jsp1.jsp<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<h2><a name="_Toc7328"><span lang="EN-US" style="font-size:10.5pt;line-height:
+173%;font-family:'Courier New';text-transform:uppercase">JSP</span></a><span style="mso-bookmark:_Toc7328"><span style="font-size:10.5pt;line-height:173%;
+font-family:宋体;mso-ascii-font-family:'Courier New';mso-hansi-font-family:'Courier New';
+mso-bidi-font-family:'Courier New';text-transform:uppercase">的执行过程</span></span><span style="mso-bookmark:_Toc7328"></span><span lang="EN-US" style="font-size:10.5pt;
+line-height:173%;font-family:宋体"><o:p></o:p></span>
+			</h2>
+			<h3><a name="_Toc17153"></a><a name="_Toc393102199"></a><a name="_Toc27849"><span style="mso-bookmark:_Toc393102199"><span style="mso-bookmark:_Toc17153"><em style="mso-bidi-font-style:normal"><span style="font-size:10.5pt;line-height:
+173%;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">知识点</span></em></span></span></a><span style="mso-bookmark:_Toc17153"></span><span style="mso-bookmark:_Toc393102199"></span><span style="mso-bookmark:_Toc27849"></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="font-size:10.5pt;line-height:173%"><o:p></o:p></span></em>
+			</h3>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">1</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">、翻译</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-spacerun:yes">&nbsp;</span>.jsp<span style="mso-spacerun:yes">&nbsp; </span>--&gt;<span style="mso-spacerun:yes">&nbsp; </span>.java<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">翻译规则：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;%= %&gt;<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>--<span style="mso-spacerun:yes">&nbsp;&nbsp;</span>service</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法中的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> out.println()<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;%! %&gt;<span style="mso-spacerun:yes">&nbsp; </span>--<span style="mso-spacerun:yes">&nbsp;&nbsp;</span>servlet</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">类的成员变量和成员方法</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;%<span style="mso-spacerun:yes">&nbsp; </span>%&gt;<span style="mso-spacerun:yes">&nbsp;</span>--<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>service</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法中的</span><span style="mso-bidi-font-size:10.5pt"> </span><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">普通代码</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>html</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">内容</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-spacerun:yes">&nbsp;</span>--<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>service</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法中的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> out.write()<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>2</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">、编译</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-spacerun:yes">&nbsp; </span>.java
+--&gt; .class<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>3</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">、运行</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> .class<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">注意：在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">JSP</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">执行时，第</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">1</span><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">次执行慢，以后快。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">原因：第</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">1</span><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">次执行要经过编译、编译和执行</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">3</span><span style="mso-bidi-font-size:10.5pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">个阶段；以后次执行，不需要编译、编译，直接执行已经编译好的</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">class</span><span style="mso-bidi-font-size:10.5pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">文件。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

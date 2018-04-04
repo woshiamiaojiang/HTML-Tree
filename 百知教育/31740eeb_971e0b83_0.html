@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<p class="MsoNormal" align="left" style="margin-left:21.0pt;text-align:left;
+text-indent:-21.0pt;mso-list:l0 level1 lfo1"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">1.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span lang="EN-US" style="font-size:14.0pt">HibernateUtil</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的工具类</span><span lang="EN-US" style="font-size:14.0pt"><br />Configuration:</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">封装整个配置文件的读取过程。</span><span lang="EN-US" style="font-size:14.0pt">2</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">种配置文件全部读取。<span style="color:red">一次性的把配置文件的内容，全部加载到内存中。</span></span><span lang="EN-US" style="font-size:14.0pt"><br />SessionFactory:SessionFactory</span><span style="font-size:14.0pt;font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">是用于创建</span><span lang="EN-US" style="font-size:14.0pt">Session</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">对象。重量级资源，</span><span lang="EN-US" style="font-size:14.0pt">SessionFactory</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">占用很多的内存，功能多。</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">注意：在一个应用中，只创建一个</span><span lang="EN-US" style="font-size:14.0pt">SessionFactory</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">对象。</span><span lang="EN-US" style="font-size:14.0pt"><br /><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>SessionFactory</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">线程安全的对象</span><span lang="EN-US" style="font-size:14.0pt"><br />Session:</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">完成数据库</span><span lang="EN-US" style="font-size:14.0pt">CRUD</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">的，内部封装了</span><span lang="EN-US" style="font-size:14.0pt">Connection</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">，一一对应。</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">轻量级的资源。内存占用少，功能单一（</span><span lang="EN-US" style="font-size:14.0pt">CRUD</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">）。</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">注意：</span><span lang="EN-US" style="font-size:14.0pt">Session</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">不允许被多线程（多用户、多请求）共享</span><span lang="EN-US" style="font-size:14.0pt"><br />HibernateUtil</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">的封装</span><span lang="EN-US" style="font-size:14.0pt"><br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">目的：封装创建</span><span lang="EN-US" style="font-size:14.0pt">Session</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">的代码</span><span lang="EN-US" style="font-size:14.0pt"><br style="mso-special-character:line-break" /><br style="mso-special-character:line-break" /><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-left:21.0pt;text-align:left;
+text-indent:-21.0pt;mso-list:l0 level1 lfo1"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">2.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span lang="EN-US" style="font-size:14.0pt">SessionFactory.getCurrentSession()<br /></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">注意：</span><span lang="EN-US" style="font-size:14.0pt">sessionFactory.openSession()</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">与</span><span lang="EN-US" style="font-size:14.0pt">getCurrentSession()</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的区别</span><span lang="EN-US" style="font-size:14.0pt"><br /><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>openSession()</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">每一次调用</span><span lang="EN-US" style="font-size:14.0pt"> Hibernate</span><span style="font-size:
+14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">都会创建新的</span><span lang="EN-US" style="font-size:14.0pt">Session<br /><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>getCurrentSession()</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">这个方法会把创建好的</span><span lang="EN-US" style="font-size:14.0pt">Session</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">放置到</span><span lang="EN-US" style="font-size:14.0pt"><br /><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>ThreadLocal</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中，从而保证一个线程一个</span><span lang="EN-US" style="font-size:14.0pt">Session,</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">用于控制事务</span><span lang="EN-US" style="font-size:14.0pt">getCurrentSession()</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">的注意事项：</span><span lang="EN-US" style="font-size:14.0pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-left:84.0pt;text-align:left;
+text-indent:-21.0pt;mso-list:l0 level4 lfo1"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">1.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">必须要在</span><span lang="EN-US" style="font-size:14.0pt">hibernate.cfg.xml</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中进行额外的配置</span><span lang="EN-US" style="font-size:14.0pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-left:84.0pt;text-align:left;
+text-indent:-21.0pt;mso-list:l0 level4 lfo1"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">2.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span lang="EN-US" style="font-size:14.0pt">getCurrentSession</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">获得的</span><span lang="EN-US" style="font-size:14.0pt">Session</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">对象必须运行在事务之中。（查询也要事务）</span><span lang="EN-US" style="font-size:14.0pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" align="left" style="margin-left:84.0pt;text-align:left;
+text-indent:-21.0pt;mso-list:l0 level4 lfo1"><span lang="EN-US" style="font-size:14.0pt;mso-fareast-font-family:'Times New Roman'"><span style="mso-list:Ignore">3.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span lang="EN-US" style="font-size:14.0pt">getCurrentSession</span><span style="font-size:14.0pt;font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">获得的</span><span lang="EN-US" style="font-size:14.0pt">Session</span><span style="font-size:14.0pt;
+font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">对象，在事务结束，会自动关闭</span><span lang="EN-US" style="font-size:14.0pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

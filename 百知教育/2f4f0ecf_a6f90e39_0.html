@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<p class="MsoNormal" align="center" style="text-align:center"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="font-size:24.0pt">Ajax</span></strong><strong style="mso-bidi-font-weight:normal"><span style="font-size:24.0pt;font-family:
+宋体;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">框架</span></strong><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:24.0pt">Day2<o:p></o:p></span></strong>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 21.0pt"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-fareast-font-family:
+'Times New Roman'"><span style="mso-list:Ignore">1.<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></strong><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">ajax</span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">操作中以</span></strong><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">post</span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">方式提交异步请求</span></strong><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span></strong>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l0 level2 lfo1;
+tab-stops:list 42.0pt"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-fareast-font-family:
+'Times New Roman'"><span style="mso-list:Ignore">a)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">创建</span></strong><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">xhr<br /></span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt">var xhr = new
+XMLHttpRequest();<strong style="mso-bidi-font-weight:normal"><o:p></o:p></strong></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l0 level2 lfo1;
+tab-stops:list 42.0pt"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-fareast-font-family:
+'Times New Roman'"><span style="mso-list:Ignore">b)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">发送请求</span></strong><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><br /></span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt">xhr.open(“post”,”url”);<br /><span style="color:red">xhr.setRequestHeader(“Content-Type”,”application/x-www-form-urlencoded”);</span><br />xhr.send(“name=suns&amp;password=123456&amp;…”);<br /></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">解释</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">: </span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">为什么在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">post</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">方式提交数据时</span><span style="mso-bidi-font-size:
+10.5pt"> </span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">需要指定</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"> application/xxxx…?<br /></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">答案</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">: </span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">在</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">xhr</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">操作中</span><span style="mso-bidi-font-size:
+10.5pt"> </span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">没有了</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">form </span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">就没有</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">enctype</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">属性</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">,</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">所以必须手工设置</span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt"><o:p></o:p></span></strong>
+			</p>
+			<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;mso-list:l0 level2 lfo1;
+tab-stops:list 42.0pt"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;mso-fareast-font-family:
+'Times New Roman'"><span style="mso-list:Ignore">c)<span style="font:7.0pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></strong><strong style="mso-bidi-font-weight:normal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">处理响应</span></strong><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><br /></span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt">xhr.onreadystatechange
+= function(){<br /><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>if(xhr.readySate==4 &amp;&amp;
+xhr.status==200){<br /><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>xhr.responseText;<br /><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>}<br /><br />}<strong style="mso-bidi-font-weight:normal"><o:p></o:p></strong></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p>&nbsp;</o:p></span></strong>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>

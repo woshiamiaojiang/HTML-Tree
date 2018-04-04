@@ -1,0 +1,1091 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<div style="mso-element:para-border-div;border:solid #DBE5F1 3.0pt;padding:
+0cm 0cm 0cm 0cm;background:#DBE5F1">
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;letter-spacing:
+.75pt;mso-font-kerning:0pt;font-weight:normal">第</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">1</span><span style="font-size:14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">讲</span><span style="font-size:14.0pt;line-height:115%;
+font-family:'Calibri',sans-serif;letter-spacing:.75pt;mso-font-kerning:0pt;
+font-weight:normal"> </span><span style="font-size:14.0pt;line-height:115%;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">整合</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">Hibernate</span><span style="font-size:14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">的另一种做法：模板</span><span lang="EN-US" style="font-size:14.0pt;
+line-height:115%;font-family:'Calibri',sans-serif;letter-spacing:.75pt;
+mso-font-kerning:0pt;font-weight:normal"><o:p></o:p></span>
+				</h2>
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;letter-spacing:
+.75pt;mso-font-kerning:0pt;font-weight:normal">第</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">2</span><span style="font-size:14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">讲</span><span style="font-size:14.0pt;line-height:115%;
+font-family:'Calibri',sans-serif;letter-spacing:.75pt;mso-font-kerning:0pt;
+font-weight:normal"> </span><span style="font-size:14.0pt;line-height:115%;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">整合</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">JDBC<o:p></o:p></span>
+				</h2>
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;letter-spacing:
+.75pt;mso-font-kerning:0pt;font-weight:normal">第</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">3</span><span style="font-size:14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">讲</span><span style="font-size:14.0pt;line-height:115%;
+font-family:'Calibri',sans-serif;letter-spacing:.75pt;mso-font-kerning:0pt;
+font-weight:normal"> </span><span style="font-size:14.0pt;line-height:115%;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">整合</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">Struts2<o:p></o:p></span>
+				</h2>
+			</div>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l0 level1 lfo1;tab-stops:18.75pt 211.15pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><span style="mso-list:Ignore">1.<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal">将<span lang="EN-US">Action</span>类交给<span lang="EN-US">Spring</span>管理<span lang="EN-US"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">bean</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">id</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;findUserAction&quot;</span></em><span style="color:#7F007F">class</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;day4.action.FindUserAction&quot;</span></em></span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:#2A00FF"> </span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F007F">scope</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">=</span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#2A00FF">&quot;prototype&quot;</span></em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">property</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">name</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;userService&quot;</span></em> <span style="color:#7F007F">ref</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;userService&quot;</span></em><span style="color:teal">&gt;&lt;/</span><span style="color:#3F7F7F">property</span><span style="color:teal">&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">bean</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">跟其它</span><span lang="EN-US">bean</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的定义以及依赖关系注入是类似的，唯一要注意的是</span><span lang="EN-US">scope</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">必须是</span><span lang="EN-US">prototype</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">，因为</span><span lang="EN-US">Struts2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中每次请求必须创建新的</span><span lang="EN-US">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实例</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US">struts.xml</span><span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">中的</span><span lang="EN-US">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">配置则修改如下：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">package</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">name</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;pk1&quot;</span></em><span style="color:#7F007F">extends</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;struts-default&quot;</span></em><span style="color:#7F007F">namespace</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;/user&quot;</span></em><span style="color:teal">&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">action</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">name</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;findUser&quot;</span></em> <span style="color:#7F007F">class</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;findUserAction&quot;</span></em><span style="color:teal">&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">result</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">name</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;success&quot;</span></em><span style="color:teal">&gt;</span><span style="color:black">/index.jsp</span><span style="color:teal">&lt;/</span><span style="color:#3F7F7F">result</span><span style="color:teal">&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">action</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">package</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">其中</span><span lang="EN-US">&lt;action&gt;</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的</span><span lang="EN-US">class</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">由类名改为</span><span lang="EN-US">spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的</span><span lang="EN-US">bean</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的</span><span lang="EN-US">id<o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l0 level1 lfo1;tab-stops:18.75pt 211.15pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><span style="mso-list:Ignore">2.<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal">添加<span lang="EN-US">struts2-spring-plugin.jar<o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">这算是</span><span lang="EN-US">Struts</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">提供的一个插件包，它的主要作用是找到</span><span lang="EN-US">spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">容器，按</span><span lang="EN-US">&lt;action&gt;</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">标签中的</span><span lang="EN-US">class</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">值（</span><span lang="EN-US">bean id</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">）到</span><span lang="EN-US">spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">容器中找到</span><span lang="EN-US">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">类，让</span><span lang="EN-US">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">实例的创建由</span><span lang="EN-US">Struts</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">改为</span><span lang="EN-US">Spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">。</span><strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt"><o:p></o:p></span></strong>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l0 level1 lfo1;tab-stops:18.75pt 211.15pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><span style="mso-list:Ignore">3.<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal">添加<span lang="EN-US">spring</span>提供的<span lang="EN-US">ContextLoaderListener<o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">这是一个监听器，实现了</span><span lang="EN-US">ServletContextListener</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">接口，会在应用程序启动和停止时被调用，用来创建和销毁</span><span lang="EN-US">spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">容器，在</span><span lang="EN-US">spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">容器创建成功后，该</span><span lang="EN-US">Listener</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">会将</span><span lang="EN-US">spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">容器放入</span><span lang="EN-US">application</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">作用域，供其它代码访问：</span><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:11.0pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:11.0pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">listener</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">listener-class</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">org.springframework.web.context.ContextLoaderListener</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">listener-class</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">listener</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">它默认读取一个名为</span><span lang="EN-US">/WEB-INF/applicationContext.xml</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">的</span><span lang="EN-US">spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">配置文件，如果需要自定义配置文件位置，添加如下初始化参数：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">context-param</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">param-name</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">contextConfigLocation</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">param-name</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">param-value</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">classpath:day4/transaction.xml</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">param-value</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">context-param</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">做完如上配置，与</span><span lang="EN-US">Struts</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的整合就</span><span lang="EN-US">OK</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">了。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">提高：其实第一步可以不做，仍然让</span><span lang="EN-US">struts</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">自己创建</span><span lang="EN-US">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">对象：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">package</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">name</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;pk1&quot;</span></em><span style="color:#7F007F">extends</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;struts-default&quot;</span></em><span style="color:#7F007F">namespace</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;/user&quot;</span></em><span style="color:teal">&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">action</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">name</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;findUser&quot;</span></em> <span style="color:#7F007F">class</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;day4.action.FindUserAction&quot;</span></em><span style="color:teal">&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">result</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"> <span style="color:#7F007F">name</span><span style="color:black">=</span><em style="mso-bidi-font-style:normal"><span style="color:#2A00FF">&quot;success&quot;</span></em><span style="color:teal">&gt;</span><span style="color:black">/index.jsp</span><span style="color:teal">&lt;/</span><span style="color:#3F7F7F">result</span><span style="color:teal">&gt;</span><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">action</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">package</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">但要注意</span><span lang="EN-US">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">所依赖的</span><span lang="EN-US">Service</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的</span><span lang="EN-US">set</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法要与</span><span lang="EN-US">spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">容器的</span><span lang="EN-US">service bean</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">的</span><span lang="EN-US">id</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">一致（</span><span lang="EN-US">set</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法去掉</span><span lang="EN-US">set</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">后第一个字符变为小写</span><span lang="EN-US">==bean id</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">）：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">class</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">FindUserAction {<span style="mso-tab-count:1">&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">private</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> UserService </span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#0000C0">userService</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black">;<span style="mso-tab-count:1"> </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">void</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"> setUserService(UserService userService) {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">this</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">.</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">userService</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> = userService;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:宋体;color:black">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US">struts2-spring-plugin.jar</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">插件会在内部调用</span><span lang="EN-US">spring</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">的</span><span lang="EN-US">AutowireCapableBeanFactory</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">相关方法来完成属性注入操作。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l0 level1 lfo1;tab-stops:18.75pt 211.15pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><span style="mso-list:Ignore">4.<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal">OpenSessionInViewFilter<o:p></o:p></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">回忆延迟加载异常的解决方法：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">思路</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：</span> <span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">在</span><span lang="EN-US">Hibernate
+Session</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">关闭前，提前查询数据</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">关系属性上加</span><span lang="EN-US">lazy=false<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span lang="EN-US">Hibernate.initialize(user.getContacts());<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l1 level1 lfo2;
+tab-stops:21.0pt"><span lang="EN-US" style="font-family:
+Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings"><span style="mso-list:Ignore">²<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">用</span><span lang="EN-US">inner join
+fetch </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">连接抓取查询</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US">Spring</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">又为我们提供了另一种思路：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">思路</span><span lang="EN-US">2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：让</span><span lang="EN-US">session</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">关闭推迟</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">原本</span><span lang="EN-US">Hibernate Session</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">是在每个</span><span lang="EN-US">Service</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">业务方法调用结束后，事务结束时关闭的。现在让</span><span lang="EN-US">Hibernate Session</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">的打开时间提前，关闭时间推迟。具体就是在请求进入</span><span lang="EN-US">OpenSessionInViewFilter</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">过滤器时打开，在响应返回时关闭。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">过滤器的配置如下：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">filter</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">filter-name</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">osiv</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">filter-name</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">filter-class</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">filter-class</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">filter</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">filter-mapping</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">filter-name</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">osiv</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">filter-name</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">url-pattern</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black">/*</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F7F">url-pattern</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:teal">&gt;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal">&lt;/</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F7F">filter-mapping</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:teal">&gt;<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:teal"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman';background:yellow;
+mso-highlight:yellow">注意</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">三点：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">一．此过滤器的</span><span lang="EN-US">filter-mapping</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">必须位于</span><span lang="EN-US">struts2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的</span><span lang="EN-US">filter-mapping</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">之前，否则请求到达不了</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">二．该过滤器仅是为了解决延迟加载而产生，因此<span style="background:lime;mso-highlight:lime">只应当配置过滤那些查询</span></span><span lang="EN-US" style="background:lime;mso-highlight:lime">action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">，像上面配置</span><span lang="EN-US">/*</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">其实是非常不恰当的，这样即使请求</span><span lang="EN-US">jsp</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，</span><span lang="EN-US">html</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">这些资源时，也会打开关闭</span><span lang="EN-US">Hibernate Session</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">，得不偿失</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">三．在一些特殊场合下，会出现意想不到的错误</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">场景</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：更新商品</span><span lang="EN-US">(Product)</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">，它有一个关系属性类别</span><span lang="EN-US">(Category)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">更新时，因为只需要类别</span><span lang="EN-US">id</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，所以类别对象没有从数据库查询，使用的是游离态类别对象</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">更新</span><span lang="EN-US">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">代码大致如下：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">Product product = ... ; </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">包括其中的<span lang="EN-US">Category</span>（仅含<span lang="EN-US">id</span>）都是根据请求参数由<span lang="EN-US">struts</span>封装。</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:#0000C0">product</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#0000C0">Service</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black">.update(product); </span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;font-family:
+'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">更新商品</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#0000C0">list</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> = productService.findAll(); </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">// list</span><span style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F5F">也是<span lang="EN-US">Action</span>的属性，本意是在更新后再次查询所有商品仍跳转回商品列表视图<span lang="EN-US"><o:p></o:p></span></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">问题来了，在返回商品列表后，发现商品的名称不见了。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman';
+background:yellow;mso-highlight:yellow">分析</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：因为用了</span><span lang="EN-US">OpenSessionInViewFilter</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">过滤器，因此更新和查询操作使用的同一个</span><span lang="EN-US">session</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，更新时，将该商品对象的状态变为了持久态，纳入</span><span lang="EN-US">session</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">一级缓存管理；接下来的查询操作，在将结果集封装为商品对象时，在一级缓存中发现已经存在了该商品对象，所以不会生成新的商品对象，该商品的所有属性（包括其类别关系属性）都会使用内存中已存在的；最后到页面显示时，其他商品对象的类别都是代理对象，因此引发查询数据库操作，获得了正确的值，但刚才商品的类别是读的内存中的，仅有</span><span lang="EN-US">id</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">值。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman';
+background:lime;mso-highlight:lime">解决</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法</span><span lang="EN-US">a</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，对于类别关系属性，使用其持久态对象，也就是更新前再查一遍类别（不太好）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法</span><span lang="EN-US">b</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，更新操作和查询操作分开，用不同的</span><span lang="EN-US">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">（可以再让</span><span lang="EN-US">OpenSessionInViewFilter</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">仅过滤查询</span><span lang="EN-US">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">场景</span><span lang="EN-US">2</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：更新用户</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">代码如下：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">list</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> = </span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">userService</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">.findAll();<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">userService</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">.update(u</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:宋体;color:black">ser</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">);<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">在执行到更新时会出现异常：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'">a different object with the same
+identifier value was already associated with the session<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman';
+background:yellow;mso-highlight:yellow">分析</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：这个</span><span lang="EN-US">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的本意也是更新完毕后，查询所有用户，调回用户列表页面。因为是同一</span><span lang="EN-US">session</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">，查询方法以及将该用户对象查询出来变为持久态，而更新</span><span lang="EN-US">update</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法也是要将该用户对象变为持久态，因此出现了上面的异常。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman';
+background:lime;mso-highlight:lime">解决</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法</span><span lang="EN-US">a</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：调整代码顺序，先更新，再查询（不推荐，会有潜在的问题，类似于场景</span><span lang="EN-US">1</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">的描述）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法</span><span lang="EN-US">b</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：将</span><span lang="EN-US">update</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法改为</span><span lang="EN-US">merge</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">方法</span><span lang="EN-US">c</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">：更新操作和查询操作分开，用不同的</span><span lang="EN-US">Action </span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">（推荐）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">可以看到：使用了</span><span lang="EN-US">osiv</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">过滤器之后，</span> <span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">正确的做法是让</span><span lang="EN-US">Action</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">操作相互独立（</span><span lang="EN-US">session</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">的生存变长后，</span> <span style="font-family:
+'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:
+'Times New Roman'">需要对</span><span lang="EN-US">Hibernate</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:'Times New Roman';
+mso-hansi-font-family:'Times New Roman'">的对象状态有深刻了解，才能避免犯错）</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+			<div style="mso-element:para-border-div;border:solid #DBE5F1 3.0pt;padding:
+0cm 0cm 0cm 0cm;background:#DBE5F1">
+				<h2 align="left" style="margin-top:10.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;background:
+#DBE5F1;border:none;mso-border-alt:solid #DBE5F1 3.0pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm"><span style="font-size:14.0pt;line-height:115%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;letter-spacing:
+.75pt;mso-font-kerning:0pt;font-weight:normal">第</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">4</span><span style="font-size:14.0pt;line-height:115%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;letter-spacing:.75pt;mso-font-kerning:
+0pt;font-weight:normal">讲</span><span style="font-size:14.0pt;line-height:115%;
+font-family:'Calibri',sans-serif;letter-spacing:.75pt;mso-font-kerning:0pt;
+font-weight:normal"> </span><span style="font-size:14.0pt;line-height:115%;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">整合</span><span lang="EN-US" style="font-size:14.0pt;line-height:115%;font-family:'Calibri',sans-serif;
+letter-spacing:.75pt;mso-font-kerning:0pt;font-weight:normal">JSON<o:p></o:p></span>
+				</h2>
+			</div>
+			<div style="mso-element:para-border-div;border-top:dotted #4F81BD 1.0pt;
+border-left:dotted #4F81BD 1.0pt;border-bottom:none;border-right:none;
+mso-border-top-alt:dotted #4F81BD .75pt;mso-border-left-alt:dotted #4F81BD .75pt;
+padding:2.0pt 0cm 0cm 2.0pt">
+				<h4 align="left" style="margin-top:15.0pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:21.0pt;margin-bottom:.0001pt;text-align:left;text-indent:-21.0pt;
+line-height:115%;mso-pagination:widow-orphan;page-break-after:auto;mso-list:
+l2 level1 lfo3;tab-stops:18.75pt 211.15pt;border:none;mso-border-top-alt:dotted #4F81BD .75pt;
+mso-border-left-alt:dotted #4F81BD .75pt;padding:0cm;mso-padding-alt:2.0pt 0cm 0cm 2.0pt"><span lang="EN-US" style="font-size:10.5pt;line-height:115%;font-family:宋体;mso-bidi-font-family:
+宋体;color:#365F91;letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal"><span style="mso-list:Ignore">1.<span style="font:7.0pt 'Times New Roman'">&nbsp; </span></span></span><span style="font-size:10.5pt;line-height:115%;font-family:宋体;color:#365F91;
+letter-spacing:.5pt;mso-font-kerning:0pt;font-weight:normal">当<span lang="EN-US">json</span>转换遇到<span lang="EN-US">hibernate</span>关系属性和代理对象<span lang="EN-US"><o:p></o:p></span></span>
+				</h4>
+			</div>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">对于</span><span lang="EN-US">Gson,</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">不能自动转换</span><span lang="EN-US">Hibernate</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的代理对象，需要注册新的代理对象转换器：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">class</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">HibernateProxyTypeAdapter </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">extends</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">TypeAdapter&lt;HibernateProxy&gt; {</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">static</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">final</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> TypeAdapterFactory </span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#0000C0">FACTORY</span></em><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> = </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> TypeAdapterFactory() {</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#646464">@SuppressWarnings</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#2A00FF">&quot;unchecked&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">)</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> &lt;T&gt; TypeAdapter&lt;T&gt; create(Gson gson,
+TypeToken&lt;T&gt; type) {</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> (HibernateProxy.</span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">class</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">.isAssignableFrom(<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="margin-left:63.0pt;text-indent:21.0pt;text-autospace:
+none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">type.getRawType()) ?
+(TypeAdapter&lt;T&gt;) </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">HibernateProxyTypeAdapter(gson) : </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">null</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>};</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">private</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">final</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"> Gson </span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#0000C0">context</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">private</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> HibernateProxyTypeAdapter(Gson context) {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">this</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">.</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0">context</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> = context;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#646464">@Override</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> HibernateProxy read(JsonReader in) </span><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">throws</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> IOException {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">throw</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black"></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> UnsupportedOperationException(</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#2A00FF">&quot;Not supported&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#646464">@SuppressWarnings</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">({</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#2A00FF">&quot;rawtypes&quot;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">, </span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#2A00FF">&quot;unchecked&quot;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black">})</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#646464">@Override</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">void</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"> write(JsonWriter out, HibernateProxy value) </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">throws</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> IOException {</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">if</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">(value == </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">null</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">) {</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>out.nullValue();</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black">;</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#3F7F5F">// Retrieve the original (not proxy) class</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Class&lt;?&gt; baseType = Hibernate.<em style="mso-bidi-font-style:normal">getClass</em>(value);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">// Get the TypeAdapter
+of the original class, to delegate the serialization</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>TypeAdapter delegate = </span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#0000C0">context</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">.getAdapter(TypeToken.<em style="mso-bidi-font-style:normal">get</em>(baseType));</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">// Get a filled instance
+of the original class</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Object unproxiedValue = ((HibernateProxy)
+value).getHibernateLazyInitializer()</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.getImplementation();</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">// Serialize the value</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>delegate.write(out, unproxiedValue);</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">}<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black"><o:p>&nbsp;</o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">然后使用：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black;
+background:white;mso-highlight:white">Gson gson = </span><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055;background:white;
+mso-highlight:white">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black;background:white;mso-highlight:white">GsonBuilder().registerTypeAdapterFactory(</span><em style="mso-bidi-font-style:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#0000C0;background:white;
+mso-highlight:white">FACTORY</span></em><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black;background:white;mso-highlight:white">).create();<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">来创建</span><span lang="EN-US">Gson</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">对象</span><span lang="EN-US">.<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">另外：如果</span><span lang="EN-US">Hibernate</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">中的实体类出现了双向关联，需要转换时排除其中一方，否则会出现由于循环引用导致</span><span lang="EN-US">StackOverflow</span><span style="font-family:'微软雅黑',sans-serif;
+mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman'">错误，使用</span><span lang="EN-US">Gson</span><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">可以通过：</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">Gson gson = </span><strong style="mso-bidi-font-weight:
+normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black"> GsonBuilder()<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">.registerTypeAdapterFactory(</span><em style="mso-bidi-font-style:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#0000C0">FACTORY</span></em><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black">)<o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-indent:21.0pt;text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:black">.setExclusionStrategies(</span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">new</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black">ExclusionStrategy() {<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">boolean</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"> shouldSkipField(FieldAttributes attr) {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">返回<span lang="EN-US">true</span>表示忽略此<span lang="EN-US">field</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">false</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">public</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">boolean</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"> shouldSkipClass(Class&lt;?&gt; clazz) {</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS';color:#3F7F5F">// </span><span style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#3F7F5F">返回<span lang="EN-US">true</span>表示忽略此<span lang="EN-US">class</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:#7F0055">return</span></strong><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';
+color:black"> </span><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:#7F0055">false</span></strong><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black">;</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal" style="text-autospace:none"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';mso-fareast-font-family:
+'Comic Sans MS';color:black"><span style="mso-tab-count:3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:'Comic Sans MS';
+mso-fareast-font-family:'Comic Sans MS'"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:'Comic Sans MS';mso-fareast-font-family:'Comic Sans MS';color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}).create();</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span style="font-family:'微软雅黑',sans-serif;mso-ascii-font-family:
+'Times New Roman';mso-hansi-font-family:'Times New Roman'">来解决。</span><span lang="EN-US"><o:p></o:p></span>
+			</p>
+			<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span>
+			</p>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>
