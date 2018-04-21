@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><style>/*<![CDATA[*/
+table{border: 1px solid gray;} td{border: 1px dotted gray;} p{margin: 3px 0 3px 0; padding: 0;} #ID_Footer{font-size: small; font-style: italic;} a{padding-right: 20px; background: URL(./icon_newwin.gif) no-repeat center right;} a[href ^= "mailto:"]{padding: 0 20px 0 0; background: URL(./icon_email.gif) no-repeat center right;} a[href ^= "nyf:"]{padding: 0 20px 0 0; background: URL(./icon_jump.gif) no-repeat center right;} 
+/*]]>*/</style><title>最短路径</title></head><body>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; line-height: 140%">4.最短路径</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;在许多应用领域，带权图都被用来描述某个网络，比如通信网络、交通网络等。这种情况下，各边的权重就对应于两点之间通信的成本或交通费用。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;此时，一类典型的问题就是：在任意指定的两点之间如果存在通路，那么最小的消耗是多少。这类问题实际上就是带权图中两点之间最短路径的问题。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;问题：计算V1到V8的最短路径</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 9pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><br /></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">最短路径1：段数最少的最短路径：换乘最少 &nbsp;使用广度优先遍历即可</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">类似问题：编写国际象棋AI，计算最少走多少步就可获胜</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; 根据你的人际关系找到关系最近的医生</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #ff0000; line-height: 140%">类似于数的层次遍历，需要借助于队列来实现</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;对于已经检查过结点，应该标记为已检查，且不再检查它。否则可能会导致无限循环。可以使用另外一个列表存放已经检查过的结点</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;如果到最后队列为空，标明没有路径可以到达</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">最短路径2：权值最小的最短路径：时间最少，距离最短 &nbsp;使用狄克斯特拉算法</span></div>
+<div><br /></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><br /></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><br /></div>
+<div><br /></div>
+<div><br /></div>
+<div><br /></div>
+<div id="ID_Footer" style="text-align: right; margin-top: 4em; padding-top: 4px; border-top: 2px solid gray">Generated with <a href="http://www.wjjsoft.com/mybase#htmltree" target="_blank">myBase/HtmlTree Maker</a> by <a href="http://www.wjjsoft.com/#htmltree" target="_blank">Wjj Software</a></div><script type="text/javascript" language="javascript" src="jquery.js;itemlink.js"></script>
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body></html>
