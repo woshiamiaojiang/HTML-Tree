@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><style>/*<![CDATA[*/
+table{border: 1px solid gray;} td{border: 1px dotted gray;} p{margin: 3px 0 3px 0; padding: 0;} #ID_Footer{font-size: small; font-style: italic;} a{padding-right: 20px; background: URL(./icon_newwin.gif) no-repeat center right;} a[href ^= "mailto:"]{padding: 0 20px 0 0; background: URL(./icon_email.gif) no-repeat center right;} a[href ^= "nyf:"]{padding: 0 20px 0 0; background: URL(./icon_jump.gif) no-repeat center right;} 
+/*]]>*/</style><title>面向对象部分</title></head><body>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #000000; line-height: 140%">1.类和对象</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt">类是对象的抽象，而对象是类的具体实例。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt">类是抽象的，不占用内存，而对象是具体的，占用存储空间。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt">类是用于创建对象的蓝图，它是一个定义包括在特定类型的对象中的方法和变量的软件模板。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt">类和对象好比图纸和实物的关系，模具和铸件的关系。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt">比如人类就是一个概念，人类具有身高，体重等属性。人类可以做吃饭、说话等方法。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt">小明就是一个具体的人，也就是实例，他的属性是具体的身高200cm，体重180kg，他做的方法是具体的吃了一碗白米饭，说了&quot;12345&quot;这样一句话。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt">比如英雄是类</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt">名称、性别、生命值、移动速度、攻击速度、拥有物品是属性</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt">移动、攻击、升级、购买/出售/使用物品是方法。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt">具体的英雄是对象。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">2.</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #ff0000; line-height: 140%">方法重写方法重载</span></div>
+<div><br /></div>
+<div><br /></div>
+<table cellpadding="2" cellspacing="0">
+<tr>
+<td></td>
+<td><span style="font-family: 宋体; font-size: 9pt">英文</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">位置不同</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">作用不同</span></td></tr>
+<tr>
+<td><span style="font-family: 宋体; font-size: 9pt">重载</span></td>
+<td><span style="font-family: Times New Roman; font-size: 9pt">overload</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">同一个类中</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">在一个类里面为一种行为提供多种实现方式并提高可读性</span></td></tr>
+<tr>
+<td><span style="font-family: 宋体; font-size: 9pt">重写</span></td>
+<td><span style="font-family: Times New Roman; font-size: 9pt">override</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">子类和父类间</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">父类方法无法满足子类的要求，子类通过方法重写满足要求</span></td></tr></table>
+<div><br /></div>
+<table cellpadding="2" cellspacing="0">
+<tr>
+<td></td>
+<td><span style="font-family: 宋体; font-size: 9pt">修饰符</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">返回值</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">方法名</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">参数</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">抛出异常</span></td></tr>
+<tr>
+<td><span style="font-family: 宋体; font-size: 9pt">重载</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">无关</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">无关</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">相同</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">不同</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">无关</span></td></tr>
+<tr>
+<td><span style="font-family: 宋体; font-size: 9pt">重写</span></td>
+<td><span style="font-family: 宋体; font-size: 7pt">大于等于</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">小于等于</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">相同</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">相同</span></td>
+<td><span style="font-family: 宋体; font-size: 9pt">小于等于</span></td></tr></table>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">3.static关键字的作用（修饰变量、方法、代码块、内部类）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 21pt">static可以修饰变量、方法、代码块和内部类</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 42pt">1. &nbsp; &nbsp; &nbsp; &nbsp;static属性属于这个类所有，即由该类创建的所有对象共享同一个static属性。可以对象创建后通过对象名.属性名和类名.属性名两种方式来访问。也可以在没有创建任何对象之前通过类名.属性名的方式来访问。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 42pt">static变量和非static变量的区别(都是成员变量，不是局部变量)</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 42pt">1.在内存中份数不同</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 63pt">不管有多少个对象，static变量只有1份。对于每个对象，实例变量都会有单独的一份</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 63pt">static变量是属于整个类的，也称为类变量。而非静态变量是属于对象的，也称为实例变量</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 42pt">2.在内存中存放的位置不同</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 84pt">静态变量存在方法区中，  &nbsp; &nbsp; &nbsp; &nbsp;实例变量存在堆内存中 * &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 42pt">3.访问的方式不同</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 42pt">实例变量： 对象名.变量名 &nbsp;stu1.name=&quot;小明明&quot;;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 63pt">静态变量：对象名.变量名 &nbsp;stu1.schoolName=&quot;西二旗小学&quot;; 不推荐如此使用</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 63pt">类名.变量名 &nbsp;Student.schoolName=&quot;东三旗小学&quot;; 推荐使用</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 42pt">4.在内存中分配空间的时间不同</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 63pt">实例变量：创建对象的时候才分配了空间。静态变量：第一次使用类的时候 </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 63pt">Student.schoolName=&quot;东三旗小学&quot;;或者Student stu1 = new Student(&quot;小明&quot;,&quot;男&quot;,20,98);</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 42pt">2. &nbsp; &nbsp; &nbsp; &nbsp;static方法也可以通过对象名.方法名和类名.方法名两种方式来访问</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 42pt">3. &nbsp; &nbsp; &nbsp; &nbsp;static代码块。当类被第一次使用时（可能是调用static属性和方法，或者创建其对象）执行静态代码块，且只被执行一次，主要作用是实现static属性的初始化。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 42pt">4. &nbsp; &nbsp; &nbsp; &nbsp;static内部类：属于整个外部类，而不是属于外部类的每个对象。不能访问外部类的非静态成员（变量或者方法），可以访问外部类的静态成员</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">4.三大特征（封装、继承、多态）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">5.接口和抽象类的区别和联系</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 21pt">相同点</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 62pt"> &nbsp; &nbsp; &nbsp; &nbsp;抽象类和接口均包含抽象方法，类必须实现所有的抽象方法，否则是抽象类</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 62pt"> &nbsp; &nbsp; &nbsp; &nbsp;抽象类和接口都不能实例化，他们位于继承树的顶端，用来被其他类继承和实现</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 21pt">两者的区别主要体现在两方面：语法方面和设计理念方面</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 21pt">语法方面的区别是比较低层次的，非本质的，主要表现在：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 62pt"> &nbsp; &nbsp; &nbsp; &nbsp;接口中只能定义全局静态常量，不能定义变量。抽象类中可以定义常量和变量。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 62pt"> &nbsp; &nbsp; &nbsp; &nbsp;接口中所有的方法都是全局抽象方法。抽象类中可以有0个、1个或多个，甚至全部都是抽象方法。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 62pt"> &nbsp; &nbsp; &nbsp; &nbsp;抽象类中可以有构造方法，但不能用来实例化，而在子类实例化是执行，完成属于抽象类的初始化操作。接口中不能定义构造方法。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 62pt"> &nbsp; &nbsp; &nbsp; &nbsp;一个类只能有一个直接父类（可以是抽象类），但可以充实实现多个接口。一个类使用extends来继承抽象类，使用implements来实现接口。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 21pt">二者的主要区别还是在设计理念上，其决定了某些情况下到底使用抽象类还是接口。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 62pt"> &nbsp; &nbsp; &nbsp; &nbsp;抽象类体现了一种继承关系，目的是复用代码，抽象类中定义了各个子类的相同代码，可以认为父类是一个实现了部分功能的&quot;中间产品&quot;，而子类是&quot;最终产品&quot;。父类和子类之间必须存在&quot;is-a&quot;的关系，即父类和子类在概念本质上应该是相同的。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 62pt"> &nbsp; &nbsp; &nbsp; &nbsp;接口并不要求实现类和接口在概念本质上一致的，仅仅是实现了接口定义的约定或者能力而已。接口定义了&quot;做什么&quot;，而实现类负责完成&quot;怎么做&quot;，体现了功能（规范）和实现分离的原则。接口和实现之间可以认为是一种&quot;has-a的关系&quot;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 62pt">举例</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 62pt">Comparable、Comparator</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 62pt"> </span></div>
+<div><br /></div>
+<div><br /></div>
+<div><br /></div>
+<div><br /></div>
+<div><br /></div>
+<div id="ID_Footer" style="text-align: right; margin-top: 4em; padding-top: 4px; border-top: 2px solid gray">Generated with <a href="http://www.wjjsoft.com/mybase#htmltree" target="_blank">myBase/HtmlTree Maker</a> by <a href="http://www.wjjsoft.com/#htmltree" target="_blank">Wjj Software</a></div><script type="text/javascript" language="javascript" src="jquery.js;itemlink.js"></script>
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body></html>

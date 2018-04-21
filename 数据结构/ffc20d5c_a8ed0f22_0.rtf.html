@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><style>/*<![CDATA[*/
+table{border: 1px solid gray;} td{border: 1px dotted gray;} p{margin: 3px 0 3px 0; padding: 0;} #ID_Footer{font-size: small; font-style: italic;} a{padding-right: 20px; background: URL(./icon_newwin.gif) no-repeat center right;} a[href ^= "mailto:"]{padding: 0 20px 0 0; background: URL(./icon_email.gif) no-repeat center right;} a[href ^= "nyf:"]{padding: 0 20px 0 0; background: URL(./icon_jump.gif) no-repeat center right;} 
+/*]]>*/</style><title>算法时间复杂度</title></head><body>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #000000; line-height: 140%">时间复杂度（Time Complexity)）定义</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">时间频度：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp;一个算法执行所耗费的时间，从理论上是不能算出来的，必须上机运行测试才能知道。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;但我们不可能也没有必要对每个算法都上机测试。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">一个算法花费的时间与算法中语句的执行次数成正比例</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">，哪个算法中语句执行次数多，它花费时间就多。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;一个算法中的语句执行次数称为语句频度或时间频度，表示为T（n），n表示问题的规模</span></div>
+<div><br /></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">时间复杂度</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;但有时我们想知道它变化时呈现什么规律，想知道</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">问题的规模</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">，</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; line-height: 140%">而不是具体的次数，此时引入时间复杂度。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数，用T(n)表示，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;若有某个辅助函数f(n),使得当n趋近于无穷大时，T(n)/f(n)的极限值为不等于零的常数，则称f(n)是T(n)的同数量级函数。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;记作T(n)=O(f(n)),称O(f(n)) 为算法的渐进时间复杂度，简称时间复杂度。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 40pt; line-height: 140%">T(n)=O(f(n))</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;或者说：</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">时间复杂度就是时间频度去掉低阶项和首项常数</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;注意：时间频度与时间复杂度是不同的，时间频度不同但时间复杂度可能相同。 &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;比如：某两个算法的时间频度是 T（n） = 100000n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; line-height: 140%">2</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">+10n+6 &nbsp; T(n) = n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; line-height: 140%">2 &nbsp; &nbsp; &nbsp; </span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">T(n) = n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; line-height: 140%">3</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;但是时间复杂度都是 T（n） = O（n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; line-height: 140%">2</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;最坏时间复杂度和平均时间复杂度 &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;最坏情况下的时间复杂度称最坏时间复杂度。一般不特别说明，讨论的时间复杂度均是最坏情况下的时间复杂度。 </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;这样做的原因是：最坏情况下的时间复杂度是算法在任何输入实例上运行时间的上界，这就保证了算法的运行时间不会比任何更长。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;在最坏情况下的时间复杂度为T(n)=O(n)，它表示对于任何输入实例,该算法的运行时间不可能大于O(n)。 </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;平均时间复杂度是指所有可能的输入实例均以等概率出现的情况下，算法的期望运行时间。鉴于平均复杂度</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;第一，难计算</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;第二，有很多算法的平均情况和最差情况的复杂度是一样的。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;所以一般讨论最坏时间复杂度</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;比如 我要求你在字典里查同一个字，告诉我这个字在字典的那一页。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;如果一页一页的翻，你需要多少时间呢？</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;最优的情况就是这个字在第一页，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;最坏的情况就是这个字是 整本字典的最后一个字。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;所以即使我故意为难你，你也不会花费比找整本字典最后一个字还长的时间。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;当然，此时聪明的你就会想用部首、笔画等去查，才不要傻乎乎的一页一页翻，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;此时的你就会择优选择，因为此时你最坏得情况就是我给你部首笔画最多、除部首外笔画最多的一个超级复杂的一个字，但显然比翻整本字典快得多。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">为了进一步说明算法的时间复杂度，我们定义 Ο、Ω、Θ符号。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">Ο(欧米可荣)符号给出了算法时间复杂度的上界（最坏情况 &nbsp;&lt;=），比如T（n） =O（n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; padding-left: 40pt; line-height: 140%">2</span><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">Ω(欧米伽)符号给出了时间复杂度的下界（最好情况 &gt;=），比如T（n） =Ω（n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; padding-left: 40pt; line-height: 140%">2</span><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">而Θ(西塔)给出了算法时间复杂度的精确阶（最好和最坏是同一个阶 &nbsp;=），比如T（n） =Θ（n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; padding-left: 40pt; line-height: 140%">2</span><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">时间复杂度计算</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">根本没有必要计算时间频度，即使计算处理还要忽略常量、低次幂和最高次幂的系数，所以可以采用如下简单方法：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;⑴ 找出算法中的基本语句；</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">　　 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;算法中执行次数最多的那条语句就是基本语句，通常是最内层循环的循环体。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">　　 &nbsp; &nbsp; &nbsp; &nbsp;⑵ 计算基本语句的执行次数的数量级；</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">　　 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;只需计算基本语句执行次数的数量级，这就意味着只要保证基本语句执行次数的函数中的最高次幂正确即可，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;可以忽略所有低次幂和最高次幂的系数。这样能够简化算法分析，并且使注意力集中在最重要的一点上：增长率。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">　　 &nbsp; &nbsp; &nbsp; &nbsp;⑶ 用大Ο记号表示算法的时间性能。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">　　 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;将基本语句执行次数的数量级放入大Ο记号中。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">时间复杂度举例 &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div>
+<ol>
+<li><span style="font-family: 宋体; font-size: 11pt">一个简单语句的时间复杂度为</span><span style="font-family: Arial; font-size: 11pt">O(1)</span><span style="font-family: 宋体; font-size: 11pt">。</span></li></ol>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">int count=0; </span></div>
+<div><br /></div>
+<div>
+<ol>
+<li><span style="font-family: 宋体; font-size: 11pt">100个简单语句的时间复杂度也为</span><span style="font-family: Arial; font-size: 11pt">O(1)</span><span style="font-family: 宋体; font-size: 11pt">。（100是常数，不是趋向无穷大的n）</span></li></ol>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">int count=0; </span></div>
+<div><br /></div>
+<div><br /></div>
+<div>
+<ol>
+<li><span style="font-family: 宋体; font-size: 11pt">一个循环的时间复杂度为</span><span style="font-family: Arial; font-size: 11pt">O(</span><span style="font-family: Arial; font-size: 11pt; font-style: italic">n</span><span style="font-family: Arial; font-size: 11pt">)</span><span style="font-family: 宋体; font-size: 11pt">。</span></li></ol>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">int n=8, count=0;</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">for (int i=1; i&lt;=n; i++)</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt"> &nbsp; &nbsp;count++;</span></div>
+<div><br /></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">T(n)=O(n)</span></div>
+<div>
+<ol>
+<li><span style="font-family: 宋体; font-size: 11pt">时间复杂度为</span><span style="font-family: Arial; font-size: 11pt">O(log</span><span style="font-family: Arial; font-size: 11pt; vertical-align: sub">2</span><span style="font-family: Arial; font-size: 11pt"> </span><span style="font-family: Arial; font-size: 11pt; font-style: italic">n</span><span style="font-family: Arial; font-size: 11pt">)</span><span style="font-family: 宋体; font-size: 11pt">的循环语句。 </span></li></ol>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">int n=8, count=0;</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">for (int i=1; i&lt;=n; i*=2)</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt"> &nbsp; &nbsp;count++;</span></div>
+<div><br /></div>
+<div>
+<ol>
+<li><span style="font-family: 宋体; font-size: 11pt">时间复杂度为</span><span style="font-family: Arial; font-size: 11pt">O(</span><span style="font-family: Arial; font-size: 11pt; font-style: italic">n</span><span style="font-family: Arial; font-size: 11pt; vertical-align: super">2</span><span style="font-family: Arial; font-size: 11pt">)</span><span style="font-family: 宋体; font-size: 11pt">的二重循环。</span></li></ol>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">int n=8, count=0;</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">for (int i=1; i&lt;=n; i++) </span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt"> &nbsp; &nbsp;for (int j=1; j&lt;=n; j++)</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt"> &nbsp; &nbsp; &nbsp; &nbsp;count++;</span></div>
+<div><br /></div>
+<div><br /></div>
+<div>
+<ol>
+<li><span style="font-family: 宋体; font-size: 11pt">时间复杂度为</span><span style="font-family: Arial; font-size: 11pt">O(</span><span style="font-family: Arial; font-size: 11pt; font-style: italic">n</span><span style="font-family: Arial; font-size: 11pt">log</span><span style="font-family: Arial; font-size: 11pt; vertical-align: sub">2</span><span style="font-family: Arial; font-size: 11pt; font-style: italic">n</span><span style="font-family: Arial; font-size: 11pt">)</span><span style="font-family: 宋体; font-size: 11pt">的二重循环。</span></li></ol>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">int n=8, count=0;</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">for (int i=1; i&lt;=n; i*=2)</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt"> &nbsp; &nbsp;for (int j=1; j&lt;=n; j++)</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt"> &nbsp; &nbsp; &nbsp; &nbsp;count++;</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 47pt"> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div>
+<ol>
+<li><span style="font-family: 宋体; font-size: 11pt">时间复杂度为</span><span style="font-family: Arial; font-size: 11pt">O(</span><span style="font-family: Arial; font-size: 11pt; font-style: italic">n</span><span style="font-family: Arial; font-size: 11pt; font-style: italic; vertical-align: super">2</span><span style="font-family: Arial; font-size: 11pt">)</span><span style="font-family: 宋体; font-size: 11pt">的二重循环。</span></li></ol>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">int n=8, count=0;</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">for (int i=1; i&lt;=n; i++)</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt"> &nbsp; &nbsp;for (int j=1; j&lt;=i; j++)</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt"> &nbsp; &nbsp; &nbsp; &nbsp;count++;</span></div>
+<div><br /></div>
+<div><span style="font-family: 宋体; font-size: 11pt; padding-left: 78pt">需要复杂些数学运算：1+2+3+.....+n=(n+1)*n/2 &nbsp;时间复杂度是 O(n</span><span style="font-family: 宋体; font-size: 11pt; vertical-align: super; padding-left: 78pt">2</span><span style="font-family: 宋体; font-size: 11pt; padding-left: 78pt">)</span></div>
+<div><br /></div>
+<div>
+<ol>
+<li><span style="font-family: 宋体; font-size: 11pt">时间复杂度为</span><span style="font-family: Arial; font-size: 11pt">O(</span><span style="font-family: Arial; font-size: 11pt; font-style: italic">n</span><span style="font-family: Arial; font-size: 11pt; font-style: italic; vertical-align: super">2</span><span style="font-family: Arial; font-size: 11pt">)</span><span style="font-family: 宋体; font-size: 11pt">的二重循环。</span></li></ol>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">int n=8, count=0;</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt">for (int i=1; i&lt;=n; i++)</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt"> &nbsp; &nbsp;for (int j=1; j&lt;=i; j++)</span></div>
+<div><span style="font-family: Arial; font-size: 11pt; padding-left: 78pt"> &nbsp; &nbsp; &nbsp; &nbsp;count++;</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;后面讲解</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #ff0000; line-height: 140%">查找和排序算法</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; line-height: 140%">时会大量的设计时间复杂度，作为选择查找和排序算法的重要依据</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">常用的时间复杂度级别</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">常数阶O(1) </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;对数阶O(log</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: sub; line-height: 140%">2</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">n)</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;线性阶O(n)</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;线性对数阶O(n*log</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: sub; line-height: 140%">2</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">n)</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;平方阶O(n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; line-height: 140%">2</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">) &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;立方阶O(n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; line-height: 140%">3</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">)</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;...</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;k次方阶O(n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; line-height: 140%">k</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">)</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;指数阶O(2</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; line-height: 140%">n</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">)</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">阶乘阶O(n!)</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;上面各种时间复杂度级别，执行效率越来越低。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #ff0000; line-height: 140%">大家发现对数阶O(log</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #ff0000; vertical-align: sub; line-height: 140%">2</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #ff0000; line-height: 140%">n)和线性阶O(n)的效率差异了吗，当n=10的8次方（1亿）时，执行此时一个是1亿次，一个是8次。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;所以编写算法时一定要注意时间复杂度的选择。</span></div>
+<div><br /></div>
+<div id="ID_Footer" style="text-align: right; margin-top: 4em; padding-top: 4px; border-top: 2px solid gray">Generated with <a href="http://www.wjjsoft.com/mybase#htmltree" target="_blank">myBase/HtmlTree Maker</a> by <a href="http://www.wjjsoft.com/#htmltree" target="_blank">Wjj Software</a></div><script type="text/javascript" language="javascript" src="jquery.js;itemlink.js"></script></div></div></div></div></div></div></div></div>
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body></html>

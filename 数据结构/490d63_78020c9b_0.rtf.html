@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><style>/*<![CDATA[*/
+table{border: 1px solid gray;} td{border: 1px dotted gray;} p{margin: 3px 0 3px 0; padding: 0;} #ID_Footer{font-size: small; font-style: italic;} a{padding-right: 20px; background: URL(./icon_newwin.gif) no-repeat center right;} a[href ^= "mailto:"]{padding: 0 20px 0 0; background: URL(./icon_email.gif) no-repeat center right;} a[href ^= "nyf:"]{padding: 0 20px 0 0; background: URL(./icon_jump.gif) no-repeat center right;} 
+/*]]>*/</style><title>各种排序比较</title></head><body>
+<div><br /></div>
+<div><br /></div>
+<div><br /></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">1.直接插入排序、简单选择排序、冒泡排序是最简单的三种排序算法，时间复杂度也最高O（n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; line-height: 140%">2</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">），作为基础排序，面试中有被问到，</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #ff0000; line-height: 140%">三种都要掌握</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; line-height: 140%">。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">2.三种简单排序算法简单，但是效率低下；高级排序在简单排序基础上优化，算法复杂，换取的是性能提高，同时可能需要更多的辅助空间。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">3.快速排序和归并排序都使用了</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #ff0000; line-height: 140%">分治和递归</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; line-height: 140%">，所以面试时被问到的机会比较高，尤其是快速排序。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">4.从时间性能上看，快速排序是所有排序算法中实际性能最好的，然而快速排序在最坏情况下（数据基本有序）的时间性能不如堆排序和归并排序，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">并且空间复杂度高，所以更适合数据不大的情况。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">5.堆排序在任何情况下，其时间复杂度为 Ο(n log n)。这相对于快速排序而言是堆排序的最大优点。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">堆排序在元素较少时由于消耗较多时间在初始建堆上，因此不值得提倡，然而当元素较多时还是很有效的排序算法</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">6.与快速排序和堆排序相比，归并排序的优点是它是一种稳定的排序方法，最坏情况下时间性能好。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">7.从方法稳定性上来看，大多数时间复杂度为Ο(n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; line-height: 140%">2</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> )的排序均是稳定的排序方法，除简单选择排序之外。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;而多数时间性能较好的排序方法，例如快速排序、堆排序、希尔排序都是不稳定的</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">8.基于比较的排序的</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #ff0000; line-height: 140%">时间复杂度下限是</span><span style="font-family: Gulim; font-size: 11pt; font-weight: bold; color: #ff0000; line-height: 140%"> з</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #ff0000; line-height: 140%">(nlogn)，即这已经是最高的效率了</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">9.如果在面试中有面试官要求你写一个O(n)时间复杂度的排序算法，你千万不要立刻说：这不可能！</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #ff0000; line-height: 140%">使用非比较的排序(计数排序、基数排序)可以达到线性时间O（n）复杂度的排序，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">只不过有前提条件，就是待排序的数要满足一定的范围的整数，而且可能需要较多辅助空间。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">10.需要结合具体的需求和场景来选择甚至组合使用。才能达到高效稳定的目的。没有最好的排序，只有最适合的排序。</span></div>
+<div><br /></div>
+<div><br /></div>
+<div id="ID_Footer" style="text-align: right; margin-top: 4em; padding-top: 4px; border-top: 2px solid gray">Generated with <a href="http://www.wjjsoft.com/mybase#htmltree" target="_blank">myBase/HtmlTree Maker</a> by <a href="http://www.wjjsoft.com/#htmltree" target="_blank">Wjj Software</a></div><script type="text/javascript" language="javascript" src="jquery.js;itemlink.js"></script>
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body></html>
