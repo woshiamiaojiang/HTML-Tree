@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<div>
+			<div class="article-title-box" style="box-sizing: inherit; outline: 0px; padding: 0px; margin: 0px 0px 16px; color: rgb(51, 51, 51); font-family: 'SF Pro Display', Roboto, Noto, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+				<h6 class="title-article" style="box-sizing: inherit; outline: 0px; padding: 0px; margin: 0px; font-size: 24px; word-break: break-all;">RESTful Web 服务四种操作POST/DELETE/PUT/GET
+				</h6>
+			</div>
+			<div class="article-info-box" style="box-sizing: inherit; outline: 0px; padding: 0px 0px 14px; margin: 0px; border-bottom: 1px solid rgb(227, 227, 227); color: rgb(51, 51, 51); font-family: 'SF Pro Display', Roboto, Noto, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+				<div class="article-bar-top d-flex" style="box-sizing: inherit; outline: 0px; padding: 0px; margin: 0px; display: flex !important; color: rgb(133, 133, 133);"><span class="time" style="box-sizing: inherit; outline: 0px; margin-right: 14px;">2016年08月25日 11:05:23</span>
+					<div class="float-right" style="box-sizing: inherit; outline: 0px; padding: 0px; margin: 0px 0px 0px auto; float: right !important;"><span class="read-count" style="box-sizing: inherit; outline: 0px; margin-right: 14px;">阅读数：8685</span>
+					</div>
+				</div>
+			</div><article style="box-sizing: inherit; outline: 0px; display: block; position: relative; padding-top: 16px; color: rgb(51, 51, 51); font-family: 'SF Pro Display', Roboto, Noto, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+			<div id="article_content" class="article_content csdn-tracking-statistics" data-pid="blog" data-mod="popu_307" data-dsm="post" style="box-sizing: inherit; outline: 0px; padding: 0px; margin: 0px; word-break: break-all;">
+				<div class="htmledit_views" style="box-sizing: inherit; outline: 0px; padding: 0px; margin: 0px; font-family: 'PingFang SC', 'Microsoft YaHei', SimHei, Arial, SimSun; word-break: break-all;">
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;">关于REST及RESTful的概念，已有不少文章介绍，这里整理几篇我觉得不错的参考:
+					</p>
+					<ul style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 0px 0px 0px 30px; list-style: none; word-break: break-all; color: rgb(51, 51, 51); font-family: verdana, 宋体, Arial; font-size: 13.3333px; line-height: 24px;">
+						<li style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 8px 0px 0px 32px; list-style-type: disc; word-break: break-all;">维基百科的定义:&nbsp;<a href="http://zh.wikipedia.org/wiki/REST" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">REST</a>
+						</li>
+						<li style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 8px 0px 0px 32px; list-style-type: disc; word-break: break-all;"><a href="http://www.cnblogs.com/joeblackzqq/archive/2011/06/16/2082841.html" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">什么是REST跟RESTful?</a>&nbsp;REST理论的中文详述，其中你可以了解到WCF Restful属于RPC 样式的 Web 服务，ASP.NET Web API属于RESTful Web 服务。
+						</li>
+						<li style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 8px 0px 0px 32px; list-style-type: disc; word-break: break-all;"><a href="http://www.infoq.com/cn/articles/rest-introduction" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">深入浅出REST</a>&nbsp;InfoQ的专文介绍，文中甚至有Roy T. Fielding当年REST博士论文的中文翻译链接。另外值得一提的，大家可能没听过<a href="http://en.wikipedia.org/wiki/Roy_Fielding" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">Roy Fielding</a>的大名，但如果得知他是HTTP规格的主要作者及Apache HTTP Server项目的发起人之一，应该不会有人怀疑他在Web技术领域的分量。
+						</li>
+					</ul>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;">上面的文章建议大家认真的读一下，这里我们简要的介绍下REST 做入门介绍，理解整个 REST 能让我们在 ASP.NET Web API 的路上更顺畅。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">REST是什么？</strong>
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;">REST ( REpresentational State Transfer )，State Transfer 为 &quot;状态传输&quot; 或 &quot;状态转移 &quot;，Representational 中文有人翻译为&quot;表征&quot;、&quot;具象&quot;，合起来就是 &quot;表征状态传输&quot; 或 &quot;具象状态传输&quot; 或 &quot;表述性状态转移&quot;，不过，一般文章或技术文件都比较不会使用翻译后的中文来撰写，而是直接引用 REST 或 RESTful 来代表，因为 REST 一整个观念，想要只用六个中文字来完整表达真有难度。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;">REST 一词的出于《<a href="http://draft.blogger.com/goog_1073514207" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">Architectural Styles and</a>&nbsp;<br style="box-sizing: border-box; outline: 0px; word-break: break-all;" /><a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">the Design of Network-based Software Architectures</a>》论文，我们先简单从标题来看，它应该是一种架构样式 (Architectural Styles) 与软件架构 (Software Architectures)，而且是以网络 (Network-based) 为基础，重点就是：
+					</p>
+					<ul style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 0px 0px 0px 30px; list-style: none; word-break: break-all; color: rgb(51, 51, 51); font-family: verdana, 宋体, Arial; font-size: 13.3333px; line-height: 24px;">
+						<li style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 8px 0px 0px 32px; list-style-type: disc; word-break: break-all;">架构样式 (Architectural Styles)
+						</li>
+						<li style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 8px 0px 0px 32px; list-style-type: disc; word-break: break-all;">软件架构 (Software Architectures)
+						</li>
+						<li style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 8px 0px 0px 32px; list-style-type: disc; word-break: break-all;">网络 (Network-based) 为基础
+						</li>
+					</ul>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;">REST 本身是设计风格而不是标准。REST 谈论一件非常重要的事，如何正确地使用&nbsp;<strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">Web标准</strong>，例如，HTTP 和&nbsp;<a href="http://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E6%A0%87%E5%BF%97%E7%AC%A6" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">URI</a>。想要了解 REST 最好的方式就是<strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">思索与了解&nbsp;Web&nbsp;及其工作方式</strong>。如果你设计的应用程序能符合 REST 原则 (REST principles)，这些符合 REST 原则的 REST 服务可称为 &quot;<strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">RESTful web service</strong>&quot; 也称 &quot;<strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">RESTful Web API</strong>&quot;。&quot;-ful&quot; 字尾强调它们的设计完全符合 REST 论文里的建议内容。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">资源 RESOURCE</strong>
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">在&nbsp;REST&nbsp;中的资源&nbsp;(Resource)&nbsp;代表整个网络上的资源。</strong>网络上提供了各式各样的资源，而网络上的资源由 URI (统一资源标识符,Uniform Resource Identifier) 来提供。&nbsp;<br style="box-sizing: border-box; outline: 0px; word-break: break-all;" />回想，你如何连上我的 博客，你可能通过浏览器直接输入&nbsp;&nbsp;<a href="http://www.cnblogs.com/shanyou" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">www.cnblogs.com/shanyou</a>&nbsp;此域名来到达首页，也能用书签或网络上的链接，经点击后来连上我的博客。然后，你想看这一篇名为「REST 入门介绍」的文章，所以以你接下去点击这文章的标题连结，接去下阅读。我们简易了解一下整个流程：
+					</p>
+					<ol style="box-sizing: border-box; outline: 0px; padding: 0px 0px 0px 40px; margin: 0px 0px 24px; list-style: none; word-break: break-all; color: rgb(51, 51, 51); font-family: verdana, 宋体, Arial; font-size: 13.3333px; line-height: 24px;">
+						<li style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 8px 0px 0px 40px; list-style-type: decimal; word-break: break-all;">通过URL ( http://www.cnblogs.com/shanyou ) ， Client 向 http://www.cnblogs.com/shanyou 发出请求
+						</li>
+						<li style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 8px 0px 0px 40px; list-style-type: decimal; word-break: break-all;">www.cnblogs.com/shanyou 收到请求，回应首页给 Client
+						</li>
+						<li style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 8px 0px 0px 40px; list-style-type: decimal; word-break: break-all;">Client 又点击 REST 文章连结&nbsp; (假设是&nbsp;<a title="http://www.cnblogs.com/shanyou/archive/2011/06/30/2095018.html" href="http://www.cnblogs.com/shanyou/archive/2011/06/30/2095018.html" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">http://www.cnblogs.com/shanyou/archive/2011/06/30/2095018.html</a>) 向&nbsp;<a href="http://www.cnblogs.com/shanyou" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">http://www.cnblogs.com/shanyou</a>发出<a title="http://www.cnblogs.com/shanyou/archive/2011/06/30/2095018.html" href="http://www.cnblogs.com/shanyou/archive/2011/06/30/2095018.html" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">archive/2011/06/30/2095018.html</a>&nbsp; 此篇文章的请求
+						</li>
+						<li style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 8px 0px 0px 40px; list-style-type: decimal; word-break: break-all;">www.cnblogs.com/shanyou&nbsp; 收到请求，响应 REST 文章内容给 Client
+						</li>
+					</ol>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;">Client 的通过 URI 来获取资源的具体象征 (Representational)。Client 取得这些具体象征使这些应用程序转变其状态 (以 浏览器而言，取得 HTML、CSS、JavaScript … 来生成界面)，随着不断取得资源的具体象征， Client 端不断地改变其状态，这样不断的反复 (iterations ) 过程就是所谓的 Representational State Transfer。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">使用 WEB 标准</strong>
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;">上述是最接近日常的范例，这些行为在 HTTP 规范中称之为 GET，也就是通过URL 来 GET 我想要的资源。另一常用的例子是填写表单，例如，登入表单，我想进行登入动作，就必须先发送账号与密码给某一资源，此资源会验证你所传送的数据是否正确，再进行后续动作。我们发送信息给资源的行为在 HTTP 规范中称之为 POST。&nbsp;<br style="box-sizing: border-box; outline: 0px; word-break: break-all;" />在&nbsp;<a href="http://tools.ietf.org/html/rfc2616" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">HTTP/1.1 RFC 2616</a>第 5.1.1 Method 一节定义了八大类 HTTP 方法，除了我们常用的 GET 与 POST 之外，在 REST 中常用的还有 PUT 与 DELETE。此 GET, POST, PUT, DELETE 正好可以对应我们 CRUD (Create, Read, Update, Delete) 四种数据操作。
+					</p>
+					<table border="0" cellspacing="0" cellpadding="0" style="box-sizing: border-box; outline: 0px; border-collapse: collapse; border-spacing: 0px; display: table; width: 851.818px; text-align: left; margin-bottom: 24px; word-break: break-all; border: 1px solid rgb(192, 192, 192); color: rgb(51, 51, 51); font-family: verdana, 宋体, Arial; font-size: 13.3333px; line-height: 24px;">
+						<tbody style="box-sizing: border-box; outline: 0px; border: 0px; word-break: break-all;">
+							<tr style="box-sizing: border-box; outline: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(221, 221, 221); background-color: rgb(255, 255, 255); word-break: break-all;">
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">HTTP Method 与 CURD 数据处理操作对应
+									</p>
+								</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(221, 221, 221); background-color: rgb(247, 247, 247); word-break: break-all;">
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">HTTP方法</strong>
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">数据处理</strong>
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">说明</strong>
+									</p>
+								</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(221, 221, 221); background-color: rgb(255, 255, 255); word-break: break-all;">
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">POST
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">Create
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">新增一个没有id的资源
+									</p>
+								</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(221, 221, 221); background-color: rgb(247, 247, 247); word-break: break-all;">
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">GET
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">Read
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">取得一个资源
+									</p>
+								</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(221, 221, 221); background-color: rgb(255, 255, 255); word-break: break-all;">
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">PUT
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">Update
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">更新一个资源。或新增一个含 id 资源(如果 id 不存在)
+									</p>
+								</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(221, 221, 221); background-color: rgb(247, 247, 247); word-break: break-all;">
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">DELETE
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">Delete
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">删除一个资源
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">RESTFUL WEB SERVICE</strong>
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;">RESTful Web Service (又称 RESTful Web API) 是一个使用 HTTP 并符合 REST 原则的 Web 服务。我们知道，通过 URL 可以传送 GET 请求，在 表单指定 method=&quot;GET|POST&quot; 来送出请求。但我们要处理 PUT 或 DELETE 的请求呢？通过 RESTful 我们可以简单 URI 来定义资源并和 HTTP 方法配合使用。
+					</p>
+					<table border="0" cellspacing="0" cellpadding="0" style="box-sizing: border-box; outline: 0px; border-collapse: collapse; border-spacing: 0px; display: table; width: 851.818px; text-align: left; margin-bottom: 24px; word-break: break-all; border: 1px solid rgb(192, 192, 192); color: rgb(51, 51, 51); font-family: verdana, 宋体, Arial; font-size: 13.3333px; line-height: 24px;">
+						<tbody style="box-sizing: border-box; outline: 0px; border: 0px; word-break: break-all;">
+							<tr style="box-sizing: border-box; outline: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(221, 221, 221); background-color: rgb(255, 255, 255); word-break: break-all;">
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">Resource 与 HTTP 方法的对应
+									</p>
+								</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(221, 221, 221); background-color: rgb(247, 247, 247); word-break: break-all;">
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">资源</strong>
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">资源说明</strong>
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">GET</strong>
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">PUT</strong>
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">POST</strong>
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">DELETE</strong>
+									</p>
+								</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(221, 221, 221); background-color: rgb(255, 255, 255); word-break: break-all;">
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">http://www.cnblogs.com/Products/
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">Products是<strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">一组</strong>资源集合
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">列出</strong>&nbsp;该组资源集合中每个资源的详细信息
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">更新</strong>&nbsp;当前整组资源
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">新增</strong>&nbsp;或附加一个新资源。该操作传回新资源的URL
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">删除</strong>&nbsp;整组资源
+									</p>
+								</td>
+							</tr>
+							<tr style="box-sizing: border-box; outline: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(221, 221, 221); background-color: rgb(247, 247, 247); word-break: break-all;">
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">http://www.cnblogs.com/Products/1
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;">Products/1是<strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">单个</strong>资源
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">取得</strong>&nbsp;指定的资源的详细信息
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">更新</strong>&nbsp;或新增指定的资源
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">新增</strong>&nbsp;或附加一个新元素
+									</p>
+								</td>
+								<td style="box-sizing: border-box; outline: 0px; padding: 3px; margin: 0px; font-weight: normal; text-align: left; word-break: break-all; border: 1px solid rgb(192, 192, 192); font-size: 14px; color: rgb(79, 79, 79); line-height: 22px; border-collapse: collapse;">
+									<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 22px; text-align: left; word-break: break-all;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">删除</strong>&nbsp;指定的元素
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;">以上表格有没有很像我们一般在对数据库表格的操作顺序，进入一个 Table 的数据首页 (通常是列表)，此页面会有「新增、更新、删除、详细」等连结，你想进行什么操作，就点那一个连结。&nbsp;<br style="box-sizing: border-box; outline: 0px; word-break: break-all;" />在 RESTful 每个资源有自己独立的 URI， Client 从资源集合或单个资源开始进入，不管是资源集合或单个资源，我们都能与 HTTP 方法配合使用，例如，GET 下载，PUT 更新，POST 新增，DELETE 删除。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;"><a href="http://www.asp.net/web-api" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">ASP.NET Web API</a>&nbsp;是一个框架(framework)，能让你在 .NET Framwork 之上架设&nbsp;<strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">HTTP&nbsp;服务&nbsp;(HTTP Services)</strong>。ASP.NET Web API 是 .NET Framework 上构建<a href="http://msdn.microsoft.com/zh-tw/magazine/dd315413.aspx" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">RESTful</a>&nbsp;应用程序的理想平台。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;">在 Julie Lerman&apos;s 的&nbsp;<a href="http://thedatafarm.com/blog/asp-net/how-i-see-web-api/" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">How I see Web API</a>&nbsp;一文中，用了一张图来简明说明 Web API：
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;"><a href="http://images.cnblogs.com/cnblogs_com/shanyou/201205/201205120743271955.png" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;"><img title="webapi_4" src="http://images.cnblogs.com/cnblogs_com/shanyou/201205/201205120743369046.png" alt="webapi_4" width="691" height="546" border="0" style="box-sizing: border-box; outline: 0px; margin: 0px; max-width: 100%; word-break: break-all; cursor: zoom-in; border: 0px; display: inline;" /></a>
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;"><a href="http://www.west-wind.com/weblog/posts/2012/Aug/21/An-Introduction-to-ASPNET-Web-API" target="_blank" style="box-sizing: border-box; outline: 0px; color: rgb(70, 70, 70); text-decoration: none; cursor: pointer; word-break: break-all;">An Introduction to ASP.NET Web API</a>
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 10px auto; font-size: 13.3333px; color: rgb(51, 51, 51); font-weight: 400; line-height: 24px; text-align: justify; word-break: break-all; font-family: verdana, 宋体, Arial;">
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 1em 0px; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 21px; text-align: justify; word-break: break-all; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif !important;">GET操作是安全的。所谓安全是指不管进行多少次操作，资源的状态都不会改变。比如我用GET浏览文章，不管浏览多少次，那篇文章还在那，没有变化。当然，你可能说每浏览一次文章，文章的浏览数就加一，这不也改变了资源的状态么？这并不矛盾，因为这个改变不是GET操作引起的，而是用户自己设定的服务端逻辑造成的。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 1em 0px; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 21px; text-align: justify; word-break: break-all; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif !important;">PUT，DELETE操作是幂等的。所谓幂等是指不管进行多少次操作，结果都一样。比如我用PUT修改一篇文章，然后在做同样的操作，每次操作后的结果并没有不同，DELETE也是一样。顺便说一句，因为GET操作是安全的，所以它自然也是幂等的。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 1em 0px; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 21px; text-align: justify; word-break: break-all; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif !important;">POST操作既不是安全的，也不是幂等的，比如常见的POST重复加载问题：当我们多次发出同样的POST请求后，其结果是创建出了若干的资源。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 1em 0px; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 21px; text-align: justify; word-break: break-all; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif !important;">安全和幂等的意义在于：当操作没有达到预期的目标时，我们可以不停的重试，而不会对资源产生副作用。从这个意义上说，POST操作往往是有害的，但很多时候我们还是不得不使用它。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 1em 0px; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 21px; text-align: justify; word-break: break-all; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif !important;">还有一点需要注意的就是，创建操作可以使用POST，也可以使用PUT，区别在于POST 是作用在一个集合资源之上的（/uri），而PUT操作是作用在一个具体资源之上的（/uri/xxx），再通俗点说，如果URL可以在客户端确定，那么就使用PUT，如果是在服务端确定，那么就使用POST，比如说很多资源使用数据库自增主键作为标识信息，而创建的资源的标识信息到底是什么只能由服务端提供，这个时候就必须使用POST。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 1em 0px; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 21px; text-align: justify; word-break: break-all; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif !important;"><strong style="box-sizing: border-box; outline: 0px; font-weight: 700; word-break: break-all;">关于GET POST 的混淆</strong>
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 1em 0px; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 21px; text-align: justify; word-break: break-all; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif !important;">先说相同点，只有了解了相同点之后才能理解为什么会发生混淆。两者都能向服务器发送数据，提交的“内容”[注1]的格式相同，都是var_1=value_1&amp;var_2=value_2&amp;....get 和 post 区别如字面，一个是get（获取），一个是post（发送）。get用来告诉服务器需要获取哪些内容（uri+query），向静态页面（uri）请求则直接返回文件内容给浏览器，向一个动态页面请求时可以提供查询参数（query）以获得相应内容。post用来向服务器提交内容，主要是为了提交，而不是为了请求内容，就是说post的初衷并不要求服务器返回内容[注2]，只是提交内容让服务器处理（主要是存储或者处理之后再存储）。get和post出现混淆是因为对提交的数据处理方法的滥用造成的，数据是无辜的。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 1em 0px; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 21px; text-align: justify; word-break: break-all; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif !important;">混淆之一： 将get提交的用来查询的字段当作是存储数据存入了服务器端文件或者数据库。然后就误以为get是用来提交用于存储的数据的。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 1em 0px; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 21px; text-align: justify; word-break: break-all; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif !important;">混淆之二： 编写脚本在服务器端通过处理post提交的数据并返回内容。只要有数据，就能用来进行判断，脚本怎写是程序员的事，而不在乎数据来源的形式（post、get，或者是自己预设值的常量）。这点功能上确实没问题，只是背离的其初始目的而已。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 1em 0px; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 21px; text-align: justify; word-break: break-all; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif !important;">由于都是要传送数据，且数据格式相同（即使数据格式不同，只要能提取出相应数据）。使用的时候难免出现张冠李戴，将get数据用来存储、将post数据用来检索返回数据。但是二者还是有区别的（主要是根据其用途而“人为”[注3]造成的），get的长度限制在2048字节（由浏览器和服务器限制的，这是目前IE的数据，曾经是1024字节），很大程度上限制了get用来传递“存储数据”的数据的能力，所以还是老老实实用来做检索吧；post则无此限制（只是HTTP协议规范没有进行大小限制，但受限于服务器的处理能力），因此对于大的数据（一般来说需要存储的数据可能会比较大，比2048字节大）的传递有天然的优势，谁让它是 nature born post 呢。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 1em 0px; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 21px; text-align: justify; word-break: break-all; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif !important;">get提交的数据是放在url里，目的是灵活的向服务其提交检索请求，可以在地址栏随时修改数据以变更需要获取的内容，比如直接修改分页的编号就跳到另外一个分页了（当然也可能是 404）。post提交的数据放在http请求的正文里，目的在于提交数据并用于服务器端的存储，而不允许用户过多的更改相应数据（主要是相对于在url 修改要麻烦很多，url的修改只要点击地址栏输入字符就可以了），除非是专门跑来编辑数据的。
+					</p>
+					<p style="box-sizing: border-box; outline: 0px; padding: 0px; margin: 1em 0px; font-size: 14px; color: rgb(79, 79, 79); font-weight: 400; line-height: 21px; text-align: justify; word-break: break-all; font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif !important;">花边：post和get的安全性在传输的层面上区别不大，但是采用url提交数据的get方式容易被人肉眼看到，或者出现在历史纪录里，还是可能被肉眼看到，都是一些本地的问题。
+					</p>
+				</div>
+			</div></article>
+		</div>转载：https://blog.csdn.net/john548/article/details/52312637
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>
