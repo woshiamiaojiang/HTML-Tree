@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><style>/*<![CDATA[*/
+table{border: 1px solid gray;} td{border: 1px dotted gray;} p{margin: 3px 0 3px 0; padding: 0;} #ID_Footer{font-size: small; font-style: italic;} a{padding-right: 20px; background: URL(./icon_newwin.gif) no-repeat center right;} a[href ^= "mailto:"]{padding: 0 20px 0 0; background: URL(./icon_email.gif) no-repeat center right;} a[href ^= "nyf:"]{padding: 0 20px 0 0; background: URL(./icon_jump.gif) no-repeat center right;} 
+/*]]>*/</style><title>树的基本概念</title></head><body>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #000000; line-height: 140%">树</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">树是由一个集合以及在该集合上定义的一种关系构成的。集合中的元素称为树的结点，所定义的关系称为父子关系。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">父子关系在树的结点之间建立了一个层次结构。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">树的结点包含一个数据元素及若干指向其子树的若干分支。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">在这种层次结构中有一个结点具有特殊的地位，这个结点称为该树的根结点，或简称为树根。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">我们可以形式地给出树的递归定义如下：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%">树（tree ）是 n（n ≥ 0）个结点的有限集</span><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">。它</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">1) &nbsp;或者是一棵空树（n = 0），空树中不包含任何结点。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">2) 或者是一棵非空树（n &gt; 0），此时有且仅有一个特定的称为 根（root ）的结点；</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">当n &gt; 1 时，其余结点可分为m（m &gt; 0）个互不相交的有限集T 1 ，T 2 ，…，T m ，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">其中每一个本身又是一棵树，并且称为根的 子树（sub tree） ）。</span></div>
+<div><br /></div>
+<div><img src="img_15075.jpg" style="padding-left: 20pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">例如图 （a）是一棵空树、（b）是只有一个根节点的树、（c）是一棵有 10个结点的树，其中A是根，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">其余的结点分成 3 个不相交的集合：T1 ={B,E,F}、T2 ={C,G}、T3 ={D,H,I,J}，每个集合都构成一棵树，且都是根A的子树。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">生活案例：树：单位组织架构、族谱</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">技术案例：文件系统。</span></div>
+<div><img src="img_475.jpg" style="padding-left: 20pt; line-height: 140%"></img><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><img src="img_13234.jpg" style="padding-left: 20pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><img src="img_9464.jpg" style="padding-left: 20pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%">结点的度与树的度</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">结点拥有的子树的数目称为结点的 度（Degree） ）。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">度为 0 的结点称为 叶子（leaf ）或终端结点。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">度不为 0 的结点称为 非终端结点或 分支结点。除根之外的分支结点也称为内部结点。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">树内各结点的度的最大值称为树的度</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><img src="img_14161.jpg" style="padding-left: 20pt; line-height: 140%"></img><span style="font-family: 微软雅黑; font-size: 9pt; padding-left: 20pt; line-height: 140%"> &nbsp;</span><img src="img_17469.jpg" style="padding-left: 20pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%"> 结点的层次和树的深度</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">结点的 层次（level） ）从根开始定义，层次数为1的结点是根结点，其子树的根的层次数为2。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">树中结点的最大层次数称为树的 深度（Depth ）或 高度。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><img src="img_28350.jpg" style="padding-left: 20pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%">父亲、儿子、兄弟</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">父亲（parent）：一个结点的直接前驱结点</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">儿子（child）：一个结点的直接后继结点</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">兄弟（sibling） ：同一个父亲结点的其他结点</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">结点 A 是结点 B、C、D 的父亲，结点 B、C、D 是结点 A 的孩子。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">由于结点 H、I、J 有同一个父结点 D，因此它们互为兄弟。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%">祖先、子孙、堂兄弟</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">将父子关系进行扩展，就可以得到祖先、子孙、堂兄弟等关系。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">结点的 祖先是从根到该结点路径上的所有结点。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">以某结点为根的树中的任一结点都称为该结点的 子孙。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">父亲在同一层次的结点互为 堂兄弟</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%"> 有序树、m 叉树、森林</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">如果将树中结点的各子树看成是从左至右是有次序的，则称该树为 有序树；</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">若不考虑子树的顺序则称为 无序树。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">对于有序树，我们可以明确的定义每个结点的第一个孩子、第二个孩子等，直到最后一个孩子。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 40pt; line-height: 140%">若不特别指明，一般讨论的树都是有序树。</span></div>
+<div><br /></div>
+<div><img src="img_10910.jpg" style="padding-left: 40pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">树中所有结点最大度数为 m 的有序树称为 m &nbsp;叉树。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">森林（forest ）是 m（m ≥ 0 ）棵互不相交的树的集合。对树中每个结点而言，其子树的集合即为森林。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">树和森林的概念相近。删去一棵树的根，就得到一个森林；反之，加上一个结点作树根，森林就变为一棵树。</span></div>
+<div><br /></div>
+<div><img src="img_18337.jpg" style="padding-left: 40pt; line-height: 140%"></img></div>
+<div><br /></div>
+<ul id="ID_PictFileNames" style="display: none">
+<li fn="img_15075.jpg"></li>
+<li fn="img_475.jpg"></li>
+<li fn="img_13234.jpg"></li>
+<li fn="img_9464.jpg"></li>
+<li fn="img_14161.jpg"></li>
+<li fn="img_17469.jpg"></li>
+<li fn="img_28350.jpg"></li>
+<li fn="img_10910.jpg"></li>
+<li fn="img_18337.jpg"></li></ul>
+<div id="ID_Footer" style="text-align: right; margin-top: 4em; padding-top: 4px; border-top: 2px solid gray">Generated with <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=mybase" target="_blank">myBase/HtmlTree Maker</a> by <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=home" target="_blank">Wjj Software</a></div><script type="text/javascript" language="javascript" src="jquery.js"></script><script type="text/javascript" language="javascript" src="itemlink.js"></script></body></html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><style>/*<![CDATA[*/
+table{border: 1px solid gray;} td{border: 1px dotted gray;} p{margin: 3px 0 3px 0; padding: 0;} #ID_Footer{font-size: small; font-style: italic;} a{padding-right: 20px; background: URL(./icon_newwin.gif) no-repeat center right;} a[href ^= "mailto:"]{padding: 0 20px 0 0; background: URL(./icon_email.gif) no-repeat center right;} a[href ^= "nyf:"]{padding: 0 20px 0 0; background: URL(./icon_jump.gif) no-repeat center right;} 
+/*]]>*/</style><title>算法空间复杂度</title></head><body>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold">空间复杂度（Space Complexity)）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;算法的存储量包括: </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;1．程序本身所占空间</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;2．输入数据所占空间；</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;3．辅助变量所占空间</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;输入数据所占空间只取决于问题本身，和算法无关，则</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #ff0000">只需要分析除输入和程序之外的辅助变量所占额外空间</span><span style="font-family: 微软雅黑; font-size: 11pt">。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;空间复杂度是对一个算法在运行过程中临时占用的存储空间大小的量度，一般也作为问题规模n的函数，以数量级形式给出，记作：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;S(n) = O(g(n))</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt">空间复杂度分析1：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt">int fun(int n){ &nbsp; </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;int i，j，k，s; </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;s=0;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (i=0;i&lt;=n;i++) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (j=0;j&lt;=i;j++) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (k=0;k&lt;=j;k++) &nbsp; &nbsp; </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;s++; </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return(s);</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt">}</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt">由于算法中临时变量的个数与问题规模n无关，所以空间复杂度均为S(n)=O(1)。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold">空间复杂度分析2：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt">void fun(int a[]，int n，int k) </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; //数组a共有n个元素</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> { &nbsp; &nbsp; &nbsp; &nbsp;int i;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;if (k==n-1)</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (i=0;i&lt;n;i++)　　</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;printf(&quot;%d\n&quot;，a[i]); &nbsp;//执行n次</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;else</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;for (i=k;i&lt;n;i++)</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;a[i]=a[i]+i*i; &nbsp; &nbsp; &nbsp; &nbsp;　　//执行n-k次</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fun(a，n，k+1);</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;}</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> } </span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt">此属于递归算法（后续讲解），每次调用本身都要分配空间，fun(a,n,0)的空间复杂度为O(n)。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt">注意：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt">1.空间复杂度相比时间复杂度分析要少</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt">2.对于递归算法来说，代码一般都比较简短，算法本身所占用的存储空间较少，但运行时需要占用较多的临时工作单元；</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt"> &nbsp; &nbsp; &nbsp; &nbsp;若写成非递归算法，代码一般可能比较长，算法本身占用的存储空间较多，但运行时将可能需要较少的存储单元。</span></div>
+<div><br /></div>
+<div><br /></div>
+<div id="ID_Footer" style="text-align: right; margin-top: 4em; padding-top: 4px; border-top: 2px solid gray">Generated with <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=mybase" target="_blank">myBase/HtmlTree Maker</a> by <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=home" target="_blank">Wjj Software</a></div><script type="text/javascript" language="javascript" src="jquery.js"></script><script type="text/javascript" language="javascript" src="itemlink.js"></script></body></html>

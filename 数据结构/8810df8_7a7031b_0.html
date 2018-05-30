@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><style>/*<![CDATA[*/
+table{border: 1px solid gray;} td{border: 1px dotted gray;} p{margin: 3px 0 3px 0; padding: 0;} #ID_Footer{font-size: small; font-style: italic;} a{padding-right: 20px; background: URL(./icon_newwin.gif) no-repeat center right;} a[href ^= "mailto:"]{padding: 0 20px 0 0; background: URL(./icon_email.gif) no-repeat center right;} a[href ^= "nyf:"]{padding: 0 20px 0 0; background: URL(./icon_jump.gif) no-repeat center right;} 
+/*]]>*/</style><title>队列</title></head><body>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #000000; line-height: 140%">队列定义</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">队列（queue ）简称队，它同堆栈一样，也是一种运算受限的线性表，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">其限制是仅允许在表的一端进行插入，而在表的另一端进行删除。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">在队列中把插入数据元素的一端称为 队尾（rear） ），删除数据元素的一端称为 队首（front） ）。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">向队尾插入元素称为 进队或入队，新元素入队后成为新的队尾元素；</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">从队列中删除元素称为 离队或出队，元素出队后，其后续元素成为新的队首元素。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">由于队列的插入和删除操作分别在队尾和队首进行，每个元素必然按照进入的次序离队，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">也就是说先进队的元素必然先离队，所以称队列为 先进先出表（First In First Out,简称FIFO）。</span></div>
+<div><img src="img_5131.jpg" style="padding-left: 20pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><img src="img_7958.jpg" style="padding-left: 20pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">生活案例：排队打饭，排队进地铁站，上地铁</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">技术案例：多线程中就绪队列和阻塞队列</span></div>
+<div><br /></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">对于队列的主要操作是入队和出队操作</span></div>
+<div><br /></div>
+<div><span style="font-family: Consolas; font-size: 11pt; font-weight: bold; color: #7f0055; padding-left: 20pt; line-height: 140%">public</span><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> </span><span style="font-family: Consolas; font-size: 11pt; font-weight: bold; color: #7f0055; padding-left: 20pt; line-height: 140%">interface</span><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> Queue {</span></div>
+<div><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: Consolas; font-size: 11pt; color: #3f7f5f; padding-left: 20pt; line-height: 140%">// </span><span style="font-family: 微软雅黑; font-size: 11pt; color: #3f7f5f; padding-left: 20pt; line-height: 140%">返回队列的大小</span></div>
+<div><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: Consolas; font-size: 11pt; font-weight: bold; color: #7f0055; padding-left: 20pt; line-height: 140%">public</span><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> </span><span style="font-family: Consolas; font-size: 11pt; font-weight: bold; color: #7f0055; padding-left: 20pt; line-height: 140%">int</span><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> getSize();</span></div>
+<div><br /></div>
+<div><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: Consolas; font-size: 11pt; color: #3f7f5f; padding-left: 20pt; line-height: 140%">// </span><span style="font-family: 微软雅黑; font-size: 11pt; color: #3f7f5f; padding-left: 20pt; line-height: 140%">判断队列是否为空</span></div>
+<div><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: Consolas; font-size: 11pt; font-weight: bold; color: #7f0055; padding-left: 20pt; line-height: 140%">public</span><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> </span><span style="font-family: Consolas; font-size: 11pt; font-weight: bold; color: #7f0055; padding-left: 20pt; line-height: 140%">boolean</span><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> isEmpty();</span></div>
+<div><br /></div>
+<div><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: Consolas; font-size: 11pt; color: #3f7f5f; padding-left: 20pt; line-height: 140%">// </span><span style="font-family: 微软雅黑; font-size: 11pt; color: #3f7f5f; padding-left: 20pt; line-height: 140%">数据元素</span><span style="font-family: Consolas; font-size: 11pt; color: #3f7f5f; padding-left: 20pt; line-height: 140%"> e </span><span style="font-family: 微软雅黑; font-size: 11pt; color: #3f7f5f; padding-left: 20pt; line-height: 140%">入队</span></div>
+<div><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: Consolas; font-size: 11pt; font-weight: bold; color: #7f0055; padding-left: 20pt; line-height: 140%">public</span><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> </span><span style="font-family: Consolas; font-size: 11pt; font-weight: bold; color: #7f0055; padding-left: 20pt; line-height: 140%">void</span><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> enqueue(Object </span><span style="font-family: Consolas; font-size: 11pt; color: #6a3e3e; padding-left: 20pt; line-height: 140%">e</span><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%">);</span></div>
+<div><br /></div>
+<div><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: Consolas; font-size: 11pt; color: #3f7f5f; padding-left: 20pt; line-height: 140%">// </span><span style="font-family: 微软雅黑; font-size: 11pt; color: #3f7f5f; padding-left: 20pt; line-height: 140%">队首元素出队</span></div>
+<div><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: Consolas; font-size: 11pt; font-weight: bold; color: #7f0055; padding-left: 20pt; line-height: 140%">public</span><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> Object dequeue();</span></div>
+<div><br /></div>
+<div><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: Consolas; font-size: 11pt; color: #3f7f5f; padding-left: 20pt; line-height: 140%">// </span><span style="font-family: 微软雅黑; font-size: 11pt; color: #3f7f5f; padding-left: 20pt; line-height: 140%">取队首元素</span></div>
+<div><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: Consolas; font-size: 11pt; font-weight: bold; color: #7f0055; padding-left: 20pt; line-height: 140%">public</span><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> Object peek();</span></div>
+<div><span style="font-family: ????; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: Consolas; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%">}</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; </span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">队列的存储结构</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">顺序队列</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">方法1：使用数组作为存储结构：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><img src="img_6995.jpg" style="line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;缺点：通过出队操作将数据弹出队列后，front之前的空间还能够再次得到吗？</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;不能。所以使用普通数组实现队列，就再也不能使用front之前的空间了，这会导致大量空间丢失</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">方法2：使用循环数组作为存储结构：</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;为了解决这个问题，将普通数组换成循环数组。在循环数组中，末尾元素的下一个元素不是数组外，而是数组的头元素。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;这样就能够再次使用front之前的存储空间了</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><img src="img_7479.jpg" style="padding-left: 40pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">链式队列</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;队列的链式存储可以使用单链表来实现。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;为了操作实现方便，这里采用带头结点的单链表结构。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;根据单链表的特点，选择链表的头部作为队首，链表的尾部作为队尾。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;除了链表头结点需要通过一个引用来指向之外，还需要一个对链表尾结点的引用，以方便队列的入队操作的实现。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;为此一共设置两个指针，一个队首指针和一个队尾指针，如图 所示。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;队首指针指向队首元素的前一个结点，即始终指向链表空的头结点，队尾指针指向队列当前队尾元素所在的结点。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;当队列为空时，队首指针与队尾指针均指向空的头结点</span></div>
+<div><br /></div>
+<div><img src="img_27918.jpg" style="padding-left: 40pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">双端队列deque </span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> double ended queue &nbsp;通常读为&quot;deck&quot;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">所谓双端队列是指两端都可以进行进队和出队操作的队列，如下图所示，将队列的两端分别称为前端和后端，两端都可以入队和出队。其元素的逻辑结构仍是线性结构</span></div>
+<div><img src="img_32498.jpg" style="padding-left: 60pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">在双端队列进队时：前端进的元素排列在队列中后端进的元素的前面，后端进的元素排列在队列中前端进的元素的后面。在双端队列出队时，无论前端出还是后端出，先出的元素排列在后出的元素的前面。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">输出受限的双端队列，即一个端点允许插入和删除，另一个端点只允许插入的双端队列。 </span></div>
+<div><img src="img_7462.jpg" style="padding-left: 60pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">输入受限的双端队列，即一个端点允许插入和删除，另一个端点只允许删除的双端队列。 </span></div>
+<div><img src="img_12022.jpg" style="padding-left: 60pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 14pt; color: #ff0000; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 14pt; font-weight: bold; line-height: 140%">双端队列既可以用来队列操作，也可以用来实现</span><span style="font-family: 微软雅黑; font-size: 14pt; font-weight: bold; color: #ff0000; line-height: 140%">栈操作</span><span style="font-family: 微软雅黑; font-size: 14pt; font-weight: bold; line-height: 140%">（只操作一端就是栈了）</span></div>
+<div><br /></div>
+<div><br /></div>
+<div><br /></div>
+<ul id="ID_PictFileNames" style="display: none">
+<li fn="img_5131.jpg"></li>
+<li fn="img_7958.jpg"></li>
+<li fn="img_6995.jpg"></li>
+<li fn="img_7479.jpg"></li>
+<li fn="img_27918.jpg"></li>
+<li fn="img_32498.jpg"></li>
+<li fn="img_7462.jpg"></li>
+<li fn="img_12022.jpg"></li></ul>
+<div id="ID_Footer" style="text-align: right; margin-top: 4em; padding-top: 4px; border-top: 2px solid gray">Generated with <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=mybase" target="_blank">myBase/HtmlTree Maker</a> by <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=home" target="_blank">Wjj Software</a></div><script type="text/javascript" language="javascript" src="jquery.js"></script><script type="text/javascript" language="javascript" src="itemlink.js"></script></body></html>

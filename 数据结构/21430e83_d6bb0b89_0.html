@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><style>/*<![CDATA[*/
+table{border: 1px solid gray;} td{border: 1px dotted gray;} p{margin: 3px 0 3px 0; padding: 0;} #ID_Footer{font-size: small; font-style: italic;} a{padding-right: 20px; background: URL(./icon_newwin.gif) no-repeat center right;} a[href ^= "mailto:"]{padding: 0 20px 0 0; background: URL(./icon_email.gif) no-repeat center right;} a[href ^= "nyf:"]{padding: 0 20px 0 0; background: URL(./icon_jump.gif) no-repeat center right;} 
+/*]]>*/</style><title>二叉树遍历策略</title></head><body>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #000000; line-height: 140%">二叉树遍历概念和算法</span></div>
+<div><img src="img_27358.jpg" style="padding-left: 40pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">遍历（</span><span style="font-family: Consolas; font-size: 14pt; background-color: #d4d4d4; padding-left: 40pt; line-height: 140%">Traverse</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 40pt; line-height: 140%">）：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 60pt; line-height: 140%">就是按照某种次序访问树中的所有结点，且每个结点恰好访问一次。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 60pt; line-height: 140%">也就是说，按照被访问的次序，可以得到由树中所有结点排成的一个序列。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 60pt; line-height: 140%">树的遍历也可以看成是人为的将非线性结构线性化。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 60pt; line-height: 140%">这里的&quot;访问&quot;是广义的，可以是对结点作各种处理，例如输出结点信息、更新结点信息等。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 60pt; line-height: 140%">在我们的实现中，并不真正的&quot;访问&quot;这些结点，而是得到一个结点的线性序列，以线性表的形式输出</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">将整个二叉树看做三部分：根、左子树、右子树。如果规定先遍历左子树、再遍历右子树。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">那么根据根的遍历顺序就有三种遍历方式</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%"> 左子树 &nbsp; &nbsp; 右子树 根</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">先序/根遍历DLR：根 &nbsp; 左子树 &nbsp; &nbsp; 右子树</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">中序/根遍历LDR：左子树 &nbsp; 根 &nbsp; &nbsp; 右子树</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">后根/序遍历LRD：左子树 &nbsp; &nbsp; 右子树 &nbsp;根 </span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">注意：由于树的递归定义，其实对三种遍历的概念其实也是一个递归的描述过程</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">先序遍历DLR：</span><span style="font-family: Consolas; font-size: 11pt; color: #3f7f5f; background-color: #e8f2fe; padding-left: 40pt; line-height: 140%"> 1 &nbsp;4 &nbsp;5 &nbsp;2 &nbsp;3 &nbsp;6 &nbsp;7</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">中序遍历LDR：</span><span style="font-family: Consolas; font-size: 11pt; color: #3f7f5f; background-color: #e8f2fe; padding-left: 40pt; line-height: 140%"> 4 &nbsp;5 &nbsp;1 &nbsp;3 &nbsp;2 &nbsp;6 &nbsp;7</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">后序遍历LRD： &nbsp;</span><span style="font-family: Consolas; font-size: 11pt; color: #3f7f5f; background-color: #e8f2fe; padding-left: 40pt; line-height: 140%">5 &nbsp;4 &nbsp;3 &nbsp;7 &nbsp;6 &nbsp;2 &nbsp;1</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; padding-left: 40pt; line-height: 140%"> </span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;面试题：</span><span style="font-family: 仿宋; font-size: 14pt; padding-left: 20pt; line-height: 140%">已知一棵二叉树的后序遍历的序列为</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> </span><span style="font-family: Consolas; font-size: 11pt; color: #3f7f5f; background-color: #e8f2fe; padding-left: 20pt; line-height: 140%">5 &nbsp;4 &nbsp;3 &nbsp;7 &nbsp;6 &nbsp;2 &nbsp;1</span><span style="font-family: 仿宋; font-size: 14pt; padding-left: 20pt; line-height: 140%">，中序遍历的序列为</span><span style="font-family: Consolas; font-size: 11pt; color: #3f7f5f; background-color: #e8f2fe; padding-left: 20pt; line-height: 140%"> 4 &nbsp;5 &nbsp;1 &nbsp;3 &nbsp;2 &nbsp;6 &nbsp;7</span><span style="font-family: 仿宋; font-size: 14pt; padding-left: 20pt; line-height: 140%">，</span></div>
+<div><span style="font-family: 仿宋; font-size: 14pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;则其先序遍历的序列是什么？</span></div>
+<div><br /></div>
+<div><br /></div>
+<ul id="ID_PictFileNames" style="display: none">
+<li fn="img_27358.jpg"></li></ul>
+<div id="ID_Footer" style="text-align: right; margin-top: 4em; padding-top: 4px; border-top: 2px solid gray">Generated with <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=mybase" target="_blank">myBase/HtmlTree Maker</a> by <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=home" target="_blank">Wjj Software</a></div><script type="text/javascript" language="javascript" src="jquery.js"></script><script type="text/javascript" language="javascript" src="itemlink.js"></script></body></html>

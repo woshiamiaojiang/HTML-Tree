@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><style>/*<![CDATA[*/
+table{border: 1px solid gray;} td{border: 1px dotted gray;} p{margin: 3px 0 3px 0; padding: 0;} #ID_Footer{font-size: small; font-style: italic;} a{padding-right: 20px; background: URL(./icon_newwin.gif) no-repeat center right;} a[href ^= "mailto:"]{padding: 0 20px 0 0; background: URL(./icon_email.gif) no-repeat center right;} a[href ^= "nyf:"]{padding: 0 20px 0 0; background: URL(./icon_jump.gif) no-repeat center right;} 
+/*]]>*/</style><title>数据结构类型</title></head><body>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #000000; line-height: 140%">数据的逻辑结构</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">数据的逻辑结构指数据元素之间的逻辑关系（和实现无关）。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%">分类1：线性结构和非线性结构</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">线性结构：有且只有一个开始结点和一个终端结点，并且所有结点都最多只有一个直接前驱和一个直接后继。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">线性表就是一个典型的线性结构，它有四个基本特征： &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">1．集合中必存在唯一的一个&quot;第一个元素&quot;； </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">2．集合中必存在唯一的一个&quot;最后的元素&quot;； </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">3．除最后元素之外，其它数据元素均有唯一的&quot;后继&quot;；</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">4．除第一元素之外，其它数据元素均有唯一的&quot;前驱&quot;。 </span></div>
+<div><br /></div>
+<div><img src="img_14736.jpg" style="padding-left: 20pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">生活案例：冰糖葫芦、 排队上地铁</span></div>
+<div><img src="img_5994.jpg" style="padding-left: 20pt; line-height: 140%"></img><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp;</span><img src="img_23936.jpg" style="padding-left: 20pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">相对应于线性结构，非线性结构的逻辑特征是一个结点元素可能对应多个直接前驱和多个直接后继。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">常见的非线性结构有：树(二叉树等)，图(网等)。</span></div>
+<div><img src="img_1355.jpg" style="padding-left: 40pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">树：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">生活案例：单位组织架构、族谱</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">技术案例：文件系统。</span></div>
+<div><img src="img_18230.jpg" style="padding-left: 80pt; line-height: 140%"></img><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 80pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><img src="img_2011.jpg" style="padding-left: 80pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><img src="img_19690.jpg" style="padding-left: 80pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">图：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">生活案例：交通线路图，地铁图</span></div>
+<div><br /></div>
+<div><img src="img_21634.jpg" style="padding-left: 60pt; line-height: 140%"></img><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 60pt; line-height: 140%"> &nbsp; &nbsp;</span><img src="img_21416.jpg" style="padding-left: 60pt; line-height: 140%"></img><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 60pt; line-height: 140%"> &nbsp; </span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%">分类2：集合结构 线性结构 树状结构 网络结构</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">逻辑结构有四种基本类型：集合结构、线性结构、树状结构和网络结构。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">表和树是最常用的两种高效数据结构，许多高效的算法能够用这两种数据结构来设计实现。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">集合结构：就是数学中所学习的集合。集合中的元素有三个特征：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;1).确定性（集合中的元素必须是确定的）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;2).唯一性（集合中的元素互不相同。例如：集合A={1，a}，则a不能等于1）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;3).无序性（集合中的元素没有先后之分），如集合{3,4,5}和{3,5,4}算作同一个集合 </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;该结构的数据元素间的关系是&quot;属于同一个集合&quot;，别无其它关系。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;因为集合中元素关系很弱，数据结构中不对该结构进行研究 </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">线性结构：数据结构中线性结构指的是数据元素之间存在着&quot;一对一&quot;的线性关系的数据结构。 &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">树状结构：除了一个数据元素（元素 01）以外每个数据元素有且仅有一个直接前驱元素，但是可以有多个直接后续元素。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">特点是数据元素之间是 1 对 多的联系</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; 网络结构：每个数据元素可以有多个直接前驱元素，也可以有多个直接后续元素。特点是数据元素之间是多对 多 的联系</span></div>
+<div><img src="img_7262.jpg" style="padding-left: 40pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;问题：1个班的学生是什么逻辑结构呢？</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">数据的存储结构</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">数据的存储结构主要包括数据元素本身的存储以及数据元素之间关系表示，是数据的逻辑结构在计算机中的表示。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">常见的存储结构有顺序存储，链式存储，索引存储，以及散列存储。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%">顺序存储结构</span><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">：把逻辑上相邻的节点存储在物理位置上相邻的存储单元中，结点之间的逻辑关系由存储单元的邻接关系来体现。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">由此得到的存储结构为顺序存储结构，通常顺序存储结构是借助于计算机程序设计语言（例如C/C++）的数组来描述的。 &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">（数据元素的存储对应于一块连续的存储空间，数据元素之间的前驱和后续关系通过数据元素，在存储器中的相对位置来反映）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><img src="img_16303.jpg" style="padding-left: 20pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">优点：是节省存储空间，因为分配给数据的存储单元全用存放结点的数据（不考虑c/c++语言中数组需指定大小的情况），结点之间的逻辑关系没有占用额外的存储空间。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">采用这种方法时，可实现对结点的随机存取，即每一个结点对应一个序号，由该序号可以直接计算出来结点的存储地址。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">缺点：插入和删除操作需要移动元素，效率较低。 &nbsp; &nbsp;</span></div>
+<div><img src="img_14256.jpg" style="padding-left: 40pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%">链式存储结构</span><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">：数据元素的存储对应的是不连续的存储空间，每个存储节点对应一个需要存储的数据元素。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;每个结点是由数据域和指针域组成。 元素之间的逻辑关系通过存储节点之间的链接关系反映出来。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">特点： </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">1、比顺序存储结构的存储密度小 (每个节点都由数据域和指针域组成，所以相同空间内假设全存满的话顺序比链式存储更多)。 &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">2、逻辑上相邻的节点物理上不必相邻。 &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">3、插入、删除灵活 (不必移动节点，只要改变节点中的指针)。 </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">4、查找结点时链式存储要比顺序存储慢。 </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%"> </span></div>
+<div><img src="img_12317.jpg" style="padding-left: 40pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%">索引存储结构</span><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">：除建立存储结点信息外，还建立附加的索引表来标识结点的地址。 </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;比如图书、字典的目录</span></div>
+<div><br /></div>
+<div><img src="img_24028.jpg" style="padding-left: 40pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%">散列存储结构</span><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">：根据结点的关键字直接计算出该结点的存储地址</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">一种神奇的结构，添加、查询速度快。 </span></div>
+<div><img src="img_21318.jpg" style="padding-left: 40pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">举例：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">线性表的逻辑结构如图所示：</span></div>
+<div><img src="img_24155.jpg" style="padding-left: 20pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">线性表逻辑结构对应的顺序存储结构为顺序表，对应的链式存储结构为链表。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;顺序表</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 60pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><img src="img_11903.jpg" style="padding-left: 60pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 60pt; line-height: 140%">链表</span></div>
+<div><img src="img_26909.jpg" style="padding-left: 80pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div>
+<ol>
+<li><span style="font-family: 楷体_GB2312; font-size: 11pt; font-weight: bold; color: #0033cc">同一逻辑结构可以对应多种存储结构。</span></li>
+<li><span style="font-family: 楷体_GB2312; font-size: 11pt; font-weight: bold; color: #0033cc">同样的运算，在不同的存储结构中，其实现过程是不同的</span></li></ol>
+<div><br /></div>
+<div><img src="img_28489.jpg" style="padding-left: 60pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><br /></div>
+<div id="ID_Footer" style="text-align: right; margin-top: 4em; padding-top: 4px; border-top: 2px solid gray">Generated with <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=mybase" target="_blank">myBase/HtmlTree Maker</a> by <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=home" target="_blank">Wjj Software</a></div><script type="text/javascript" language="javascript" src="jquery.js"></script><script type="text/javascript" language="javascript" src="itemlink.js"></script></div>
+<ul id="ID_PictFileNames" style="display: none">
+<li fn="img_14736.jpg"></li>
+<li fn="img_5994.jpg"></li>
+<li fn="img_23936.jpg"></li>
+<li fn="img_1355.jpg"></li>
+<li fn="img_18230.jpg"></li>
+<li fn="img_2011.jpg"></li>
+<li fn="img_19690.jpg"></li>
+<li fn="img_21634.jpg"></li>
+<li fn="img_21416.jpg"></li>
+<li fn="img_7262.jpg"></li>
+<li fn="img_16303.jpg"></li>
+<li fn="img_14256.jpg"></li>
+<li fn="img_12317.jpg"></li>
+<li fn="img_24028.jpg"></li>
+<li fn="img_21318.jpg"></li>
+<li fn="img_24155.jpg"></li>
+<li fn="img_11903.jpg"></li>
+<li fn="img_26909.jpg"></li>
+<li fn="img_28489.jpg"></li></ul></body></html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><style>/*<![CDATA[*/
+table{border: 1px solid gray;} td{border: 1px dotted gray;} p{margin: 3px 0 3px 0; padding: 0;} #ID_Footer{font-size: small; font-style: italic;} a{padding-right: 20px; background: URL(./icon_newwin.gif) no-repeat center right;} a[href ^= "mailto:"]{padding: 0 20px 0 0; background: URL(./icon_email.gif) no-repeat center right;} a[href ^= "nyf:"]{padding: 0 20px 0 0; background: URL(./icon_jump.gif) no-repeat center right;} 
+/*]]>*/</style><title>图的定义</title></head><body>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; line-height: 140%">1.图的基本概念：多对多关系</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;图（graph）是一种网状数据结构，图是由非空的顶点集合和一个描述顶点之间关系的集合组成。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;其形式化的定义如下：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">Graph = ( V , E )</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">V = {x| x∈某个数据对象}</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">E = {&lt;u , v&gt;| P(u , v)∧(u,v∈V)}</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">V 是具有相同特性的数据元素的集合，V 中的数据元素通常称为 顶点（Vertex） ），</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">E 是两个顶点之间关系的集合。P(u , v)表示 u 和 v 之间有特定的关联属性。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">若&lt;u , v&gt;∈E，则&lt;u , v&gt;表示从顶点 u 到顶点 v 的一条弧，并称 u 为弧尾或起始点，称v 为弧头或终止点，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">此时图中的顶点之间的连线是有方向的，这样的图称为 有向图（directedgraph） ）。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">若&lt;u , v&gt;∈E 则必有&lt;v , u&gt;∈E，即关系 E 是对称的，此时可以使用一个无序对(u , v)来代替两个有序对，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">它表示顶点 u 和顶点 v 之间的一条边，此时图中顶点之间的连线是没有方向的，这种图称为 无向图（undirected graph）。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">在无向图和有向图中 V 中的元素都称为顶点，而顶点之间的关系却有不同的称谓，即弧或边，为避免麻烦，在不影响理解的前提下，我们统一的将它们称为 边（edge） 。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">并且我们还约定顶点集与边集都是有限的，并记顶点与边的数量为|V|和|E|。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><img src="img_23552.jpg" style="line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;无向图实际上也是有向图，是双向图</span></div>
+<div><br /></div>
+<div><img src="img_15495.jpg" style="padding-left: 40pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">加权图：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">在实际应用中，图不但需要表示元素之间是否存在某种关系，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">而且图的边往往与具有一定实际意义的数有关，即每条边都有与它相关的实数，称为 权。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">这些权值可以表示从一个顶点到另一个顶点的距离或消耗等信息，在本章中假设边的权均为正数。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">这种边上具有权值的图称为 带权图（weighted graph）</span></div>
+<div><br /></div>
+<ul id="ID_PictFileNames" style="display: none">
+<li fn="img_23552.jpg"></li>
+<li fn="img_15495.jpg"></li></ul>
+<div id="ID_Footer" style="text-align: right; margin-top: 4em; padding-top: 4px; border-top: 2px solid gray">Generated with <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=mybase" target="_blank">myBase/HtmlTree Maker</a> by <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=home" target="_blank">Wjj Software</a></div><script type="text/javascript" language="javascript" src="jquery.js"></script><script type="text/javascript" language="javascript" src="itemlink.js"></script></body></html>

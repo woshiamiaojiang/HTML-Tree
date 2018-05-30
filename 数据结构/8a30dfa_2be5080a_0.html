@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><style>/*<![CDATA[*/
+table{border: 1px solid gray;} td{border: 1px dotted gray;} p{margin: 3px 0 3px 0; padding: 0;} #ID_Footer{font-size: small; font-style: italic;} a{padding-right: 20px; background: URL(./icon_newwin.gif) no-repeat center right;} a[href ^= "mailto:"]{padding: 0 20px 0 0; background: URL(./icon_email.gif) no-repeat center right;} a[href ^= "nyf:"]{padding: 0 20px 0 0; background: URL(./icon_jump.gif) no-repeat center right;} 
+/*]]>*/</style><title>哈希表查找</title></head><body>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #000000">引入哈希表</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt">前面查找方法共同特点：通过将关键字值与给定值比较，来确定位置。效率取决比较次数。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt">理想的方法是：不需要比较，根据给定值能直接定位记录的存储位置。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt">这样，需要在记录的存储位置与该记录的关键字之间建立一种确定的对应关系，使每个记录的关键字与一个存储位置相对应。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> 1.哈希表的结构和特点</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;hashtable 也叫散列表</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;特点：快 &nbsp; 很快 &nbsp;神奇的快</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;结构：结构有多种</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;最流行、最容易理解：顺序表+链表</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;主结构：顺序表</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;每个顺序表的节点在单独引出一个链表</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; </span><img src="img_20972.jpg" style="line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 9pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;哈希表初始操作状态</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><img src="img_28442.jpg" style="line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">2.哈希表是如何添加数据的</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; 1.计算哈希码(调用hashCode(),结果是一个int值，整数的哈希码取自身即可)</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; 2.计算在哈希表中的存储位置 &nbsp;y=k(x)=x%11 x:哈希码 &nbsp;k(x) 函数 &nbsp; &nbsp;y：在哈希表中的存储位置</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; 3.存入哈希表</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;情况1：一次添加成功</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;情况2：多次添加成功（出现了冲突，调用equals()和对应链表的元素进行比较，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;比较到最后，结果都是false，创建新节点，存储数据，并加入链表末尾）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;情况3：不添加（出现了冲突，调用equals()和对应链表的元素进行比较，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;经过一次或者多次比较后，结果是true，表明重复，不添加）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;结论1：哈希表添加数据快（3步即可，不考虑冲突）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;结论2：唯一</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;结论2：无序</span></div>
+<div><img src="img_25770.jpg" style="padding-left: 80pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%"> </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">3.哈希表是如何查询数据的</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;和添加数据的过程是相同的</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;情况1：一次找到 &nbsp; 23 &nbsp;86 &nbsp;76</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;情况2：多次找到 &nbsp; 67 &nbsp;56 &nbsp;78</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;情况3：找不到 &nbsp; 100 200</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;结论1：哈希表查询数据快</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;结论2：哈希表删除数据快</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;结论3：哈希表更新数据快(如果更新后影响到哈希码值，就比较繁琐了，比如要删除再添加了)</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">4.hashCode和equals到底有什么神奇的作用</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;hashCode():计算哈希码，是一个整数，根据哈希码可以计算出数据在哈希表中的存储位置</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;equals()：添加时出现了冲突，需要通过equals进行比较，判断是否相同</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;查询时也需要使用equals进行比较，判断是否相同</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">5.各种类型数据的哈希码应该如何获取 hashCode()</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1.int &nbsp; 取自身 看Integer的源码</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2.double &nbsp;3.14 3.15 &nbsp;3.145 &nbsp;6.567 &nbsp;9.87 &nbsp;取整不可以 &nbsp;看Double的源码</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3.String java &nbsp;oracle &nbsp;j+a+v+a &nbsp;将各个字符的编码值相加不可以 </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;abc cba &nbsp;bac &nbsp;a:97 &nbsp;b:98 &nbsp;c:99</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;abc 1*97+2*98+3*99</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cba 1*99+2*98+3*97</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4.Student 先各个属性的哈希码，进行某些相加相乘的运算</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;int id</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;String name</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;int age</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;double score;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">6.如何减少冲突</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;1）哈希表的长度和表中的记录数的比例--装填因子：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;如果Hash表的空间远远大于最后实际存储的记录个数，则造成了很大的空间浪费，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;如果选取小了的话，则容易造成冲突。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;在实际情况中，一般需要根据最终记录存储个数和关键字的分布特点来确定Hash表的大小。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;还有一种情况时可能事先不知道最终需要存储的记录个数，则需要动态维护Hash表的容量，此时可能需要重新计算Hash地址。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 40pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;装填因子=表中的记录数/哈希表的长度， &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;如果装填因子越小，表明表中还有很多的空单元，则添加发生冲突的可能性越小；</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;而装填因子越大，则发生冲突的可能性就越大，在查找时所耗费的时间就越多。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;有相关文献证明当装填因子在0.5左右的时候，Hash的性能能够达到最优。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #ff0000; padding-left: 40pt; line-height: 140%">因此，一般情况下，装填因子取经验值0.5</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; padding-left: 40pt; line-height: 140%">。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;2）</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%">哈希函数的选择</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">直接定址法 &nbsp; &nbsp; &nbsp; &nbsp;平方取中法 &nbsp;折叠法 &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #ff0000; line-height: 140%"> 除留取余法（y = x%11）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; line-height: 140%">查询相关资料</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;3）处理冲突的方法</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #ff0000; line-height: 140%">链地址法</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; line-height: 140%"> &nbsp;开放地址法 &nbsp;再散列法 &nbsp; 建立一个公共溢出区</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><br /></div>
+<ul id="ID_PictFileNames" style="display: none">
+<li fn="img_20972.jpg"></li>
+<li fn="img_28442.jpg"></li>
+<li fn="img_25770.jpg"></li></ul>
+<div id="ID_Footer" style="text-align: right; margin-top: 4em; padding-top: 4px; border-top: 2px solid gray">Generated with <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=mybase" target="_blank">myBase/HtmlTree Maker</a> by <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=home" target="_blank">Wjj Software</a></div><script type="text/javascript" language="javascript" src="jquery.js"></script><script type="text/javascript" language="javascript" src="itemlink.js"></script></body></html>

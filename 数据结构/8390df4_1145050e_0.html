@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><style>/*<![CDATA[*/
+table{border: 1px solid gray;} td{border: 1px dotted gray;} p{margin: 3px 0 3px 0; padding: 0;} #ID_Footer{font-size: small; font-style: italic;} a{padding-right: 20px; background: URL(./icon_newwin.gif) no-repeat center right;} a[href ^= "mailto:"]{padding: 0 20px 0 0; background: URL(./icon_email.gif) no-repeat center right;} a[href ^= "nyf:"]{padding: 0 20px 0 0; background: URL(./icon_jump.gif) no-repeat center right;} 
+/*]]>*/</style><title>二叉树</title></head><body>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #000000; line-height: 140%">二叉树</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; line-height: 140%">：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">每个结点的度</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #ff0000; padding-left: 20pt; line-height: 140%">均不超过 2</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%"> 的</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; color: #ff0000; padding-left: 20pt; line-height: 140%">有序</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #000000; padding-left: 20pt; line-height: 140%">树，称为 二叉树（binary tree） 。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">与树的递归定义类似，二叉树的递归定义如下：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">二叉树或者是一棵空树，或者是一棵由一个根结点和两棵互不相交的分别称为根的左子树和右子树的子树所组成的非空树。</span></div>
+<div><img src="img_20289.jpg" style="padding-left: 60pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">由以上定义可以看出，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">二叉树中每个结点的孩子数只能是 0、1 或 2 个，并且每个孩子都有左右之分。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">位于左边的孩子称为左孩子，位于右边的孩子称为右孩子；</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">以左孩子为根的子树称为左子树，以右孩子为根的子树称为右子树。</span></div>
+<div><br /></div>
+<div><img src="img_3805.jpg" style="padding-left: 20pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%">满二叉树：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">高度为k并且有 2</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; padding-left: 20pt; line-height: 140%">k+1 </span><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">-1 个结点的二叉树。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">在满二叉树中，每层结点都达到最大数，即每层结点都是满的，因此称为满二叉树。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; padding-left: 20pt; line-height: 140%">完全二叉树：</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">若在一棵满二叉树中，在最下层从最右侧起去掉相邻的若干叶子结点，得到的二叉树即为完全二叉树。</span></div>
+<div><br /></div>
+<div><img src="img_31450.jpg" style="padding-left: 60pt; line-height: 140%"></img></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">满二叉树必为完全二叉树，而完全二叉树不一定是满二叉树</span></div>
+<div><img src="img_11064.jpg" style="padding-left: 20pt; line-height: 140%"></img><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 20pt; line-height: 140%">· &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">二叉树的性质</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #ff0000; line-height: 140%">性质1： 在二叉树的第i层上最多有 2 </span><span style="font-family: 微软雅黑; font-size: 11pt; color: #ff0000; vertical-align: super; line-height: 140%">i-1</span><span style="font-family: 微软雅黑; font-size: 11pt; color: #ff0000; line-height: 140%"> 个结点（根是第一层）</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;性质2：高度为h的二叉树至多有 2</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: super; line-height: 140%">h</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> -1 个结点</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">性质3： 对任何一棵二叉树T，如果其终端结点数为n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: sub; line-height: 140%">0</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> ，度为 2 的结点数为n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: sub; line-height: 140%">2</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> ，则n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: sub; line-height: 140%">0</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; = n</span><span style="font-family: 微软雅黑; font-size: 11pt; vertical-align: sub; line-height: 140%">2</span><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">+ 1</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;性质4：有 n 个结点的完全二叉树的高度为[log2n]+1，其中[log2n]是向下取整 </span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;性质5： 含有 n≥1 个结点的二叉树的高度至多为 n-1；高度至少为[log2n]+1，其中[log2n]是向下取整</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;性质6：如果对一棵有n个结点的完全二叉树的结点进行编号，则对任一结点i(1≤i ≤n)，有</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">⑴ 如果 i=1，则结点 i 是二叉树的根，无双亲；如果 i&gt;1，则其双亲结点 PARENT(i)是结点 i/2</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">⑵ 如果 2i&gt;n，则结点 i 无左孩子；否则其左孩子是结点 2i。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">⑶ 如果 2i+1&gt;n，则结点 i 无右孩子；否则其右孩子是结点 2i+1。</span></div>
+<div><br /></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%">二叉树的存储结构</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;二叉树的存储结构有两种：顺序存储结构和链式存储结构。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">顺序存储结构</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;对于满二叉树和完全二叉树来说，可以将其数据元素逐层存放到一组连续的存储单元中，如图所示。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;用一维数组来实现顺序存储结构时，将二叉树中编号为 i 的结点存放到数组中的第 i 个分量中。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;如此根据二叉树性质，可以得到结点 i 的父结点、左右孩子结点分别存放在 、2i 以及 2i+1 分量中</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 60pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><img src="img_16074.jpg" style="padding-left: 60pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">这种存储方式对于满二叉树和完全二叉树是非常合适也是高效方便的。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">因为满二叉树和完全二叉树采用顺序存储结构既不浪费空间，也可以根据公式很快的确定结点之间的关系。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">但是对于一般的二叉树而言，必须用&quot;虚结点&quot;将一棵二叉树补成一棵完全二叉树来存储，</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; padding-left: 40pt; line-height: 140%">否则无法确定结点之间的前驱后续关系，但是这样一来就会造成空间的浪费</span></div>
+<div><br /></div>
+<div><img src="img_19695.jpg" style="padding-left: 100pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="font-family: 微软雅黑; font-size: 11pt; font-weight: bold; line-height: 140%">链式存储结构</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;设计不同的结点结构可构成不同的链式存储结构。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;在二叉树中每个结点都有两个孩子，则可以设计每个结点至少包括 3 个域：数据域、左孩子域和右孩子域。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;数据域存放数据元素，左孩子域存放指向左孩子结点的指针，右孩子域存放指向右孩子结点的指针。如图 （a）所示。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;利用此结点结构得到的二叉树存储结构称为二叉链表。</span></div>
+<div><br /></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;为了方便找到父结点，可以在上述结点结构中增加一个指针域，指向结点的父结点。如图 （b）所示。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;采用此结点结构得到的二叉树存储结构称为三叉链表。</span></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><img src="img_13161.jpg" style="padding-left: 80pt; line-height: 140%"></img></div>
+<div><span style="font-family: 微软雅黑; font-size: 11pt; line-height: 140%"> &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
+<div><br /></div>
+<ul id="ID_PictFileNames" style="display: none">
+<li fn="img_20289.jpg"></li>
+<li fn="img_3805.jpg"></li>
+<li fn="img_31450.jpg"></li>
+<li fn="img_11064.jpg"></li>
+<li fn="img_16074.jpg"></li>
+<li fn="img_19695.jpg"></li>
+<li fn="img_13161.jpg"></li></ul>
+<div id="ID_Footer" style="text-align: right; margin-top: 4em; padding-top: 4px; border-top: 2px solid gray">Generated with <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=mybase" target="_blank">myBase/HtmlTree Maker</a> by <a href="http://www.wjjsoft.com/cgi-bin/redir.cgi?ref=htmltree&q=home" target="_blank">Wjj Software</a></div><script type="text/javascript" language="javascript" src="jquery.js"></script><script type="text/javascript" language="javascript" src="itemlink.js"></script></body></html>
