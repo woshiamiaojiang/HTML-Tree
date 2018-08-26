@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table{border-collapse: collapse; border: 1px solid gray; border-width: 2px 1px 2px 1px;}
+			th{border: 1px solid gray; padding: 4px; background-color: #ddd;}
+			td{border: 1px solid gray; padding: 4px;}
+			tr:nth-child(2n){background-color: #f8f8f8;}
+			pre{border: 2px solid #d6d6d6; padding: 0px; border-radius: 3px;}
+		</style>
+	</head>
+	<body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; ">
+		<h1 class="hw-list-title" style="font-size: 30px; margin: 0px 0px 30px; padding: 0px; line-height: 1; font-weight: 400; color: rgb(0, 0, 0); font-family: 微软雅黑, Arial, sans-serif, Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">异常处理&nbsp;
+			<hr style="box-sizing: content-box; height: 0px; display: inline-block; width: 70px; vertical-align: middle; border: 2px solid rgb(0, 0, 0);" />&nbsp;作业状态
+		</h1>
+		<ul class="hw-list-ul practice-in-class" style="margin: 0px; padding: 0px; list-style: none; position: relative; color: rgb(0, 0, 0); font-family: 微软雅黑, Arial, sans-serif, Helvetica; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">1、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）抛出异常，使用关键字throw。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19565" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19565" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">2、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）捕获异常，使用关键字catch。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19566" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19566" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">3、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）在方法的签名后面用关键字throw来声明该方法会抛出异常。&nbsp;
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f" value="1" vid="19567" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -54px -242px; background-image: url('/static/common/common_z.png'); margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f active" value="0" vid="19567" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -110px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">4、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）Exception是Throwable的父类。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f" value="1" vid="19568" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -54px -242px; background-image: url('/static/common/common_z.png'); margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f active" value="0" vid="19568" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -110px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">5、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）Error是Throwable的子类。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19569" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19569" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">6、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）getCause()可以得到异常的内部原因。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19570" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19570" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">7、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）catch多个异常时，子类异常要排在父类异常的后面。&nbsp;
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f" value="1" vid="19571" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -54px -242px; background-image: url('/static/common/common_z.png'); margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f active" value="0" vid="19571" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -110px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">8、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）finally语句是指没有异常出现时要执行的语句。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f" value="1" vid="19572" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -54px -242px; background-image: url('/static/common/common_z.png'); margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f active" value="0" vid="19572" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -110px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">9、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）如果有return语句，finally语句应不会执行。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f" value="1" vid="19573" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -54px -242px; background-image: url('/static/common/common_z.png'); margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f active" value="0" vid="19573" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -110px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">10、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）RuntimeException及其子类，可以不明确处理。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19574" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19574" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">11、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）非RuntimeException及其子类，必须明确处理。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19575" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19575" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">12、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）若父类中的方法声明了throws异常，则子类Override时一定也要throws异常。 &nbsp;&nbsp;
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f" value="1" vid="19576" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -54px -242px; background-image: url('/static/common/common_z.png'); margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f active" value="0" vid="19576" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -110px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">13、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）若父类中的方法声明了throws异常，则子类Override时可以throws更一般的异常。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f" value="1" vid="19577" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -54px -242px; background-image: url('/static/common/common_z.png'); margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f active" value="0" vid="19577" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -110px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">14、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）try-with-resource语句中自动加了close()方法的调用。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19578" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19578" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">15、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）try-with-resource语句中的close()方法只有当异常发生时才会调用。 &nbsp;
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f" value="1" vid="19579" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -54px -242px; background-image: url('/static/common/common_z.png'); margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f active" value="0" vid="19579" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -110px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">16、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）用户自定义异常类继承自Exception类或某个子Exception类。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19580" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19580" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">17、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）assert表示断言。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19581" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19581" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">18、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）assert后面可以跟一个boolean类型的表达式。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19582" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19582" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">19、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）要使assert起作用，则在运行时，使用选项(-ea，或-enableassertions)。&nbsp;
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19583" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19583" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">20、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）单元测试是保证代码质量的一种手段。&nbsp;
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19584" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19584" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">21、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）现在很多Java集成开发工具都提供了对JUnit的支持。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19585" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19585" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">22、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）@Test来标注测试函数。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19586" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19586" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">23、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）assertEqauls表示程序要保证两个参数要相等。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19587" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19587" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">24、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）程序中的错误通常可以分成三大类：语法错、运行错、逻辑错。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19588" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19588" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">25、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）语法错可以由编译器发现。
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19589" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19589" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">26、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）逻辑错可以由编译器发现。&nbsp;
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f" value="1" vid="19590" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -54px -242px; background-image: url('/static/common/common_z.png'); margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f active" value="0" vid="19590" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -110px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">27、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）运行时错可以由try-catch方式进行处理。&nbsp;
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19591" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19591" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="unfold" style="padding: 0px 20px; width: 900px; margin: 0px 0px 18px; background: rgb(245, 245, 245); box-sizing: border-box;">
+				<div class="hw-info" style="display: block; padding: 20px 0px 5px; line-height: 2; color: rgb(163, 163, 163); position: relative;">
+					<div class="bg-gray" style="margin: -5px 0px 5px; padding: 0px 0px 15px;">
+						<div class="hw-body" style="color: rgb(69, 69, 69); overflow: hidden; width: 860px; position: relative; min-height: 36px;"><span class="qes-num" style="font-family: 微软雅黑; font-size: 16px; font-weight: bold; display: inline-block; text-align: center; float: left;">28、</span>
+							<div class="gap-underline clearfix" style="zoom: 1; color: rgb(102, 102, 102); font-size: 18px; display: inline-block; width: 650px; word-break: break-all; float: left;"><span class="fl ltScore" style="float: left;">(2分)</span>
+								<div class="fl rtTitle" style="float: left; width: 566px; word-break: break-all;">（判断）程序的调试包括断点、跟踪、监视等手段。&nbsp;
+								</div>
+							</div><span class="tips-hm-right" style="float: right; width: 35px; height: 35px; color: rgb(206, 44, 23); font-size: 45px; line-height: 40px;">√</span>
+						</div>
+						<div class="mt-20 judge judge-single" style="margin-top: 20px;"><a href="" class="btn-t-f active" value="1" vid="19592" style="background-color: rgb(57, 57, 57); text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(57, 57, 57); font-size: 14px; line-height: 24px; color: rgb(255, 255, 255);"><em class="icon icon-right" style="display: inline-block; vertical-align: -1px; width: 18px; height: 13px; background-repeat: no-repeat; background-position: -82px -242px; background-image: url('/static/common/common_z.png'); opacity: 1; margin-right: 8px;"></em>正确</a><span>&nbsp;</span><a href="" class="btn-t-f" value="0" vid="19592" style="background-color: transparent; text-decoration: none; display: inline-block; height: 24px; margin-right: 10px; padding: 0px 15px; border: 1px solid rgb(64, 64, 64); font-size: 14px; line-height: 24px; color: rgb(64, 64, 64);"><em class="icon icon-wrong" style="display: inline-block; vertical-align: -1px; width: 12px; height: 12px; background-repeat: no-repeat; background-position: -160px -242px; background-image: url('/static/common/common_z.png'); margin-right: 10px;"></em>错误</a>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="mt-10" style="margin-top: 10px; color: rgb(0, 0, 0); font-family: 微软雅黑, Arial, sans-serif, Helvetica; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><a href="" class="btn btn-red" onclick="" style="background-color: rgb(206, 44, 23); text-decoration: none; padding: 4px 40px; cursor: pointer; color: rgb(255, 255, 255); border: 2px solid rgb(206, 44, 23); font-family: 'Microsoft Yahei', arial; outline: 0px; font-size: 14px; line-height: 1.8; text-indent: 0px; display: inline-block; text-align: center;">提交</a>
+		</div>
+	
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<script type="text/javascript" language="javascript" src="itemlink.js"></script></body>
+</html>
