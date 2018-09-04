@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<style>
+
+body{
+	width: 1024px;
+	margin: 0;
+	padding: 0;
+	color: white;
+	background-color: black;
+}
+
+h1{
+	font-size: 12pt;
+}
+
+ul{
+	list-style-type: none;
+	margin-left: -24px;
+}
+
+li{
+	line-height: 150%;
+}
+
+#ID_Header{
+	border-bottom: 2px dotted black;
+	margin: 0px 4px 8px 0px;
+	padding: 0px 0px 0px 8px
+}
+
+#ID_Footer{
+	border-top: 2px dotted black;
+	margin: 4px 0px 32px 0px;
+	padding: 8px 0px 0px 8px
+}
+
+#ID_Tree{
+	padding: 0px;
+}
+
+#ID_AppData{
+	display: none;
+}
+
+.CLS_NoJump{
+	color: lavender;
+}
+
+.CLS_Jump{
+	color: white;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.CLS_Jump:hover{
+	color: black;
+	background-color: lightblue;
+	text-decoration: none;
+}
+
+.CLS_Indent1{
+	margin-left: 5px;
+}
+
+.CLS_Indent2{
+	margin-left: 16px;
+}
+
+</style>
+
+<title>Java并发编程入门与高并发面试</title>
+
+</head>
+
+<body>
+
+<div id='ID_AppLoading'>
+	<script>document.write('Loading...');</script>
+	<noscript>Javascript must be enabled for viewing this webiste.</noscript>
+</div>
+
+<div id='ID_AppData'>
+
+<ul id='ID_DataInfoItems'>
+	<li level="0" sub="19" href="3e280638_1d5f1b69_0.html">Java并发编程入门与高并发面试</li>
+	<li level="1" sub="3">第1章 课程准备</li>
+	<li level="2" href="7bfe08ba_457609a7_0.qrich.html">1-1 课程导学</li>
+	<li level="2" href="7bd6088a_b9310fba_0.html">1-2 并发编程初体验</li>
+	<li level="2" href="73b1088e_6b8e168d_0.html">1-3 并发与高并发基本概念</li>
+	<li level="1" sub="4">第2章 并发基础</li>
+	<li level="2" href="741b08a3_5423153d_0.html">2-1 CPU多级缓存-缓存一致性</li>
+	<li level="2" href="7cbe08d3_9a481778_0.html">2-2 CPU多级缓存-乱序执行优化</li>
+	<li level="2" href="7d68090f_546c0a2c_0.html">2-3 JAVA内存模型</li>
+	<li level="2" href="7d1608ed_ec7b11e7_0.html">2-4 并发的优势与风险</li>
+	<li level="1" sub="5">第3章 项目准备</li>
+	<li level="2" href="7b9208d0_b4150f44_0.html">3-1 案例环境初始化</li>
+	<li level="2" href="7c0008f3_87870d6f_0.html">3-2 案例准备工作</li>
+	<li level="2" href="69ff080c_966f0ddb_0.html">3-3 并发模拟-工具</li>
+	<li level="2" href="7b5c08ae_96900dc4_0.html">3-4 并发模拟-代码</li>
+	<li level="1" sub="5">第4章 线程安全性</li>
+	<li level="2" href="7d370905_a9d914de_0.html">4-1 线程安全性-原子性-atomic-1</li>
+	<li level="2" href="7d1008e9_a9fe14e0_0.html">4-2 线程安全性-原子性-atomic-2</li>
+	<li level="2" href="7bbe089b_5b91725_0.html">4-3 线程安全性-原子性-synchronized</li>
+	<li level="2" href="7cc208dd_f9e911d8_0.html">4-4 线程安全性-可见性</li>
+	<li level="2" href="7b5c086b_bc0a185f_0.html">4-5 线程安全性-有序性与总结</li>
+	<li level="1" sub="3">第5章 安全发布对象</li>
+	<li level="2" href="7cea08f2_b95d1851_0.html">5-1 安全发布对象-发布与逸出</li>
+	<li level="2" href="7d170901_a0bb16b3_0.html">5-2 安全发布对象-四种方法-1</li>
+	<li level="2" href="7c7208cb_a0df16b5_0.html">5-3 安全发布对象-四种方法-2</li>
+	<li level="1" sub="10">第6章 线程安全策略</li>
+	<li level="2" href="7b2508a2_7b940bf2_0.html">6-1 不可变对象-1</li>
+	<li level="2" href="7b1c08a0_7ba80bf4_0.html">6-2 不可变对象-2</li>
+	<li level="2" href="7adc08ac_58cc09d2_0.html">6-3 线程封闭-1</li>
+	<li level="2" href="7bc808e4_58dd09d4_0.html">6-4 线程封闭-2</li>
+	<li level="2" href="7acd08a4_54821497_0.html">6-5 线程不安全类与写法-1</li>
+	<li level="2" href="7b9608d4_54a21499_0.html">6-6 线程不安全类与写法-2</li>
+	<li level="2" href="7acc0896_56a209c4_0.html">6-7 同步容器-1</li>
+	<li level="2" href="7a670862_56b309c6_0.html">6-8 同步容器-2</li>
+	<li level="2" href="7ba808dc_52981cb9_0.html">6-9 并发容器及安全共享策略总结</li>
+	<li level="1" sub="6">第7章 J.U.C之AQS</li>
+	<li level="2" href="7c9308f2_55f50987_0.html">7-1 J.U.C之AQS-介绍</li>
+	<li level="2" href="73260874_98e40abc_0.html">7-2 J.U.C之AQS-CountDownLatch</li>
+	<li level="2" href="7bb2089d_678408d4_0.html">7-3 J.U.C之AQS-Semaphore</li>
+	<li level="2" href="7b9e08a4_8d870a4f_0.html">7-4 J.U.C之AQS-CyclicBarrier</li>
+	<li level="2" href="7ac50872_faf10ef4_0.html">7-5 J.U.C之AQS-ReentrantLock与锁-1</li>
+	<li level="2" href="7ca008f7_fb150ef6_0.html">7-6 J.U.C之AQS-ReentrantLock与锁-2</li>
+	<li level="1" sub="4">第8章 J.U.C组件拓展</li>
+	<li level="2" href="7a120882_43be068e_0.html">8-1 J.U.C-FutureTask-1</li>
+	<li level="2" href="7a50088d_43d30690_0.html">8-2 J.U.C-FutureTask-2</li>
+	<li level="2" href="79950878_2a4b0546_0.html">8-3 J.U.C-ForkJoin</li>
+	<li level="2" href="793b084b_4ace0753_0.html">8-4 J.U.C-BlockingQueue</li>
+	<li level="1" sub="3">第9章 线程调度-线程池</li>
+	<li level="2" href="69e107d4_3a8007c7_0.html">9-1 线程池-1</li>
+	<li level="2" href="73c008a6_3a8e07c9_0.html">9-2 线程池-2</li>
+	<li level="2" href="73c908a0_3a9c07cb_0.html">9-3 线程池-3</li>
+	<li level="1" sub="5">第10章 多线程并发拓展</li>
+	<li level="2" href="7a8d0873_1818052c_0.html">10-1 死锁</li>
+	<li level="2" href="7a170838_90580e15_0.html">10-2 并发最佳实践</li>
+	<li level="2" href="7b20087a_9bd50e27_0.html">10-3 Spring与线程安全</li>
+	<li level="2" href="7c0b08e0_1aa410ba_0.html">10-4 HashMap与ConcurrentHashMap解析</li>
+	<li level="2" href="7a940870_cda1b02_0.html">10-5 多线程并发与线程安全总结</li>
+	<li level="1" sub="1">第11章 高并发之扩容思路</li>
+	<li level="2" href="7dc9091b_1250090_0.html">11-</li>
+	<li level="1" sub="4">第12章 高并发之缓存思路</li>
+	<li level="2" href="7cb608d0_d9cc23e6_0.html">12-1 高并发之缓存-特征、场景及组件介绍-1</li>
+	<li level="2" href="7d200905_da0223e8_0.html">12-2 高并发之缓存-特征、场景及组件介绍-2</li>
+	<li level="2" href="73b50890_9ef616bd_0.html">12-3 高并发之缓存-redis的使用</li>
+	<li level="2" href="73b80891_8015280d_0.html">12-4 高并发之缓存-高并发场景问题及实战讲解</li>
+	<li level="1" sub="3">第13章 高并发之消息队列思路</li>
+	<li level="2" href="7a700871_16d4124c_0.html">13-1 高并发之消息队列-1</li>
+	<li level="2" href="7a93087b_16f1124e_0.html">13-2 高并发之消息队列-2</li>
+	<li level="2" href="7ae108a4_170e1250_0.html">13-3 高并发之消息队列-3</li>
+	<li level="1" sub="2">第14章 高并发之应用拆分思路</li>
+	<li level="2" href="7d1708e5_16f6122f_0.html">14-1 高并发之应用拆分-1</li>
+	<li level="2" href="7d1908e4_17131231_0.html">14-2 高并发之应用拆分-2</li>
+	<li level="1" sub="1">第15章 高并发之应用限流思路</li>
+	<li level="2" href="7b1608bb_990067_0.html">15</li>
+	<li level="1" sub="1">第16章 高并发之服务降级与服务熔断思路</li>
+	<li level="2" href="7ccc08f6_9a0068_0.html">16</li>
+	<li level="1" sub="1">第17章 高并发之数据库切库分库分表思路</li>
+	<li level="2" href="7aa60897_9b0069_0.html">17</li>
+	<li level="1" sub="1">第18章 高并发之高可用手段介绍</li>
+	<li level="2" href="7d1408dc_1fb00c8_0.html">18-1</li>
+	<li level="1" sub="1">第19章 课程总结</li>
+	<li level="2" href="7d180905_1fe00c9_0.html">19-1</li>
+</ul>
+
+</div>
+
+<div id='ID_AppSafeFrame' style='display: none;'>
+
+	<div id='ID_Header'>
+	</div>
+
+	<div id='ID_Workspace'>
+		<div id='ID_Tree'>
+		</div>
+	</div>
+
+	<div id='ID_Footer'>
+	</div>
+
+</div>
+
+</body>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+
+<script>
+
+var _trim=function(s){return (s||'').replace(/^\s+|\s+$/g, '');};
+var _trim_l=function(s){return (s||'').replace(/^\s+/g, '');};
+var _trim_r=function(s){return (s||'').replace(/\s+$/g, '');};
+
+$(document).ready(function(){
+
+	var bItem0=false, xWin=window.parent._item_content;
+
+	var xTree=function(vItems, iRow, iLvl, jDiv){
+
+		var jUl=$('<ul>'); jDiv.append(jUl);
+	
+		if(iLvl>1) jUl.hide();
+
+		var jLi=undefined, j=iRow;
+		while(j < vItems.length){
+			var xItem=vItems[j];
+			var iLvl2=xItem.iLevel, nSub=xItem.nSub, sTitle=xItem.sTitle||'== Untitled ==', sLink=xItem.sHref;
+
+			if(iLvl2 < iLvl){
+				return j;
+			}else if(iLvl2 > iLvl){
+				j=xTree(vItems, j, iLvl+1, jLi);
+			}else{
+				jLi=$('<li>');
+
+				if(nSub>0){
+
+					var jBtn=$('<img>'); jLi.append(jBtn); jBtn.attr('src', iLvl==0 ? 'icon_minus.gif' : 'icon_plus.gif');
+
+					jBtn.click(function(){
+						var jBtn=$(this);
+						var jUl=jBtn.parent().children('ul');
+						var sImg=jBtn.attr('src');
+						if(sImg.match(/plus/i)){ // if(jUl.css('visibility')=='visible'){
+							jUl.show();
+							jBtn.attr('src', sImg.replace(/plus/i, 'minus'));
+						}else{
+							jUl.hide();
+							jBtn.attr('src', sImg.replace(/minus/i, 'plus'));
+						}
+					});
+				}
+
+				{
+					//var jIco=$('<img>'); jLi.append(jIco); jIco.attr('src', 'custom_icon.gif');
+				}
+
+				if(sLink){
+					var jA=$('<a>');
+					jA.attr('href', sLink);
+					jA.attr('target', '_item_content');
+					jA.addClass('CLS_Jump');
+					if(nSub>0) jA.addClass('CLS_Indent1'); else jA.addClass('CLS_Indent2');
+					jA.text(sTitle); jLi.append(jA);
+
+					/*jA.click(function(){
+						var jA=$(this), sHref=jA.attr('href'), sTitle=jA.text();
+						xWin.location=sHref;
+						return false;
+					});*/
+
+					if(!bItem0 && xWin){
+						xWin.location=sLink;
+						bItem0=true;
+					}
+				}else{
+					var jTxt=$('<span>'); jLi.append(jTxt); jTxt.text(sTitle);
+					jTxt.addClass('CLS_NoJump');
+					if(nSub>0) jTxt.addClass('CLS_Indent1'); else jTxt.addClass('CLS_Indent2');
+				}
+				jUl.append(jLi);
+				j++;
+			}
+		}
+	};
+
+	var jUl=$('#ID_DataInfoItems'), vItems=[];
+	jUl.children('li').each(function(i, xLi){
+		var jLi=$(xLi), xItem={};
+		xItem.iLevel=parseInt(jLi.attr('level')||'');
+		xItem.nSub=parseInt(jLi.attr('sub')||'0');
+		xItem.nID=parseInt(jLi.attr('id')||'-1');
+		xItem.sHref=jLi.attr('href')||'';
+		xItem.sAttach=jLi.attr('attach')||'';
+		xItem.sRelated=jLi.attr('related')||'';
+		xItem.sTitle=jLi.text()||'';
+		vItems[vItems.length]=xItem;
+	});
+
+	jUl.html(''); //clear the internal data when done;
+
+	if(vItems.length>0){
+		xTree(vItems, 0, 0, $('#ID_Tree'));
+		$('#ID_AppLoading').hide();
+		$('#ID_AppSafeFrame').show();
+	}
+
+});
+
+</script>
+
+</html>

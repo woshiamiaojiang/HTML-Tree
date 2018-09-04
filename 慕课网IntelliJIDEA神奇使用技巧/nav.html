@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<style>
+
+body{
+	width: 1024px;
+	margin: 0;
+	padding: 0;
+	color: white;
+	background-color: black;
+}
+
+h1{
+	font-size: 12pt;
+}
+
+ul{
+	list-style-type: none;
+	margin-left: -24px;
+}
+
+li{
+	line-height: 150%;
+}
+
+#ID_Header{
+	border-bottom: 2px dotted black;
+	margin: 0px 4px 8px 0px;
+	padding: 0px 0px 0px 8px
+}
+
+#ID_Footer{
+	border-top: 2px dotted black;
+	margin: 4px 0px 32px 0px;
+	padding: 8px 0px 0px 8px
+}
+
+#ID_Tree{
+	padding: 0px;
+}
+
+#ID_AppData{
+	display: none;
+}
+
+.CLS_NoJump{
+	color: lavender;
+}
+
+.CLS_Jump{
+	color: white;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.CLS_Jump:hover{
+	color: black;
+	background-color: lightblue;
+	text-decoration: none;
+}
+
+.CLS_Indent1{
+	margin-left: 5px;
+}
+
+.CLS_Indent2{
+	margin-left: 16px;
+}
+
+</style>
+
+<title>慕课网IntelliJ IDEA神奇使用技巧</title>
+
+</head>
+
+<body>
+
+<div id='ID_AppLoading'>
+	<script>document.write('Loading...');</script>
+	<noscript>Javascript must be enabled for viewing this webiste.</noscript>
+</div>
+
+<div id='ID_AppData'>
+
+<ul id='ID_DataInfoItems'>
+	<li level="0" sub="9">慕课网IntelliJ IDEA神奇使用技巧</li>
+	<li level="1" sub="5">第1章 课程介绍</li>
+	<li level="2" href="7a26089a_44f10978_0.html">1-1 课程介绍</li>
+	<li level="2" href="797d086e_42c80937_0.html">1-2 神器初试</li>
+	<li level="2" href="7a4408a3_2201064e_0.html">1-3 IDEA下载</li>
+	<li level="2" href="7a240881_216d05f2_0.html">1-4 IDEA安装</li>
+	<li level="2" href="7a6408af_54d50a50_0.html">1-5 IDEA界面介绍</li>
+	<li level="1" sub="3">第2章 高效定位代码</li>
+	<li level="2" href="79590834_b5ef0fd5_0.html">2-1 无处不在的跳转</li>
+	<li level="2" href="7a5f0889_4367094a_0.html">2-2 精准搜索</li>
+	<li level="1" sub="4">第3章 代码小助手们</li>
+	<li level="2" href="7b8708a5_27c206f9_0.html">3-1 列操作</li>
+	<li level="2" href="7a35083b_2ebf05df_0.html">3-2 live template</li>
+	<li level="2" href="7af60868_12fe03c1_0.html">3-3 postfix</li>
+	<li level="2" href="7ac10878_236c050b_0.html">3-4 alter enter</li>
+	<li level="1" sub="2">第4章 编写高质量代码</li>
+	<li level="2" href="7df10927_14ce04b8_0.html">4-1 重构</li>
+	<li level="2" href="7c8608b4_158404eb_0.html">4-2 抽取</li>
+	<li level="1" sub="2">第5章 寻找修改轨迹</li>
+	<li level="2" href="71ac082a_37a20805_0.html">5-1 git的集成</li>
+	<li level="2" href="711f07fa_2ea205f2_0.html">5-2 local history</li>
+	<li level="1" sub="2">第6章 关联一切</li>
+	<li level="2" href="7ca308e4_4c6f0967_0.html">6-1 spring的关联</li>
+	<li level="2" href="7bf208aa_89de0d53_0.html">6-2 数据库的关联</li>
+	<li level="1" sub="2">第7章 开始调试你的程序吧</li>
+	<li level="2" href="79e7087e_43420948_0.html">7-1 断点调试</li>
+	<li level="2" href="7a17087e_7bd5094d_0.html">7-2 run anywhere if you can</li>
+	<li level="1" sub="3">第8章 其他操作</li>
+	<li level="2" href="72490852_43100952_0.html">8-1 文件操作</li>
+	<li level="2" href="724f0841_41f2092c_0.html">8-2 文本操作</li>
+	<li level="2" href="72670849_299b0734_0.html">8-3 结构图</li>
+	<li level="1" sub="1">第9章 课程总结</li>
+	<li level="2" href="7b4f0874_451c097d_0.html">9-1 课程总结</li>
+</ul>
+
+</div>
+
+<div id='ID_AppSafeFrame' style='display: none;'>
+
+	<div id='ID_Header'>
+	</div>
+
+	<div id='ID_Workspace'>
+		<div id='ID_Tree'>
+		</div>
+	</div>
+
+	<div id='ID_Footer'>
+	</div>
+
+</div>
+
+</body>
+
+<script type="text/javascript" language="javascript" src="jquery.js"></script>
+
+<script>
+
+var _trim=function(s){return (s||'').replace(/^\s+|\s+$/g, '');};
+var _trim_l=function(s){return (s||'').replace(/^\s+/g, '');};
+var _trim_r=function(s){return (s||'').replace(/\s+$/g, '');};
+
+$(document).ready(function(){
+
+	var bItem0=false, xWin=window.parent._item_content;
+
+	var xTree=function(vItems, iRow, iLvl, jDiv){
+
+		var jUl=$('<ul>'); jDiv.append(jUl);
+	
+		if(iLvl>1) jUl.hide();
+
+		var jLi=undefined, j=iRow;
+		while(j < vItems.length){
+			var xItem=vItems[j];
+			var iLvl2=xItem.iLevel, nSub=xItem.nSub, sTitle=xItem.sTitle||'== Untitled ==', sLink=xItem.sHref;
+
+			if(iLvl2 < iLvl){
+				return j;
+			}else if(iLvl2 > iLvl){
+				j=xTree(vItems, j, iLvl+1, jLi);
+			}else{
+				jLi=$('<li>');
+
+				if(nSub>0){
+
+					var jBtn=$('<img>'); jLi.append(jBtn); jBtn.attr('src', iLvl==0 ? 'icon_minus.gif' : 'icon_plus.gif');
+
+					jBtn.click(function(){
+						var jBtn=$(this);
+						var jUl=jBtn.parent().children('ul');
+						var sImg=jBtn.attr('src');
+						if(sImg.match(/plus/i)){ // if(jUl.css('visibility')=='visible'){
+							jUl.show();
+							jBtn.attr('src', sImg.replace(/plus/i, 'minus'));
+						}else{
+							jUl.hide();
+							jBtn.attr('src', sImg.replace(/minus/i, 'plus'));
+						}
+					});
+				}
+
+				{
+					//var jIco=$('<img>'); jLi.append(jIco); jIco.attr('src', 'custom_icon.gif');
+				}
+
+				if(sLink){
+					var jA=$('<a>');
+					jA.attr('href', sLink);
+					jA.attr('target', '_item_content');
+					jA.addClass('CLS_Jump');
+					if(nSub>0) jA.addClass('CLS_Indent1'); else jA.addClass('CLS_Indent2');
+					jA.text(sTitle); jLi.append(jA);
+
+					/*jA.click(function(){
+						var jA=$(this), sHref=jA.attr('href'), sTitle=jA.text();
+						xWin.location=sHref;
+						return false;
+					});*/
+
+					if(!bItem0 && xWin){
+						xWin.location=sLink;
+						bItem0=true;
+					}
+				}else{
+					var jTxt=$('<span>'); jLi.append(jTxt); jTxt.text(sTitle);
+					jTxt.addClass('CLS_NoJump');
+					if(nSub>0) jTxt.addClass('CLS_Indent1'); else jTxt.addClass('CLS_Indent2');
+				}
+				jUl.append(jLi);
+				j++;
+			}
+		}
+	};
+
+	var jUl=$('#ID_DataInfoItems'), vItems=[];
+	jUl.children('li').each(function(i, xLi){
+		var jLi=$(xLi), xItem={};
+		xItem.iLevel=parseInt(jLi.attr('level')||'');
+		xItem.nSub=parseInt(jLi.attr('sub')||'0');
+		xItem.nID=parseInt(jLi.attr('id')||'-1');
+		xItem.sHref=jLi.attr('href')||'';
+		xItem.sAttach=jLi.attr('attach')||'';
+		xItem.sRelated=jLi.attr('related')||'';
+		xItem.sTitle=jLi.text()||'';
+		vItems[vItems.length]=xItem;
+	});
+
+	jUl.html(''); //clear the internal data when done;
+
+	if(vItems.length>0){
+		xTree(vItems, 0, 0, $('#ID_Tree'));
+		$('#ID_AppLoading').hide();
+		$('#ID_AppSafeFrame').show();
+	}
+
+});
+
+</script>
+
+</html>
